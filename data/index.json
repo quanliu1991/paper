@@ -1,0 +1,2724 @@
+{
+ "papers": {
+  "2610.01780": {
+   "title": "RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 276,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.01780"
+  },
+  "2609.38879": {
+   "title": "Does Learning Protein Folding Generalize to Broader Reasoning?",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 120,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.38879"
+  },
+  "2609.38839": {
+   "title": "FrameMorrow: Future-guided Frame Selection with Prospective Tokens for Long-Horizon Video Generation",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 112,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.38839"
+  },
+  "2609.38078": {
+   "title": "MotorMind: Scaffolding General Vision Language Models for Zero-Shot Robot Manipulation",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 111,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.38078"
+  },
+  "2610.02826": {
+   "title": "Scaling Trajectories for Complex Tasks through Recursive Self-Rewrite",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 103,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.02826"
+  },
+  "2610.02508": {
+   "title": "World Action Modeling with Progressive Visual Planning",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 96,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02508"
+  },
+  "2610.03391": {
+   "title": "Native Action-Prior Learning from Videos for World Action Models",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 88,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.03391"
+  },
+  "2609.36659": {
+   "title": "On-Policy Parameter Update Direction Underlies Generalization in LLM Post-Training",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 87,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.36659"
+  },
+  "2610.02381": {
+   "title": "Latent-MOPD: Latent Multi-Teacher On-Policy Distillation",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 70,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02381"
+  },
+  "2609.39071": {
+   "title": "LexReward: A Taxonomy-Driven Reward Framework for Legal Language Models",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 64,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.39071"
+  },
+  "2610.03665": {
+   "title": "Pivot-SD: Efficient Self-Distillation for Masked Diffusion Language Models",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 62,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.03665"
+  },
+  "2609.34715": {
+   "title": "PDE-JEPA: Predictive Representation Learning of Latent Dynamics Modeling for Parametric PDEs",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 62,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.34715"
+  },
+  "2610.02840": {
+   "title": "PointWAM: 3D World Action Modeling for Dexterous Robotic Manipulation",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 61,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02840"
+  },
+  "2610.03574": {
+   "title": "HyperBrowseComp: A Multilingual and Multimodal Stress Test for Web-Browsing Agents",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 60,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.03574"
+  },
+  "2610.00531": {
+   "title": "Science or Slop?: Benchmarking and Mitigating Scientific Slop in AI-Generated Papers",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 59,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.00531"
+  },
+  "2610.00972": {
+   "title": "VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 58,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.00972"
+  },
+  "2610.02298": {
+   "title": "EditHero: A Benchmark for Long-Horizon Part-Level 3D Editing and Vibe Modeling",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 58,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02298"
+  },
+  "2610.02521": {
+   "title": "Spatial Memory Intelligence: Endowing World Models with Understanding-Driven Long-Term Memory",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 57,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.02521"
+  },
+  "2610.02304": {
+   "title": "SimuVerity: Benchmarking Agents for Engineering-Grade Simulink Model Generation",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 54,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02304"
+  },
+  "2610.03632": {
+   "title": "World Embedding Benchmark",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 54,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.03632"
+  },
+  "2610.03367": {
+   "title": "Multilingual GSM-Symbolic: What determines capability transfer across languages?",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 51,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.03367"
+  },
+  "2610.01257": {
+   "title": "Science Utopia? Closed-Loop LLM Simulation of Academic Research Ecosystems",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 45,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.01257"
+  },
+  "2610.03195": {
+   "title": "Source Preference in the Wild: How LLM Agents Favor Items by Source, and How to Reduce It",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 45,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.03195"
+  },
+  "2610.03695": {
+   "title": "Language Models that Play Chess and Explain Their Moves",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 37,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.03695"
+  },
+  "2609.38123": {
+   "title": "HelixWorld: A Real-time Interactive Audio-Visual World Model",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 37,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.38123"
+  },
+  "2609.36529": {
+   "title": "Triadic Linear Attention: Three-Dimensional Recurrent States for Long-Context Sequence Modeling",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 37,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.36529"
+  },
+  "2609.32777": {
+   "title": "DEFINE: Exemplar-Guided Accent Control for Zero-Shot TTS",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 34,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.32777"
+  },
+  "2610.02824": {
+   "title": "MetaRubric: Learning to Reward for Rubric-Based Reinforcement Learning",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 33,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.02824"
+  },
+  "2610.03664": {
+   "title": "ProAR: Learning Prospective Reasoning with Autoregressive Video Models",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 32,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.03664"
+  },
+  "2610.03715": {
+   "title": "4DCodeBench: Benchmarking Agents on Inverse Graphics of Dynamic Scenes",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 31,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.03715"
+  },
+  "2609.39820": {
+   "title": "Learning from Runtime Feedback through Failure-Bank Self-Evolution for Vision-Language-Action Models",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 29,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.39820"
+  },
+  "2610.03675": {
+   "title": "FrugalEvo: Towards Cost-Aware LLM-Guided Program Evolution",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 29,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.03675"
+  },
+  "2610.02126": {
+   "title": "Local Support Learning",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 28,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02126"
+  },
+  "2609.28339": {
+   "title": "Beyond Future Prediction: Denoising as Generative Adaptation for Robot Control",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 27,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.28339"
+  },
+  "2609.36887": {
+   "title": "WEFT: Scaling Tool-Use Post-Training for General-Purpose Agents",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 25,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.36887"
+  },
+  "2608.26762": {
+   "title": "Equal Ranking Quality, Different Decisions: Measuring and Reducing Order Dependence in LLM Scorers",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 23,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2608.26762"
+  },
+  "2609.37925": {
+   "title": "Rollout-Marginal Distillation for Long-Horizon Autoregressive Video Generation",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 23,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.37925"
+  },
+  "2610.01153": {
+   "title": "Looping Beyond Twice: A Scalable Recipe for Looped Mixture-of-Experts",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 23,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.01153"
+  },
+  "2609.30467": {
+   "title": "Where Does Retrieval-Based Open-Ended Evaluation Fail? Automatic Taxonomy Induction from Long-Form Medical Answer Factuality Verification",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 22,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.30467"
+  },
+  "2609.39963": {
+   "title": "Diptych: Scoped, AI-Interpreted Comparison for Reference Listening in Music Production",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 21,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.39963"
+  },
+  "2610.02179": {
+   "title": "From Gradients to Capabilities: Understanding Multi-Teacher On-Policy Distillation",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 20,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02179"
+  },
+  "2610.03240": {
+   "title": "Collective Bias Mitigation via Model Routing and Collaboration",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 20,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.03240"
+  },
+  "2609.38096": {
+   "title": "Tail-Influence Sampling for CVaR Policy Evaluation",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 19,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.38096"
+  },
+  "2609.34895": {
+   "title": "LVMT: Video Mask Transformer for Long-term Video Segmentation",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 19,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.34895"
+  },
+  "2610.02788": {
+   "title": "Skill2Real: Agentic Skill Learning for Zero-Shot Sim-to-Real Robot Manipulation",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 18,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.02788"
+  },
+  "2609.26425": {
+   "title": "QuantWM: Temporally Consistent 2-Bit KV Cache Quantization for Video World Models",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 18,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.26425"
+  },
+  "2609.39050": {
+   "title": "Covert Assistance: Helpful LLM Agents Evade Oversight in Multi-Agent Systems",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 18,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.39050"
+  },
+  "2610.03509": {
+   "title": "Efficient Reasoning Training Does Not Always Harm CoT Faithfulness and Monitorability",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 17,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.03509"
+  },
+  "2609.33804": {
+   "title": "MinkowskiPE: Minkowski Positional Encoding for Spatiotemporal Perception",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 16,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.33804"
+  },
+  "2610.02388": {
+   "title": "Octrees as an Explicit 3D Language",
+   "date_added": "2026-10-05",
+   "source": "hf_daily",
+   "upvotes": 16,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02388"
+  },
+  "2610.09219v1": {
+   "title": "CM-DPO: Constraint-Margin Direct Preference Optimization for LLM Planning",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09219v1"
+  },
+  "2610.09202v1": {
+   "title": "Few Bits, One Law: Toward W2A4KV2",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09202v1"
+  },
+  "2610.09186v1": {
+   "title": "The Dichotomy Between Pattern Recognition and Step-by-Step Reasoning",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09186v1"
+  },
+  "2610.09174v1": {
+   "title": "Context-aware Attention-based Gaussian Mixture Models for Vehicular Trajectory Prediction",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09174v1"
+  },
+  "2610.09152v1": {
+   "title": "sk-bench: A Native-First Benchmark for Evaluating Large Language Models in Slovak",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09152v1"
+  },
+  "2610.09146v1": {
+   "title": "Frozen Models, Evolving Expertise: Model-Agnostic Learning from Deployment Experience for Multimodal Medical AI",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09146v1"
+  },
+  "2610.09145v2": {
+   "title": "Noise Your Prompt: Noising Conditioning Tokens in Continuous Diffusion Language Models",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09145v2"
+  },
+  "2610.09087v1": {
+   "title": "U-Space: Uncovering When and Why Uncertainty Arises in Language Models",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09087v1"
+  },
+  "2610.09074v1": {
+   "title": "TAP: Efficient Long-Horizon Agent Pruning via Trajectory-Anchored Recovery",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09074v1"
+  },
+  "2610.09026v1": {
+   "title": "BEACON-SP: Ontology-Grounded GraphRAG Framework for Clinical Suicide Risk Assessment",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09026v1"
+  },
+  "2610.09015v1": {
+   "title": "Personalize at Test Time: Learning User Preferences for Image Generation",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09015v1"
+  },
+  "2610.09008v1": {
+   "title": "Whose Memory Is It? Scope-Aware Commit Rules for Long-Term LLM Memory",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09008v1"
+  },
+  "2610.09007v1": {
+   "title": "Sigma-Hunter: A Domain-Specific Language Model for Threat Hunting and Detection Engineering",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09007v1"
+  },
+  "2610.09003v1": {
+   "title": "Algorithmic Scratchpads and Curriculum Staging for Arithmetic Reasoning in Tiny Transformers",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09003v1"
+  },
+  "2610.08993v1": {
+   "title": "Verify Less, Evolve More: Training Idea-Level Critics for Verification-Efficient ML Evolving Agents",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08993v1"
+  },
+  "2610.08966v2": {
+   "title": "Humanity's Sixth Sense: Benchmarking Intuitive Visual Reasoning in Multimodal Models",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08966v2"
+  },
+  "2610.08963v1": {
+   "title": "On KL-Regularized Policy Optimization",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08963v1"
+  },
+  "2610.08959v1": {
+   "title": "GraphOPD: Graph-Augmented On-Policy Distillation for LLM Agents",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08959v1"
+  },
+  "2610.08954v1": {
+   "title": "RACER: Reflective Agent Coupling Query Interpretation and Tool-Based Retrieval for Frame Selection in Long Video Understanding",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08954v1"
+  },
+  "2610.08923v1": {
+   "title": "AdaGuard: Enhancing Safety and Policy Compliance with Reasoning-Enabled LLM-As-A-Judge Guardrails",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08923v1"
+  },
+  "2610.08780v1": {
+   "title": "DepthWorld: 3D World Model for Robot Manipulation",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08780v1"
+  },
+  "2610.08901v1": {
+   "title": "Sequential Probabilistic Uncertainty Estimation for Parallel Multi-Agent Reasoning Systems",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08901v1"
+  },
+  "2610.08761v1": {
+   "title": "VeriFine: Scaling Verification for Self-Improvement in Embodied Reasoning",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08761v1"
+  },
+  "2610.08726v1": {
+   "title": "EgoLAP: Learning from Egocentric Human Data through Language-Action Reasoning",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08726v1"
+  },
+  "2610.09115v1": {
+   "title": "From Uncertainty to Action: Learning to Steer LLM Agents",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09115v1"
+  },
+  "2610.09112v1": {
+   "title": "GeoNatureAgent (GNA): A Framework and Benchmark for Pre-Production Evaluation of Tool-Using Agents on Geospatial and Environmental Tasks",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09112v1"
+  },
+  "2610.09048v1": {
+   "title": "Towards Financial World Modeling",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09048v1"
+  },
+  "2610.09034v1": {
+   "title": "Shared-Roadmap Generation and Evaluator for Multi-Agent Path Planning Using Heterogeneous Graph Neural Network",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09034v1"
+  },
+  "2610.08781v1": {
+   "title": "IdeaAnchor: Teaching LLMs to Turn Literature into Research Ideas",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08781v1"
+  },
+  "2610.08775v1": {
+   "title": "Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts?",
+   "date_added": "2026-10-05",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08775v1"
+  },
+  "2610.05608": {
+   "title": "Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 160,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05608"
+  },
+  "2610.06647": {
+   "title": "LoGRA: Scaling LLM Reinforcement Learning with Low-Rank Gradient Sketches",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 120,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.06647"
+  },
+  "2610.04198": {
+   "title": "ALoDLM: Adaptively Looped Diffusion Language Models",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 74,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.04198"
+  },
+  "2610.05162": {
+   "title": "Memadapter: Counterfactual Adaptation Against Memory-induced Sycophancy",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 59,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.05162"
+  },
+  "2610.03120": {
+   "title": "In-Distribution Forcing for Long Video Generation at Test Time",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 49,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.03120"
+  },
+  "2609.37267": {
+   "title": "Foundations of Proactive Agents: Principles, Technical Layers, and Proactivity-Gym",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 40,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.37267"
+  },
+  "2610.04292": {
+   "title": "LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 38,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.04292"
+  },
+  "2610.04109": {
+   "title": "SEER: Self-Evolving Event Reasoning and Retrieval for Time Series Forecasting",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 32,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.04109"
+  },
+  "2610.06648": {
+   "title": "Representation-Space MMD for Diffusion Language Models",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 31,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.06648"
+  },
+  "2610.05719": {
+   "title": "When to Switch: Reliable Action-Chunk Extension for Vision-Language-Action Models",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 31,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05719"
+  },
+  "2610.06833": {
+   "title": "Towards Looped Models Done Right, Part II: Rethinking at Fixed Points",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 30,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.06833"
+  },
+  "2610.02331": {
+   "title": "World Editing: Intervening on Executable Worlds at Increasing Depth",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 29,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02331"
+  },
+  "2609.24890": {
+   "title": "OSWorld-Pro: Process-based Evaluation for Computer Use Agents",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 28,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.24890"
+  },
+  "2609.39490": {
+   "title": "OmniReasoning: Pushing the Limits of Audio-Visual Joint Reasoning",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 27,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.39490"
+  },
+  "2609.36099": {
+   "title": "Data Unlearning via Inverse Distillation",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 27,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.36099"
+  },
+  "2610.05076": {
+   "title": "Self-Generated Feedback Destabilizes Test-Time Training: A Causal Decomposition of Long-Horizon Adaptation",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 25,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.05076"
+  },
+  "2610.06577": {
+   "title": "Optimizing the Optimizer: Language Models Discover Faster Molecular Relaxation",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 24,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.06577"
+  },
+  "2610.05107": {
+   "title": "SearchJev: A Fast and Calibrated System-1 Model for Search Agents",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 23,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.05107"
+  },
+  "2610.06851": {
+   "title": "Base Models Can Reason By Taking a Cue From Training Data",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 23,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.06851"
+  },
+  "2610.05303": {
+   "title": "ASCENT: Online Test-Time Training of Long-Horizon Agents via Self-Distillation of Verified Experience",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 23,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.05303"
+  },
+  "2610.00923": {
+   "title": "CANOPY: Adaptive-Granularity Evidence Compression for Multimodal RAG",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 23,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.00923"
+  },
+  "2610.05622": {
+   "title": "UndoBench: Separating Task Competence from Recovery Capability in Tool-Using AI Agents",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 21,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.05622"
+  },
+  "2609.36684": {
+   "title": "ProgressCompass: Embodied Progress Reward Models Are Lost Without the Right Context",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 20,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.36684"
+  },
+  "2610.05739": {
+   "title": "HLA-WM: Hybrid Linear Attention for Long-Horizon Video World Models",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 20,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05739"
+  },
+  "2610.04929": {
+   "title": "RobotUse: Allocating Computation, Context, and Decisions",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 19,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.04929"
+  },
+  "2610.06617": {
+   "title": "RealtimeWAM: One-Step Asynchronous World Action Models",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 19,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.06617"
+  },
+  "2610.05750": {
+   "title": "Beyond Semantic Similarity: Performance and Costs of Agentic Retrieval for Complex Tasks",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 18,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.05750"
+  },
+  "2610.06361": {
+   "title": "Capability-Driven Self-Evolution of Agent Memory",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 18,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.06361"
+  },
+  "2610.04616": {
+   "title": "PerturBot: Breaking Shortcut Priors in Vision-Language-Action Models with Perturbative Training",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 18,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.04616"
+  },
+  "2609.39420": {
+   "title": "QuantCode Model: Specializing Language Models for Executable Algorithmic Trading Code",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 18,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.39420"
+  },
+  "2610.04318": {
+   "title": "Rethinking Long-Video Efficiency: A Joint Allocation Perspective on Frames, Pixels, and Front-End Latency",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 17,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.04318"
+  },
+  "2609.34227": {
+   "title": "When Does Selection Replace Extraction? A Pre-Registered Test of Agent Memory with a Typed Decision Model",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 16,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.34227"
+  },
+  "2609.36691": {
+   "title": "Video2Skill: From Streaming Experience to Reusable Embodied Skills",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 16,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.36691"
+  },
+  "2610.05894": {
+   "title": "Noise Out, Bias In: Targeted Bias Injection in Diffusion Language Models via Closed-Loop Activation Steering",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 16,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05894"
+  },
+  "2610.05870": {
+   "title": "Certification of Real Images through Calibrated Content Authentication",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 16,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05870"
+  },
+  "2610.05416": {
+   "title": "Prism: Dynamic Sparse Attention for Native 2K Joint Video-Audio Generation Model Training",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 16,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05416"
+  },
+  "2610.02320": {
+   "title": "DeskForge: Dense Supervision from Desktop Environments for Computer-Use Agents",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 15,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02320"
+  },
+  "2610.02191": {
+   "title": "The Missing Primitive: Diagnosing and Repairing Mathematical Reasoning in Large Language Models",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 14,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.02191"
+  },
+  "2610.06666": {
+   "title": "What Matters for Latent Reasoning with Flow Matching",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 13,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.06666"
+  },
+  "2610.02076": {
+   "title": "LLM-as-Jev: LLMs Are Already Jev-Style Decision Models -- When and How to Fine-Tune Them",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 13,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02076"
+  },
+  "2609.35751": {
+   "title": "How to Loop MoE: Flatten the Experts, Untie the Attention",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 13,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.35751"
+  },
+  "2610.05538": {
+   "title": "LiFT: Loop Flow Transformers",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 12,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05538"
+  },
+  "2610.04128": {
+   "title": "What Gradients Add to Text Leakage in Split Language Models, Counted per Token and per Document",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 12,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.04128"
+  },
+  "2610.02150": {
+   "title": "From Knowledge Access to Source Learning: Developing Source-Specific Competence",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 12,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02150"
+  },
+  "2610.04137": {
+   "title": "Dynamic Harness Search: Building Multi-Agent Systems Per-Query via Prediction",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 12,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.04137"
+  },
+  "2610.06545": {
+   "title": "Empirical Variational Autoencoder",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 11,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.06545"
+  },
+  "2610.04226": {
+   "title": "PaLoRA: Paced Low-Rank Adaptation for Continual Learning",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 10,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.04226"
+  },
+  "2605.21318": {
+   "title": "TextReg: Mitigating Prompt Distributional Overfitting via Regularized Text-Space Optimization",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 9,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2605.21318"
+  },
+  "2610.10996v1": {
+   "title": "Invariant-Measure Reasoners: Stable Representations for Latent Reasoning",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10996v1"
+  },
+  "2610.10978v1": {
+   "title": "Probabilistic Sensing, Deterministic Authority: Admitting Model-Produced Observations into Sufficiency-Checked Governance Contracts",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10978v1"
+  },
+  "2610.10962v1": {
+   "title": "iAm.md: Robot Skill Self-Assessment through Agentic Introspection for Unknown Open-Vocabulary Domains",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10962v1"
+  },
+  "2610.10942v1": {
+   "title": "StoreBench: A Live-Commerce Environment for Evaluating and Training Autonomous Operator Agents",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10942v1"
+  },
+  "2610.10878v1": {
+   "title": "Stochastic Teacher Intervention for Agentic On-Policy Distillation",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10878v1"
+  },
+  "2610.10858v1": {
+   "title": "RFChipAgent: Multi-Agentic AI Flow for Analog/RF Chip Design",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10858v1"
+  },
+  "2610.10854v1": {
+   "title": "KDFP: A first-principles approach to knowledge distillation in large language models",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10854v1"
+  },
+  "2610.10833v1": {
+   "title": "On the Clock: Towards Punctual and Productive Time-Budgeted AI Agents",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10833v1"
+  },
+  "2610.10787v1": {
+   "title": "NavGPT-3: Harnessing Context in a Hierarchical Navigation Runtime",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10787v1"
+  },
+  "2610.10782v1": {
+   "title": "VICO: Visual Environments Co-Evolving for Vision-Language Model Reasoning",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10782v1"
+  },
+  "2610.10742v1": {
+   "title": "BRANCH: Bypassing Multi-Scanner AI Guardrails",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10742v1"
+  },
+  "2610.10536v1": {
+   "title": "Decoupling Exploration from Optimization in RLVR",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10536v1"
+  },
+  "2610.10533v1": {
+   "title": "EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10533v1"
+  },
+  "2610.10462v1": {
+   "title": "FoldBack: Self-Correcting Masked Generative Policy for Long-Horizon Garment Folding",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10462v1"
+  },
+  "2610.10455v1": {
+   "title": "PHRBench: A Behavioral Evaluation of Post-Hallucination Reasoning in LLMs",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10455v1"
+  },
+  "2610.10447v1": {
+   "title": "A Good Self-Teacher Meets the Student Where They Are: Joint On-Policy Learning and Teaching",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10447v1"
+  },
+  "2610.10415v1": {
+   "title": "Steerspeech: Activation Steering For Emotion Control In Generated Speech",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10415v1"
+  },
+  "2610.10411v1": {
+   "title": "Training Parallel Speculative Draft Models by Directly Minimizing Expected Decoding Rounds",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10411v1"
+  },
+  "2610.10405v1": {
+   "title": "Reasoning-Token Spikes Under Prompted Untruthful Responding in Large Language Models",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10405v1"
+  },
+  "2610.10381v1": {
+   "title": "ResidualQuant: KV Cache Quantization for Looped Transformers with 2-Bit Residuals",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10381v1"
+  },
+  "2610.10374v1": {
+   "title": "TaoD2C-Bench: Benchmarking MLLMs for Industrial UI Code Generation Beyond Visual Fidelity",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10374v1"
+  },
+  "2610.10655v1": {
+   "title": "Nullify: Null-Space Activation Steering for Training-Free LLM Unlearning",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10655v1"
+  },
+  "2610.10332v1": {
+   "title": "Learning to Act with Task Progress: Distilling Small Agents from Compact Teacher Supervision",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10332v1"
+  },
+  "2610.04047": {
+   "title": "Periscope: Extending Frozen Language Models Beyond Their Context Window",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 9,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.04047"
+  },
+  "2610.03872": {
+   "title": "Training Numerical Intelligence via Auto-Diagnosis and Skill Discovery",
+   "date_added": "2026-10-06",
+   "source": "hf_daily",
+   "upvotes": 9,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.03872"
+  },
+  "2610.11008v1": {
+   "title": "Why LLM Agents Favor Their Group: Stakes, Observed Norms, and Reputation",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.11008v1"
+  },
+  "2610.11007v1": {
+   "title": "Curating Always-Loaded Context for LLM Agents: A Capacitated Assortment Model with Censored Feedback",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.11007v1"
+  },
+  "2610.10906v1": {
+   "title": "Reading the Room: Foundations, Design, and Challenges of Normative Competence in LLMs",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10906v1"
+  },
+  "2610.10857v1": {
+   "title": "Self-Supervised Keyframe Discovery for Horizon-Invariant Behavior Cloning",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10857v1"
+  },
+  "2610.10805v1": {
+   "title": "Whose Ground Truth? Embracing Ambiguity in Human-Centered AI",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10805v1"
+  },
+  "2610.10444v1": {
+   "title": "RunningTab: Direct Workspace Interaction with Environment-Side Tabs",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10444v1"
+  },
+  "2610.10407v1": {
+   "title": "SOTA: Stock Options Trading Agents Guided by Option-Implied Return Distributions",
+   "date_added": "2026-10-06",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10407v1"
+  },
+  "2610.08448": {
+   "title": "Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Coverage to Supervision Reliability",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 177,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08448"
+  },
+  "2610.07767": {
+   "title": "TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 101,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.07767"
+  },
+  "2610.03543": {
+   "title": "DuoMatching: Joint-Marginal Distribution Matching for Few-Step Video Generation",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 84,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.03543"
+  },
+  "2610.05030": {
+   "title": "EVISKILL: Grounding Skill Evolution in Replayable Evidence",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 43,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05030"
+  },
+  "2610.00864": {
+   "title": "Kinematic MeanFlow: One-Step Action Generation Policy for Robotic Foundation Models",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 42,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.00864"
+  },
+  "2610.07753": {
+   "title": "From Evidence to Action: How Tool-Using Agents Fail",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 41,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.07753"
+  },
+  "2610.07043": {
+   "title": "TRIAGE: Direction-Aware Mismatch Stabilization of Native NVFP4 Reinforcement Learning",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 35,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.07043"
+  },
+  "2610.05140": {
+   "title": "AutoSciBench: Autonomous Benchmark Generation for Evaluating Scientific Agents",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 32,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.05140"
+  },
+  "2609.37334": {
+   "title": "Taming VLAs under Robot Execution Errors: Self-Compensation and Stress Testing",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 32,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.37334"
+  },
+  "2610.05966": {
+   "title": "HuatuoGPT-3: RL-Only Domain Adaptation from Base Models",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 32,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05966"
+  },
+  "2610.05912": {
+   "title": "MiniCorp: The Last Mile of the AI Agent Firm",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 28,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05912"
+  },
+  "2610.09455": {
+   "title": "RLHND: Video Foundation Models as Physically Grounded Hand Trackers for Robot Learning",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 24,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09455"
+  },
+  "2610.03607": {
+   "title": "World Action Learning via Interaction-Centric Spectral Latent Guidance",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 24,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.03607"
+  },
+  "2609.29792": {
+   "title": "TimeBraid: Unifying Time Series and Language for Understanding and Forecasting",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 19,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.29792"
+  },
+  "2610.08463": {
+   "title": "UNREAL: Unifying Retrieval and Long-Context with a Single Model",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 18,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08463"
+  },
+  "2610.01892": {
+   "title": "Selection-Based Structured Reasoning: Toward Efficient Multimodal Search Agents",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 17,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.01892"
+  },
+  "2610.01218": {
+   "title": "AGO AI Quality Gate: Evidence-First Release Decisions for Retrieval-Augmented Generation",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 17,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.01218"
+  },
+  "2610.04596": {
+   "title": "DiffGate: Difficulty-Gated Teacher Guidance for On-Policy Distillation",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 16,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.04596"
+  },
+  "2609.38972": {
+   "title": "Making LLMs Say What They Think: Measuring and Improving CoT-Interpretability Alignment",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 16,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.38972"
+  },
+  "2610.08430": {
+   "title": "NeMo-DCR: Bit-Exact Delta-Compressed Refit for Scalable Agentic RL at Trillion-Parameter Scale",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 16,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08430"
+  },
+  "2609.34117": {
+   "title": "SlimWise: Decoupling Expert Pruning Across Prefill and Decode for Efficient MoE Serving",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 14,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.34117"
+  },
+  "2610.08791": {
+   "title": "World Models' Last Exam in Physics",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 14,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08791"
+  },
+  "2610.07342": {
+   "title": "Rationale-Guided Policy Optimization: Learning to Reason with Adaptive Rationale Scaffolding",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 13,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.07342"
+  },
+  "2610.00948": {
+   "title": "GUI-HARVEST: Self-Improving GUI Agents through Evidence-Driven Harness Evolution",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 13,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.00948"
+  },
+  "2610.07969": {
+   "title": "EmbodiedSmith: Scaling Embodied Data through Recursive Self-Improvement Flywheel in Simulation",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 13,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.07969"
+  },
+  "2610.04933": {
+   "title": "DiVeR: Decision-Critical Verifier Learning for VLA Test-Time Scaling",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 12,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.04933"
+  },
+  "2609.32921": {
+   "title": "Adaptive Latent Capacity for World Models",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 12,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.32921"
+  },
+  "2610.08778": {
+   "title": "Sherpa: Teaching LLMs to Teach Adaptively",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 11,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08778"
+  },
+  "2609.40127": {
+   "title": "Learning Functional Subspaces for Neural Network Compression",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 11,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.40127"
+  },
+  "2610.02781": {
+   "title": "OPD Before RL: Warm-Starting Rubric-Based RL with On-Policy Distillation",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 10,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.02781"
+  },
+  "2610.02858": {
+   "title": "Harness-Aware Distillation for Small Language Model Agents",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 10,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.02858"
+  },
+  "2610.07510": {
+   "title": "Understanding and Enhancing Backdoor Persistency in LLM Agent Post-Training",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 10,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.07510"
+  },
+  "2610.07641": {
+   "title": "Hiding Tool Latency in On-Device Cascaded Voice Agent through Speculative Execution",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 10,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.07641"
+  },
+  "2610.07727": {
+   "title": "HiPLEX: Hierarchical Policy Factorization for Full Duplex Speech Language Models",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 8,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.07727"
+  },
+  "2610.08048": {
+   "title": "DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08048"
+  },
+  "2610.07832": {
+   "title": "Harness Engineering for Software Engineering via Modular Executable Dev-Primitives",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.07832"
+  },
+  "2609.35378": {
+   "title": "Multilinguality in Hybrid Attention LLMs",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 6,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.35378"
+  },
+  "2610.08761": {
+   "title": "VeriFine: Scaling Verification for Self-Improvement in Embodied Reasoning",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 5,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08761"
+  },
+  "2610.12417v1": {
+   "title": "WOVEN: Weaving Visual World Modeling into Multimodal LLMs",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12417v1"
+  },
+  "2610.12416v1": {
+   "title": "MAMHOI: Factorizing Scene-Aware Human-Object Interaction through Affordances",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12416v1"
+  },
+  "2610.12402v1": {
+   "title": "SpaceCast-Bench: Evaluating Predictive Spatial Reasoning in Vision-Language Models",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12402v1"
+  },
+  "2610.12391v1": {
+   "title": "GeoReform: Reflective Formalization Evolution for Multimodal Geometry Problem Solving",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12391v1"
+  },
+  "2610.12386v1": {
+   "title": "ARC: A Reasoning Recipe for Robot Foundation Models",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12386v1"
+  },
+  "2610.12367v1": {
+   "title": "Which Skill to Distill? SGUID: Selecting a Compact Skill Bank for Model-Skill Co-Evolution",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12367v1"
+  },
+  "2610.12361v1": {
+   "title": "Cited but Not Consulted: A Counterfactual Audit of Legal Chain-of-Thought Faithfulness",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12361v1"
+  },
+  "2610.12355v1": {
+   "title": "Distilling Routed 3D Privilege for Spatial Reasoning in Vision-Language Models",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12355v1"
+  },
+  "2610.12333v1": {
+   "title": "RiCo: Neural Simulation of Rigid-Body Interactions via Local Contact Reasoning",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12333v1"
+  },
+  "2610.12304v1": {
+   "title": "Looking Inside LLMs: Small-World Connectivity as a Signature of Reasoning Performance",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12304v1"
+  },
+  "2610.12303v1": {
+   "title": "Learning Probabilistic Logic Programs with Functional Gradient Guided Language Models",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12303v1"
+  },
+  "2610.12281v1": {
+   "title": "Unlocking the Regulatory Genome by ARGUS: An Evidence-Constrained Agentic Framework for Interpreting Single Nucleotide Variants",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12281v1"
+  },
+  "2610.12235v1": {
+   "title": "Language Models as AI Research World Models",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12235v1"
+  },
+  "2610.12176v1": {
+   "title": "Recursive Self-Improvement through Multi-Agent Self-Supervision",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12176v1"
+  },
+  "2610.12168v1": {
+   "title": "Learning to Plan by Looking Back: Hindsight Hierarchies for Training Reasoning Models",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12168v1"
+  },
+  "2610.12161v1": {
+   "title": "When KL Regularization Misfires in Group Policy Optimization",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12161v1"
+  },
+  "2610.12137v1": {
+   "title": "Poster: A Preliminary Study of LLM Distillation Inference",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12137v1"
+  },
+  "2610.12114v1": {
+   "title": "Universal Textual Teaching for LLMs",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12114v1"
+  },
+  "2610.12104v1": {
+   "title": "VINCIE-NExT: Unlocking Video Editing from Images via In-Context Modeling",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12104v1"
+  },
+  "2610.12090v1": {
+   "title": "Recompose and Refine Latent Reasoning Flows for Vision-Language-Action Models",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12090v1"
+  },
+  "2610.12081v1": {
+   "title": "Perception Test 2026: Challenge Summary and Extension to City-scale Audio-Visual Reasoning",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12081v1"
+  },
+  "2610.09243": {
+   "title": "We Query, Therefore We Compute: On Oracle Computation beyond the Machine, with an Application to Agents",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 8,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09243"
+  },
+  "2610.08773": {
+   "title": "AdvSim2Real : Training Web Agents Against Adaptive Prompt Injection in a Web World Model",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 8,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08773"
+  },
+  "2610.06844": {
+   "title": "Learning to Read the Contextual Tokens in Diffusion Transformers",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.06844"
+  },
+  "2610.05842": {
+   "title": "HLA: Expressive Hybrid Linear Attention via Chunk-Wise Dynamic Mixing",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05842"
+  },
+  "2610.08630": {
+   "title": "Towards In-Parameter Memory Augmentation for Large Language Models",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08630"
+  },
+  "2610.06960": {
+   "title": "DistScene: Object-to-Scene Distillation for 3D Scene Generation",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.06960"
+  },
+  "2609.29123": {
+   "title": "Accent Analogy Guidance: More Speaker Similarity at Equal Accent in Cross-Lingual Voice Cloning",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 6,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.29123"
+  },
+  "2610.07588": {
+   "title": "Personal-Agent Mediated Recommendation with Cross-Platform User History",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 6,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.07588"
+  },
+  "2610.08790": {
+   "title": "Building Rome from a Single Image",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 6,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08790"
+  },
+  "2610.07785": {
+   "title": "Attacca: Goal-Directed Control under State Continuity for Long-Horizon Embodied Agents",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 5,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.07785"
+  },
+  "2610.08779": {
+   "title": "ALIVE: Interaction-Aligned Object Insertion for First-Frame-Guided Video Editing",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 5,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08779"
+  },
+  "2609.39096": {
+   "title": "DeCoPrune: Efficient KV-Cache Pruning for Autoregressive Video Diffusion via Denoising Consistency",
+   "date_added": "2026-10-07",
+   "source": "hf_daily",
+   "upvotes": 4,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.39096"
+  },
+  "2610.12452v1": {
+   "title": "BrickBench: Evaluating Agentic Brick Design",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12452v1"
+  },
+  "2610.12445v1": {
+   "title": "Caught in the Act: Probes Effectively Detect Sabotage and Catch Unverbalized Deception",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12445v1"
+  },
+  "2610.12375v1": {
+   "title": "OnTrack: Real-Time Monitoring and Intervention in LLM Agent Trajectories via Streaming Structure-Aware Optimal Transport",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12375v1"
+  },
+  "2610.12360v1": {
+   "title": "Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12360v1"
+  },
+  "2610.12274v1": {
+   "title": "HarnessSQL: Harness-Native Training for SQL Agents in Realistic Database Environments",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12274v1"
+  },
+  "2610.12212v1": {
+   "title": "When Has a Bayesian Neural Network Sampled Enough? Adaptive Inference Time with Statistical Guarantees",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12212v1"
+  },
+  "2610.12183v1": {
+   "title": "A Closer Look at Agentic BBO: Benchmarking LLM Agents for Black-Box Optimization",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12183v1"
+  },
+  "2610.12135v1": {
+   "title": "Q-Shaped Options for Hierarchical Reinforcement Learning",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12135v1"
+  },
+  "2610.12124v1": {
+   "title": "Use and Disuse: Intent-Structured Experience Consolidation for Memory and Learning in LLM Agents",
+   "date_added": "2026-10-09",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12124v1"
+  },
+  "2610.08077": {
+   "title": "Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 115,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08077"
+  },
+  "2609.38169": {
+   "title": "STEPQuant: When and Where Errors Matter in Delta-Rule Recurrent State Quantization",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 107,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.38169"
+  },
+  "2610.08699": {
+   "title": "nanoMuse: An Open-Source Personal Agent for Every Device You Own",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 98,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08699"
+  },
+  "2610.10528": {
+   "title": "Long-WAM: Scaling the Context of World-Action Models",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 97,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10528"
+  },
+  "2610.09823": {
+   "title": "UltraText Bench: A Comprehensive Bilingual Benchmark for Evaluating Visual Text Rendering in Image Generation",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 91,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09823"
+  },
+  "2610.08621": {
+   "title": "Recursive Game Creator: An Agentic Product-Level Experience-Oriented Game Harness",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 85,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08621"
+  },
+  "2610.10524": {
+   "title": "GRACE: Generation-aware latent compression for efficient video generation",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 75,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10524"
+  },
+  "2610.04299": {
+   "title": "Questioning the Questions: Sustaining Self-Evolution in Reasoning Models",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 68,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.04299"
+  },
+  "2610.07967": {
+   "title": "DecepEval: A Benchmark for Evaluating Deception in LLM Agents",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 68,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.07967"
+  },
+  "2610.10429": {
+   "title": "SGF+: Decoupling Gradient Flows for Autoregressive Video Generation",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 55,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10429"
+  },
+  "2610.06293": {
+   "title": "VepAgent: Bridging Causal-Transition via Tool-Augmented Reinforcement Learning for Video Event Prediction",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 54,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.06293"
+  },
+  "2610.02054": {
+   "title": "UniWAM: Unified World-Action Model",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 53,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.02054"
+  },
+  "2610.10539": {
+   "title": "Tetris3D: 3D Scene Generation With Objects That Fit Together",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 43,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10539"
+  },
+  "2609.40360": {
+   "title": "Semifactual Credit-Augmented Policy Optimization",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 37,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.40360"
+  },
+  "2610.10444": {
+   "title": "RunningTab: Direct Workspace Interaction with Environment-Side Tabs",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 34,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10444"
+  },
+  "2610.08760": {
+   "title": "WorldSonus: Bringing Sound to Worlds",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 33,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08760"
+  },
+  "2609.39306": {
+   "title": "ReSAIL: Mitigating Collapse in Iterative Agent Self-Distillation",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 33,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.39306"
+  },
+  "2610.10409": {
+   "title": "RobotWorld: Benchmarking Multimodal Agents for Robot Use Across Diverse Tasks and Embodiments",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 31,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10409"
+  },
+  "2610.10114": {
+   "title": "Mechanics of Long-Context Hybrid Models Part 1.1: From Hybrid Attention to Hybrid Position",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 31,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10114"
+  },
+  "2610.03185": {
+   "title": "Gains and Collapse in On-Policy Distillation:A Reinforcement Learning Perspective",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 29,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.03185"
+  },
+  "2610.08995": {
+   "title": "PhysEvo: Astra Can Act, Let It",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 29,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08995"
+  },
+  "2610.07591": {
+   "title": "Recurrent Looped Transformer",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 27,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.07591"
+  },
+  "2610.00994": {
+   "title": "VIEScore2: Unified Image Evaluation with Spatially Grounded Explanations",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 25,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.00994"
+  },
+  "2609.33678": {
+   "title": "SWE-Game: Can Coding Agents Build the Games We Want?",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 25,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.33678"
+  },
+  "2610.09920": {
+   "title": "Inverting Multi-Vector Visual Document Indices",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 20,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09920"
+  },
+  "2610.09484": {
+   "title": "MIMESIS: Learning User Simulators as Training Environments for Interactive Agents",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 19,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09484"
+  },
+  "2610.08963": {
+   "title": "On KL-Regularized Policy Optimization",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 19,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08963"
+  },
+  "2610.04722": {
+   "title": "NAMVIS: Next-Scale Autoregressive Multi-View Image Synthesis",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 19,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.04722"
+  },
+  "2610.05034": {
+   "title": "Agentic RAG Evaluation: Budget Allocation Across Questions, Trajectories, and Reads",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 19,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05034"
+  },
+  "2610.07226": {
+   "title": "Minimal Witness Reinforcement Learning",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 18,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.07226"
+  },
+  "2610.10437": {
+   "title": "Q-Learning with Scalar Adjoint Matching",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 18,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10437"
+  },
+  "2610.07874": {
+   "title": "On-Policy Distillation with Negative-Policy Rollouts",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 17,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.07874"
+  },
+  "2610.03036": {
+   "title": "WebFovea: When the Model Is Right but the Click Is Wrong -- Reliable Round Trips for Vision-Based Web Agents on Live Websites",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 17,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.03036"
+  },
+  "2610.10047": {
+   "title": "AdSpark: A Large-Scale Dataset and Benchmark for Product-Centric Advertisement Video Generation",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 17,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10047"
+  },
+  "2610.05289": {
+   "title": "Mobile-4DGS: Unified Static-Dynamic Real-time Mobile Gaussian Splatting",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 17,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05289"
+  },
+  "2610.09684": {
+   "title": "From Pareto to Preference: Personalized Test-Time Scaling via Amortized Agentic Policy Discovery",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 16,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09684"
+  },
+  "2610.07862": {
+   "title": "A self-learning scientific agent for X-ray diffraction",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 13,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.07862"
+  },
+  "2610.07659": {
+   "title": "DLoop: Looped Speculative Decoding",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 12,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.07659"
+  },
+  "2610.10497": {
+   "title": "QuadTok: Quadtree Visual Tokenizer for Autoregressive Image Generation",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 12,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10497"
+  },
+  "2610.07250": {
+   "title": "Internalizing Agent Experience into Diffusion Model Weights via On-Policy Context Distillation",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 10,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.07250"
+  },
+  "2610.09127": {
+   "title": "CADFather: Autonomous CAD Reconstruction through Coordinated Tool Use",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 10,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09127"
+  },
+  "2610.10533": {
+   "title": "EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.10533"
+  },
+  "2610.02396": {
+   "title": "Inherit-MAS: Test-Time Evolution of Multi-Agent Systems through Workflow and Execution Inheritance",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 5,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.02396"
+  },
+  "2610.06505": {
+   "title": "Improving Proactive AI Assistance with Hierarchical Procedural Understanding",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 9,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.06505"
+  },
+  "2610.10460": {
+   "title": "Composing What Each Teacher Learned: Multi-Teacher On-Policy Distillation through Teacher-Relative Shifts",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 8,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10460"
+  },
+  "2610.09832": {
+   "title": "SkillForge: Co-Evolving Skills and Agents via Dynamic Skill Lifecycles",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 8,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09832"
+  },
+  "2609.33659": {
+   "title": "Learning Multimodal Embeddings with Evidence-Aligned Readout",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 8,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.33659"
+  },
+  "2610.09450": {
+   "title": "Iris-3B: Going Beyond the Latent with Pixel-Space Diffusion Training, Conversion and Fine-Tuning",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09450"
+  },
+  "2610.05336": {
+   "title": "SheetSage2: Coherent Lead-Sheet Transcription with Synthetic Supervision",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.05336"
+  },
+  "2610.10164": {
+   "title": "UniSkill: Learning Actor-Aligned Skill Proposals for an Evolving Policy",
+   "date_added": "2026-10-08",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.10164"
+  },
+  "2610.12374": {
+   "title": "AgentGarten: Code Worlds for Evolving Agents",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 117,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12374"
+  },
+  "2610.08215": {
+   "title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 108,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.08215"
+  },
+  "2610.12242": {
+   "title": "TokenRouter: Efficient Serving System for Token-Level LLM Routing",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 87,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12242"
+  },
+  "2610.06100": {
+   "title": "From Traces to Agentic Worlds: Agentic Language World Models for Interactive Environment Simulation",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 72,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.06100"
+  },
+  "2610.12126": {
+   "title": "SuperNav: An Agentic Navigation System for Any Task in Any Scene",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 60,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12126"
+  },
+  "2610.11959": {
+   "title": "MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 46,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.11959"
+  },
+  "2609.38173": {
+   "title": "In-context Robot Learning Made Simple: A Democratized Recipe for Manipulation Tasks",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 38,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.38173"
+  },
+  "2610.12299": {
+   "title": "Multi-Agent Egocentric World Model with Fine-Grained Embodied Interaction",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 37,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12299"
+  },
+  "2610.12468": {
+   "title": "DreamTrue: Action-Faithful Robot World Model with Counterfactual Post-Training",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 32,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12468"
+  },
+  "2610.12461": {
+   "title": "OuroWorld: Bringing Any 3D World Alive as Diverse, Endlessly Looping 3D Cinemagraphs",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 25,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12461"
+  },
+  "2610.06801": {
+   "title": "MC-Sparse: Deconstructing and Closing the Dense-Sparse Attention Gap in Diffusion Transformers",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 25,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.06801"
+  },
+  "2610.12421": {
+   "title": "Beyond Spatio-Temporal Priors: A Generalizable Approach for Dense Correspondence Matching",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 24,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12421"
+  },
+  "2610.12289": {
+   "title": "TestPrism: Rethinking Test Evaluation Beyond a Single Reference",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 23,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12289"
+  },
+  "2610.02967": {
+   "title": "Post-Training Frontier Text-to-Image Models by Composing Preference and Rubric Rewards",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 20,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.02967"
+  },
+  "2610.12327": {
+   "title": "SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 19,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12327"
+  },
+  "2610.12442": {
+   "title": "LEGO: A Lifting-Free Approach for Exocentric-to-Egocentric Video Generation",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 17,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12442"
+  },
+  "2610.12419": {
+   "title": "OneSearch-VL: Unified Multimodal Deep Research Agent for Image and Video",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 13,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12419"
+  },
+  "2610.06406": {
+   "title": "What Did the Agent Actually Do? Evidence-Grounded Oversight for Long-Horizon Agents",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 12,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.06406"
+  },
+  "2610.12343": {
+   "title": "Reasoning-Informed Visual Editing",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 12,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12343"
+  },
+  "2610.12229": {
+   "title": "VibeEdit: Image Editing with Canvas Instructions",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 12,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12229"
+  },
+  "2610.11322": {
+   "title": "USDCraft: Geometrically Grounded Programmatic Modeling of Articulated 3D Assets for Simulation",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 12,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.11322"
+  },
+  "2610.09087": {
+   "title": "U-Space: Uncovering When and Why Uncertainty Arises in Language Models",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 10,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09087"
+  },
+  "2610.12458": {
+   "title": "OmniCapBench: A Deep-Structured Evaluation Framework for Fine-Grained Audio-Visual Captioning",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 9,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12458"
+  },
+  "2609.35433": {
+   "title": "ReSPO: Reshaped Sequence Policy Optimization for Gradient Starvation in Off-Policy Learning",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.35433"
+  },
+  "2610.07730": {
+   "title": "SanSi: A Looped Typed Decision Model for System 1.5 Thinking",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.07730"
+  },
+  "2610.12402": {
+   "title": "SpaceCast-Bench: Evaluating Predictive Spatial Reasoning in Vision-Language Models",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 6,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12402"
+  },
+  "2610.11366": {
+   "title": "SpatialOPSD: Self-Distilling Spatial Intelligence from Verified Coding Agent Traces",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 6,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.11366"
+  },
+  "2610.12459": {
+   "title": "WorldGuide: Goal-Directed Video World Model for Procedural Task Execution",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 4,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12459"
+  },
+  "2501.09223": {
+   "title": "Foundations of Large Language Models",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 2,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2501.09223"
+  },
+  "2610.11570": {
+   "title": "Scaling to Tens of Thousands of Test-Time Iterations with Loop-Native Attention Residuals",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 2,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.11570"
+  },
+  "2610.09639": {
+   "title": "On-Policy Distillation Teaches New Skills but Not New Knowledge",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 1,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.09639"
+  },
+  "2610.12355": {
+   "title": "Distilling Routed 3D Privilege for Spatial Reasoning in Vision-Language Models",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 1,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2610.12355"
+  },
+  "2609.34344": {
+   "title": "Learning to Steer, Steering to See: Unveiling the Geometry of RLVR in Large Language Models via Trainable Vectors",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.34344"
+  },
+  "2609.31507": {
+   "title": "SatNav: A Scalable Benchmark for Long-Horizon UAV Vision-Language Navigation from Satellite Imagery",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 0,
+   "reasoning_hit": true,
+   "arxiv_url": "https://arxiv.org/abs/2609.31507"
+  },
+  "2609.39068": {
+   "title": "SparseEngine: Sparse-First Inference Engine",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 9,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.39068"
+  },
+  "2610.12403": {
+   "title": "ViSkill: Reinforcing VLM Agents with Evolving Visual-Native Skills",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 9,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12403"
+  },
+  "2610.11251": {
+   "title": "V-CoLA: Vision Token Compression with Linear Attention",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 8,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.11251"
+  },
+  "2610.04977": {
+   "title": "Do LLMs Understand Sequential Structure? A Controlled Study of Inference and Generation",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 7,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.04977"
+  },
+  "2610.12230": {
+   "title": "From Prompting to Composing: A Spatial Canvas Interface for Poster Generation",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 6,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12230"
+  },
+  "2610.03858": {
+   "title": "Retrieval-Centric Deep Learning in Growing Nonparametric Neural Networks",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 5,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.03858"
+  },
+  "2610.11816": {
+   "title": "Chaos in the Text: Revealing the Modality Preference in Mixed-Modality Retrievers",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 4,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.11816"
+  },
+  "2610.11287": {
+   "title": "REMORY: Learning Residual Memory for Context Compaction",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 2,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.11287"
+  },
+  "2610.12360": {
+   "title": "Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 2,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12360"
+  },
+  "2610.09059": {
+   "title": "EDiS: Edge Disjoint Subgraph Sparsification Framework for Graph Neural Networks",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 1,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09059"
+  },
+  "2610.08917": {
+   "title": "CARE: Certifying Acceleration for Vision-Language-Action Inference",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 1,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08917"
+  },
+  "2610.12452": {
+   "title": "BrickBench: Evaluating Agentic Brick Design",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 1,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12452"
+  },
+  "2610.06496": {
+   "title": "You Changed Your Mind, The Model Didn't: Demystifying Intent in Multi-Turn Dialogue",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.06496"
+  },
+  "2610.12399": {
+   "title": "SpaceFlow: Locally Controllable 3D Generation",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12399"
+  },
+  "2605.22949": {
+   "title": "MARGIN: Runtime Confidence Calibration for Multi-Agent Foundation Model Coordination",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2605.22949"
+  },
+  "2610.08941": {
+   "title": "SPW-Nav: A Streaming Panoramic World Model for Language-Guided Navigation",
+   "date_added": "2026-10-09",
+   "source": "hf_daily",
+   "upvotes": 0,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.08941"
+  }
+ }
+}

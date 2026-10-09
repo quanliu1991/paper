@@ -1,0 +1,81 @@
+# AI 论文知识库配置
+# 每日抓取 HuggingFace Daily Papers + arXiv 关键词订阅，重点沉淀推理类技术
+
+# arXiv 订阅关键词（可自由增删；抓取时按 OR 组合，按提交日期倒序）
+arxiv_keywords:
+  - reasoning
+  - chain-of-thought
+  - test-time scaling
+  - test-time compute
+  - inference-time
+  - large reasoning model
+  - LLM agent
+  - tool use LLM
+  - inference acceleration
+
+# arXiv 分类限定（cat: 前缀语法）
+arxiv_categories:
+  - cs.CL
+  - cs.AI
+  - cs.LG
+
+# 每个关键词抓取的最大条数（arXiv API）
+arxiv_max_per_query: 15
+
+# arXiv 关键词来源每日最多贡献篇数（HF Daily 全保留）
+arxiv_daily_cap: 30
+
+# 推理相关关键词（用于标记 reasoning_hit：标题/摘要命中即算）
+reasoning_keywords:
+  - reasoning
+  - chain-of-thought
+  - test-time
+  - inference-time
+  - deliberation
+  - verifier
+  - verification
+  - reward model
+  - self-refine
+  - reflection
+  - thinking model
+  - long chain-of-thought
+  - overthinking
+  - budget forcing
+  - rlhf
+  - grpo
+
+# 精选阈值：HF upvotes >= threshold 或命中推理关键词 → 精选 ⭐
+featured_threshold_upvotes: 10
+
+# 主题分类定义（Agent 分析时参考，论文按第一匹配归类）
+topics:
+  - id: reasoning
+    name: 推理
+    description: 测试时扩展、RL 训练推理、CoT、验证与奖励、高效推理
+  - id: models
+    name: 模型架构
+    description: 新架构（MoE、线性注意力、SSM 等）、模型设计
+  - id: training
+    name: 训练方法
+    description: 预训练、后训练、SFT/RLHF、数据合成、蒸馏
+  - id: agents
+    name: 智能体
+    description: 智能体框架、工具调用、多智能体、规划、环境交互
+  - id: applications
+    name: 应用与评测
+    description: 下游应用、benchmark、评测方法、安全
+
+# 推理子方向（topics/reasoning/papers.md 分节用）
+reasoning_subtopics:
+  - id: test-time-scaling
+    name: Test-time Scaling
+  - id: rl-for-reasoning
+    name: RL for Reasoning
+  - id: chain-of-thought
+    name: Chain-of-Thought
+  - id: verification-reward
+    name: Verification & Reward
+  - id: efficient-reasoning
+    name: Efficient Reasoning
+  - id: reasoning-other
+    name: Others
