@@ -225,9 +225,164 @@ RLVR 后训练不应只进化 actor，还要让视觉环境共同进化——否
 
 ## Verification & Reward
 
+### 2026-10-06 · ProgressCompass: Embodied Progress Reward Models Are Lost Without the Right Context ⭐
+> [arXiv](https://arxiv.org/abs/2609.36684) · upvotes: 20 · 推理相关性: 4/5 · 子方向: verification-reward
+
+长程具身任务中，进度奖励模型（PRM）离开正确上下文就会「迷路」：ContextProgress-Bench（24 个操作任务/120 episodes）覆盖 State Recall / Context Fusion / Full Autonomy 三档设定，考察 PRM 作为 dense reward、verifier、monitor 的表现。现有 PRM 在进度信息需要历史上下文时显著失效，为长任务验证器设计指明方向。
+
+### 2026-10-05 · LexReward: A Taxonomy-Driven Reward Framework for Legal Language Models ⭐
+> [arXiv](https://arxiv.org/abs/2609.39071) · upvotes: 64 · 推理相关性: 4/5 · 子方向: verification-reward
+
+按 Style/Element/Chain 三维度分类法为法律 LLM 构建可解释的细粒度 reward 体系：为每个维度制定 rubric（法律推理链评估 order/completeness/correctness/non-redundancy），构造偏好数据做 DPO 与 reward model 训练，再用维度 reward model 做 RL。rubric reward 可靠区分法律回答质量，各维度 DPO/RL 全面提升，且 reward 时无需参考答案。
+
+### 2026-10-05 · VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks ⭐
+> [arXiv](https://arxiv.org/abs/2610.00972) · upvotes: 58 · 推理相关性: 5/5 · 子方向: verification-reward
+
+把生成器 LLM 变成带工作区、证据工具与可复用验证技能的 agentic verifier，规模化长程任务验证。基于「分歧常暴露正确答案、共识可能掩盖错误」的发现，用 disagreement resolver 对竞争性声明做环境证据核查、consensus challenger 主动测试共同声明并搜寻遗漏需求；5 个长程基准 × 2 个前沿模型上选择得分最高，证据回溯修订带来 +6.2/+6.4pp 增益，开源约 2.6 万条 rollouts。
+
+### 2026-10-05 · MetaRubric: Learning to Reward for Rubric-Based Reinforcement Learning ⭐
+> [arXiv](https://arxiv.org/abs/2610.02824) · upvotes: 33 · 推理相关性: 5/5 · 子方向: verification-reward
+
+用反事实 prompt 对消除 rubric judge 的「Vacuous Credit」（信息缺失仍给高分、可反转 GRPO 优势符号）：MetaRubric 交替「证据感知策略优化」与「响应引导的 rubric 自适应」，仅当响应含满足准则的充分证据才给 credit，并按阶段边界调整准则权重。多骨干上 PubMedQA 较静态 judge GRPO 提升 6.00-20.40pp，HealthBench-Hard 与两个多模态医疗基准再涨。
+
+### 2026-10-05 · Verify Less, Evolve More: Training Idea-Level Critics for Verification-Efficient ML Evolving Agents ⭐
+> [arXiv](https://arxiv.org/abs/2610.08993v1) · upvotes: 0 · 推理相关性: 5/5 · 子方向: verification-reward
+
+训练「点子级 critic」预测 ML 改动是否有效，帮自进化 agent 把昂贵实证验证集中到最有希望的候选上：SFT（Gemini-3.1-Pro 合成高质量 critique）+ GRPO 提升 critic 预测精度，critic 兼任推理时筛选器与策略训练的 learned reward model。静态点子评估超 Gemini-3.1-Pro，同验证预算下最终解更优，作为 reward model 为不确定案例保留实证验证、同资源下策略更新量大增。
+
+### 2026-10-05 · VeriFine: Scaling Verification for Self-Improvement in Embodied Reasoning ⭐
+> [arXiv](https://arxiv.org/abs/2610.08761v1) · upvotes: 0 · 推理相关性: 5/5 · 子方向: verification-reward
+
+策略-课程-裁判协同进化让具身推理的自提升不再被固定 judge 卡死：Policy Improvement Loop 用 rubric judge 诊断复发失败、构建自适应课程；验证瓶颈时 Judge Improvement Loop 选择性查询人类并对 judge 做 coactive calibration。驾驶与机器人导航任务上，RL/SFT 两路都实现策略与裁判能力的持续自提升。
+
+### 2026-10-05 · Where Does Retrieval-Based Open-Ended Evaluation Fail? ⭐
+> [arXiv](https://arxiv.org/abs/2609.30467) · upvotes: 22 · 推理相关性: 4/5 · 子方向: verification-reward
+
+检索式开放题事实性评测的失败可分解为检索端五维质量错误与验证端六步推理错误：以 MedExpert 开放题为案例构建双重分类法，LLM-as-Judge 流水线规模化标注证据质量与 verifier 推理错误，跨 4 种检索法 × 6 个前沿 verifier 压力测试。扩大模型规模、增加 reasoning effort、扩展权威网络源、医疗微调均无法解决这些失败模式——是 retrieve-then-verify 范式在开放医疗场景的根本局限。
+
 ## Efficient Reasoning
 
+### 2026-10-05 · Efficient Reasoning Training Does Not Always Harm CoT Faithfulness and Monitorability ⭐
+> [arXiv](https://arxiv.org/abs/2610.03509) · upvotes: 17 · 推理相关性: 5/5 · 子方向: efficient-reasoning
+
+高效推理训练对 CoT 忠实性与可监控性的影响不同：用固定预算/逐样本长度目标/组相对长度奖励三种长度压力方式微调多模型，评估 CoT faithfulness（相关输入上的决策一致性）与 monitorability（干预是否在 CoT 中体现）。忠实性多数场景下降（主要源于一致性变差），但可监控性出奇稳健——即使 CoT 大幅变短，模型仍持续承认干预对答案的影响。
+
+### 2026-10-05 · TAP: Efficient Long-Horizon Agent Pruning via Trajectory-Anchored Recovery ⭐
+> [arXiv](https://arxiv.org/abs/2610.09074v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: efficient-reasoning
+
+结构剪枝 + 轨迹锚定恢复首次成功压缩 RL 训练的 long-horizon agent：TAP 交互锚定教师轨迹、学生自生成每个 reasoning-action 响应，冻结教师监督学生响应前缀，用恢复目标梯度在恢复中学生上重打通道分、迭代选择连接 evolving policy。剪掉 60% FFN 通道后 ALFWorld/WebShop 分别保留 99.2%/88.0% 成功率，单成功任务 GPU 时间降约 22%/17%。
+
 ## Others
+
+### 2026-10-08 · VepAgent: Bridging Causal-Transition via Tool-Augmented Reinforcement Learning for Video Event Prediction ⭐
+> [arXiv](https://arxiv.org/abs/2610.06293) · upvotes: 54 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+用因果转移推理 + 工具增强 RL 做视频事件预测，显式建模「终端观测态→未来事件」的逻辑推进而非被动外推历史：构建 FutureBench-4K CoT 数据 SFT 桥接未观测中间状态的因果逻辑缺口，状态跟踪/帧检索/区域放大工具库在推理时补全时空证据，复合奖励联合优化预测精度、因果一致性与可靠先验。FutureBench 与 NEPBench 上 SOTA，显著超过更大的 MLLM。
+
+### 2026-10-07 · Selection-Based Structured Reasoning: Toward Efficient Multimodal Search Agents ⭐
+> [arXiv](https://arxiv.org/abs/2610.01892) · upvotes: 17 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+把多模态 agent 的自由生成式推理改为从预定义候选中「选择」：SSR 将高频高层推理表示为可复用自然语言候选，按上下文似然选择（teacher-forced prefill 并行打分、共享上下文 KV cache），无需辅助任务头。2B/4B 模型在七个多模态搜索 benchmark 上成功率与同规模领先搜索 agent 相当，per-turn 推理延迟降低 90% 以上、单题总推理延迟降 28-54%。
+
+### 2026-10-07 · GUI-HARVEST: Self-Improving GUI Agents through Evidence-Driven Harness Evolution ⭐
+> [arXiv](https://arxiv.org/abs/2610.00948) · upvotes: 13 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+自动优化 GUI agent 的可执行 harness，冻结骨干模型即可持续自我改进：将模型输出与执行动作对齐前后截图以定位行为证据，同任务重复运行构成联合证据单元，跨任务归并为可复用 harness 代码编辑（先预测后验证）。OSWorld-Verified 六个骨干 held-out 一致提升（Qwen3-VL-32B +12.33 点），冻结 harness 迁移使 GPT-5 在 WindowsAgentArena +13.87 点。
+
+### 2026-10-07 · DiVeR: Decision-Critical Verifier Learning for VLA Test-Time Scaling ⭐
+> [arXiv](https://arxiv.org/abs/2610.04933) · upvotes: 12 · 推理相关性: 5/5 · 子方向: reasoning-other
+
+按「决策关键性」重加权 verifier 学习，让 VLA 策略的 verifier 引导 test-time scaling 更有效：从采样动作表征的离散度估计状态决策关键性，verifier 训练聚焦动作选择真正影响下游结果的状态，无需步级标注或额外环境交互。LIBERO、RoboCasa 与 Franka 真机实验上一致提升任务成功率，verifier 推理开销可忽略。
+
+### 2026-10-06 · OmniReasoning: Pushing the Limits of Audio-Visual Joint Reasoning ⭐
+> [arXiv](https://arxiv.org/abs/2609.39490) · upvotes: 27 · 推理相关性: 5/5 · 子方向: reasoning-other
+
+音视频联合推理的 benchmark + 数据引擎 + 学习方法三件套：OmniReasoningBench（1150 道多选/开放题，音频与视觉证据缺一不可），OmniQA 引擎自动构造带时间戳线索链的证据型 QA 并指导思维过程标注，配套学习方法激发联合推理。系统量化并有效提升现有统一全模态模型的音视频联合推理能力。
+
+### 2026-10-06 · Base Models Can Reason By Taking a Cue From Training Data ⭐
+> [arXiv](https://arxiv.org/abs/2610.06851) · upvotes: 23 · 推理相关性: 5/5 · 子方向: reasoning-other
+
+固定起始 token 提示就能让 base model 追平 RL 训练版的数学/代码推理——推理行为源自训练数据中的 token 关联：分析起始 token（如 `.\n\nOkay`、`Alright,`）与后续推理行为的关联，对训练数据做因果干预可把任意词改造成有效推理提示或删除既有提示的效应。Olmo-3-7B 的 MATH-500 pass@1 从 42% 提到 78%，Qwen3-14B 从 72% 到 87%；RL 的作用很大程度上只是让这些提示更可能出现。
+
+### 2026-10-06 · The Missing Primitive: Diagnosing and Repairing Mathematical Reasoning in Large Language Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.02191) · upvotes: 14 · 推理相关性: 5/5 · 子方向: reasoning-other
+
+用「数学原语」四维诊断 LLM 数学理解：提出 Mathematical Primitive 概念，沿 Discovery / Generation / Digestion / Execution 四维构建 benchmark 系统诊断，再据诊断结果指导 post-training 修复。Discovery（发现）是最大瓶颈，答案正确率掩盖了能力剖面差异；诊断修复定位数学推理的结构性短板，解锁大量潜在执行容量。
+
+### 2026-10-06 · PHRBench: A Behavioral Evaluation of Post-Hallucination Reasoning in LLMs ⭐
+> [arXiv](https://arxiv.org/abs/2610.10455) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+行为学评测 LLM 如何消化上下文中混入的幻觉前提：4820 个受控实例 × 18 个模型，从 Hallucination Compliance / Avoidance / Heuristic Correction 三维独立刻画推理轨迹（与最终对错解耦）。合规、回避与启发式纠正常见，真正「成功纠错且答对」的轨迹稀少且与模型规模等因素相关，定义并量化「insightful trajectory」。
+
+### 2026-10-05 · RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations ⭐
+> [arXiv](https://arxiv.org/abs/2610.01780) · upvotes: 276 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+用 10 段真实人机长期陪伴对话（27,218 条消息、最长 120 天）构建首个真实关系基准，系统评测 AI 陪伴系统的「理解人」能力：发布对话原文及派生的 profile/persona/ground truth/问题集四类文件，每个 chat 标签都附带逐步核验过的 reasoning trace。简单 recency 窗口即可覆盖 95.9% 探针问题；没有任何检测器能在真实消息上判断「何时需要记忆」；三个 agent 系统以 31 倍成本差重建出同等质量的 persona。
+
+### 2026-10-05 · MotorMind: Scaffolding General Vision Language Models for Zero-Shot Robot Manipulation ⭐
+> [arXiv](https://arxiv.org/abs/2609.38078) · upvotes: 111 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+通用 VLM 借助中层动作表示 + 异步执行 harness，无需动作专家或 grounding 工具即可零样本操纵机器人：把 VLM 提出的 mid-level actions 连接到确定性机器人控制与反馈回路，配异步监控与后台记忆更新，VLM 直接从观察推理、发出动作并根据执行反馈持续适应。LIBERO-PRO 基础套件 66.7%、扰动下 53.8%（先前零样本方法至多 13.3%/19.2%），真实 xArm6 平均 95% 成功。
+
+### 2026-10-05 · Science or Slop?: Benchmarking and Mitigating Scientific Slop in AI-Generated Papers ⭐
+> [arXiv](https://arxiv.org/abs/2610.00531) · upvotes: 59 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+AI 生成论文的「slop」在于连接各部分的科学推理断裂：从 Structure/Argument/Artifacts 三方面提出 6 项度量，构建 SciSlopBench（390 篇 AI 论文+配对人类论文），SciSlopHarness 只在实验记录支持处修订 slop。配对识别准确率 85.9%（Binoculars 68.7%）；slop 与 ICLR 评分负相关；harness 将 AI-人类差距再缩小 63%。
+
+### 2026-10-05 · Multilingual GSM-Symbolic: What determines capability transfer across languages? ⭐
+> [arXiv](https://arxiv.org/abs/2610.03367) · upvotes: 51 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+用 30,000 道跨 15 语言配对的符号化数学题，量化跨语言能力迁移的决定因素：符号模板生成百万级变体防过拟合，联合回归估计各因素 β 值并预测未见语言表现。框架解释 92% 的语言间方差；模型规模 > 语言资源 > 推理能力 > 类型学距离，32B 模型 Marathi 表现 ≈ 10B 模型英语表现；模型规模与 reasoning 缩小低/高资源语言差距（β=-0.27/-0.20）。
+
+### 2026-10-05 · ProAR: Learning Prospective Reasoning with Autoregressive Video Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.03664) · upvotes: 32 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+给自回归视频生成装上「目标帧前瞻」，把短视的 next-chunk 预测改造成目标导向推理过程：非对称 attention mask 把 goal-frame 预测融入 AR 循环（目标帧引导中间态生成而不被其干扰）+ 未来表征自对齐（teacher-forcing 一次前向提取干净未来表征，轻量 predictor 对齐）。多项视觉推理基准持续提升，仅用 25% 训练步数超过全训 AR 基线，可迁移到具身推理。
+
+### 2026-10-05 · Skill2Real: Agentic Skill Learning for Zero-Shot Sim-to-Real Robot Manipulation ⭐
+> [arXiv](https://arxiv.org/abs/2610.02788) · upvotes: 18 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+PVG 循环让 GPT-5.6 在仿真中学习可执行技能并零样本迁移真机：Proposer-Verifier-Governor 循环用特权仿真证据诊断结果、验证技能更新，Cerebellum 学局部操作技能、Brain 学任务级组合，均经共享 API 落地。LIBERO-Pro Long 成功率 2.0%→56.3%，冻结的 LIBERO-90 技能在 4 个真实任务上均值完成度 78.75%；去掉 Verifier/Governor 分别掉 17.3/13.3pp。
+
+### 2026-10-05 · SAUCE: Sequential Probabilistic Uncertainty Estimation for Parallel Multi-Agent Reasoning Systems ⭐
+> [arXiv](https://arxiv.org/abs/2610.08901v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+把并行多 agent 推理系统的置信度建模为对潜在系统级信念的序贯推断，免训练即可校准：SAUCE 通过滤波式更新聚合轮级一致性与生成不确定性信号，跨轮演化系统级信念。5 骨干 × 5 基准 × 2 MAS 协议上，误分类检测、选择性预测、校准全面优于 log-likelihood 与 MAS 专用基线。
+
+### 2026-10-05 · U-Space: Uncovering When and Why Uncertainty Arises in Language Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.09087v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+在残差空间找回「怀疑/确信」语义锚点方向，构建免训练、免正确性标签、token 级可解释的不确定性地图：识别 doubt/certainty 语义锚点，把 unembedding 方向映回残差空间并正交合成基，U-Lens 把每个 token 状态投影到基上得 token 级不确定性图或聚合标量分。推理基准上置信分数超既有基线（标准与长度控制评估下均然），比有监督估计器迁移更稳。
+
+### 2026-10-05 · Frozen Models, Evolving Expertise: Model-Agnostic Learning from Deployment Experience for Multimodal Medical AI ⭐
+> [arXiv](https://arxiv.org/abs/2610.09146v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+冻结模型也能从部署经验持续进化：模型无关框架以三类外部专业知识（Skill 引导推理与工具使用、Knowledge Memory、Multimodal KB）赋能冻结 LLM/VLM，验证策略保证更新只在新案例有帮助且不伤旧案例时保留。6 基准 × 4 模型上医疗任务最多 +34.2%，可泛化到未见案例、免优化迁移到其他模型、非医疗域也有效。
+
+### 2026-10-05 · CASK: Whose Memory Is It? Scope-Aware Commit Rules for Long-Term LLM Memory ⭐
+> [arXiv](https://arxiv.org/abs/2610.09008v1) · upvotes: 0 · 推理相关性: 5/5 · 子方向: reasoning-other
+
+LLM 已内在携带「话语所有权」因果信号，CASK commit 规则保留它，让共享世界事实入长期记忆、临时内容留在原 scope，杜绝「考虑过的计划日后当真」：识别 deliberation 中的 world/branch/speaker 所有权，发现直接存内部坐标不可靠（等价表示坐标漂移），改为保留表达所有权的稳定关系作为 scoping keys。受控长对话冲突与工具 agent 轨迹上改善记忆准入、防止临时内容污染后续答案。
+
+### 2026-10-05 · Noise Your Prompt: Noising Conditioning Tokens in Continuous Diffusion Language Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.09145v2) · upvotes: 0 · 推理相关性: 5/5 · 子方向: reasoning-other
+
+训练时给条件 prompt token 也加噪这一「单行改动」，让连续扩散 LM 的组合推理大幅泛化：打破「条件 token 保持干净」的惯例，对 conditioning prompt token 同步加噪，默认零额外推理开销，还附赠 classifier-free guidance 式引导采样灵活性。Sudoku/N-Queens 等组合推理任务显著提升且难题收益最大（Sudoku Hard 3.73%→24.65%）；Gigaword 摘要质量可测提升，但开放对话等 NL 任务不迁移。
+
+### 2026-10-05 · Humanity's Sixth Sense: Benchmarking Intuitive Visual Reasoning in Multimodal Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.08966v2) · upvotes: 0 · 推理相关性: 5/5 · 子方向: reasoning-other
+
+人类「一眼即知」的直觉视觉推理（过去成因、未来轨迹、社交权力、隐性规则）上，最强 MLLM 53.6% vs 人类 93.1%：HSS 基准覆盖图像与视频，按结构化分类法组织，每题配人类撰写的探针提示，考察时间/空间/社交/抽象四类隐式结构推断，另探索动态视觉操纵的 agentic 设置。GPT-6-astra 最大推理努力下仍仅 53.6%；agentic 视觉操纵缩窄但不消除差距。
+
+### 2026-10-05 · RACER: Reflective Agent Coupling Query Interpretation and Tool-Based Retrieval for Frame Selection in Long Video Understanding ⭐
+> [arXiv](https://arxiv.org/abs/2610.08954v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+轻量 Vid-LLM 负责查询解释、嵌入模型负责证据检索的反思循环，免训练解决长视频帧选择的双鸿沟：任务分解视角定位相似度法的 Query Comprehension Gap 与判断法的 Interpretation-Selection Gap，Vid-LLM 把复杂查询改写为显式子查询，检索工具定位证据帧，反馈形成反思迭代。多基准上持续提升长视频理解，弱组件经 agentic 组合也能增强强 Vid-LLM。
+
+### 2026-10-05 · Spatial Memory Intelligence: Endowing World Models with Understanding-Driven Long-Term Memory ⭐
+> [arXiv](https://arxiv.org/abs/2610.02521) · upvotes: 57 · 推理相关性: 3/5 · 子方向: reasoning-other
+
+用理解模型（MLLM）管理长视频世界模型的长期空间记忆：SMI 框架引入空间聚类、簇内稀疏化、动作感知检索、可靠性感知过滤四个协调操作，系统化管理世界模型的长程空间上下文。跨多个世界模型骨干与基准，记忆稀疏度、生成稳定性、空间一致性全面改善。
 
 ### 2026-10-09 · Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments? ⭐
 > [arXiv](https://arxiv.org/abs/2610.08215) · upvotes: 108 · 推理相关性: 4/5 · 子方向: reasoning-other

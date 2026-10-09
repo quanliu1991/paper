@@ -105,9 +105,11 @@
 
 ## Git 规范
 
-- 每日任务结束：`git add -A && git commit -m "daily: YYYY-MM-DD（N 篇，推理 K 篇）" && git push`
-- push 失败时重试一次；仍失败则在下次任务开始时先 `git pull --rebase` 再 push。
-- **不要** force push；**不要**提交 `data/pending/`（已在 .gitignore）。
+- 每日任务结束：`bash scripts/git_commit.sh "daily: YYYY-MM-DD（N 篇，推理 K 篇）"` 然后 `bash scripts/git_push.sh`。
+- **禁止**直接在命令行写 `git commit`（Cursor shell 集成会注入 --trailer，本机 git 2.24 不支持）；**禁止** force push。
+- remote 走 SSH over 443（`ssh://git@ssh.github.com:443/...`），22 端口不可用。
+- push 失败脚本会自动 pull --rebase 重试；仍失败则下次任务开始时先处理。
+- **不要**提交 `data/pending/`（已在 .gitignore）。
 
 ## 归档写入安全（必须遵守）
 
