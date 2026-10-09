@@ -30,7 +30,7 @@ python3 scripts/fetch_papers.py --date <d>
 - `daily/<YYYY>/<MM>/<d>.md` 每日速览（模板见 AGENTS.md，推理节排最前）。
 - 重点论文追加到 `topics/<topic>/papers.md`（按子方向小节、日期倒序插入）。
 - **归档安全**：写 topics 前必须重新 Read 目标文件最新内容，只做插入/追加，严禁整文件重写（详见 AGENTS.md「归档写入安全」）。
-- 更新 `data/index.json`（每篇一条）。
+- **每个日期处理完后立即运行** `python3 scripts/update_index.py`（重建去重索引，防止后续日期重复抓取已收录论文），不要手动编辑 index.json。
 - 更新 `README.md` 的「最近 7 天」链接列表（含每日篇数）。
 
 ### 6. 提交

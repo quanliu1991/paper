@@ -90,7 +90,7 @@
 }
 ```
 
-每分析完一篇即写入（arXiv ID 主键）。fetch 脚本据此去重。
+- `data/index.json` 由 `python3 scripts/update_index.py` 从各日 pending JSON 自动重建，**禁止手动编辑**。fetch 脚本据此去重。
 
 ## 推理相关性评分标准（0-5）
 
