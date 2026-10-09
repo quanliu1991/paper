@@ -274,6 +274,81 @@ RLVR 后训练不应只进化 actor，还要让视觉环境共同进化——否
 
 ## Others
 
+### 2026-10-09 · Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments? ⭐
+> [arXiv](https://arxiv.org/abs/2610.08215) · upvotes: 108 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+用规则全新/反直觉的文字游戏区分「交互学习」与「既有知识推理」：完整保留动作反馈记录比总结成规则更利于学习，顶尖人类峰值仍高于 agent，固定 backbone 下换 harness 可降本增效。
+
+### 2026-10-09 · RISEBench++: Reasoning-Informed Visual Editing ⭐
+> [arXiv](https://arxiv.org/abs/2610.12343) · upvotes: 12 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+首个推理驱动视觉编辑 benchmark：六维推理（时间/因果/空间/逻辑/反事实/混合）层级分类、1000 例中英标注；training-free 的 RISE-Agent 集成推理规划 + 工具执行 + verifier 精修。58 个方案中最强仅 56.6% 准确率。
+
+### 2026-10-09 · SpaceCast-Bench: Evaluating Predictive Spatial Reasoning in Vision-Language Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.12402) · upvotes: 6 · 推理相关性: 5/5 · 子方向: reasoning-other
+
+首个预测性空间推理 benchmark：observe-transform-infer 框架下三层级任务（静态感知/局部预测/全局预测）。21 模型最强仅 58.0%（人类 87.2%）；程序化数据微调把 Qwen3-VL-4B 从 34.0% 提到 65.7% 且六个 OOD 基准平均提升。
+
+### 2026-10-09 · On-Policy Distillation Teaches New Skills but Not New Knowledge ⭐
+> [arXiv](https://arxiv.org/abs/2610.09639) · upvotes: 1 · 推理相关性: 5/5 · 子方向: reasoning-other
+
+受控实验证明 reverse-KL on-policy 蒸馏可靠迁移组合技能但极少迁移事实知识：换 forward KL 恢复事实迁移，student rollout 专益多步推理执行——OPD 不扩展参数化知识，而是教模型组织已有知识。
+
+### 2026-10-09 · GeoReform: Reflective Formalization Evolution for Multimodal Geometry Problem Solving ⭐
+> [arXiv](https://arxiv.org/abs/2610.12391v1) · upvotes: 0 · 推理相关性: 5/5 · 子方向: reasoning-other
+
+把几何形式化当作可优化策略而非固定解析器输出：执行推理管线→收集失败→诊断表示缺陷→变异形式化策略。Geometry3K 上 Qwen3VL-2B 42.0%→56.0%；关键在组织支持下游推理的表示，而非抽取更多事实。
+
+### 2026-10-09 · Learning to Plan by Looking Back: Hindsight Hierarchies for Training Reasoning Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.12168v1) · upvotes: 0 · 推理相关性: 5/5 · 子方向: reasoning-other
+
+自改进闭环：联合训练「凭空想思路」「从已知解反推思路」「用思路解题」三能力，交替「反推→监督」循环；给出形式化规约与 Lean 定理证明实例，实证评估留作未来工作。
+
+### 2026-10-09 · MASS: Recursive Self-Improvement through Multi-Agent Self-Supervision ⭐
+> [arXiv](https://arxiv.org/abs/2610.12176v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+单模型自举进化多智能体 workflow 再自蒸馏：结构护栏约束的进化搜索发现角色分工与信息路由，与自生成轨迹 SFT 交替。Qwen3.6-27B 两轮后四个开放基准每 token 性能 1.2-1.6x；多智能体轨迹训练效率更高。
+
+### 2026-10-09 · SGUID: Selecting a Compact Skill Bank for Model-Skill Co-Evolution ⭐
+> [arXiv](https://arxiv.org/abs/2610.12367v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+检索技能不到 25% 有蒸馏价值：SGUID 只保留训练中持续产生有效学习信号的技能，6 个精选技能匹敌全库蒸馏（库大至 11x），支持多轮模型-技能共同进化，不过滤直接更新反而掉点。
+
+### 2026-10-09 · UTT: Universal Textual Teaching for LLMs ⭐
+> [arXiv](https://arxiv.org/abs/2610.12114v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+零参数更新的知识蒸馏：师生知识差距经多角色迭代（学生做题/Prompter 转指令/教师示范/Synthesizer 沉淀）蒸馏成可复用自然语言 Primer。KernelBench 9.4%→48.6%、数学推理 27.6%→51.7%，Primer 可跨学生泛化。
+
+### 2026-10-09 · ARC: A Reasoning Recipe for Robot Foundation Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.12386v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+扎根下一步动作、解释因果结构（为何合适、产生何效果）的推理轨迹 + 从既有演示自动标注（ARC-Trace-DROID）+ 架构定制微调。RoboLab-Reasoning-50 提升最高 50 点，真机把 π0.5 成功率提高 82.2 点。
+
+### 2026-10-09 · WOVEN: Weaving Visual World Modeling into Multimodal LLMs ⭐
+> [arXiv](https://arxiv.org/abs/2610.12417v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+视觉转移推理作为可复用训练原语：36076 例按场景/动作/推理类型组织；38 个前沿 MLLM 呈系统性短板；~2000 条子集即提升 26 个外部基准中的 22 个（最高 27.3 点），配方为按推理操作选监督、偏好更大视觉状态变化。
+
+### 2026-10-09 · FlowMem: Recompose and Refine Latent Reasoning Flows for VLA Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.12090v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+把 VLA 成功的 latent 推理计算存成记忆，按情境动态检索重组兼容片段成推理路线，再用当前视觉/本体感觉证据精炼后条件动作生成。RoboMME 48.0%、LIBERO-Plus 77.3%，分别超无记忆策略 1.7/4.1 点。
+
+### 2026-10-09 · Looking Inside LLMs: Small-World Connectivity as a Signature of Reasoning Performance ⭐
+> [arXiv](https://arxiv.org/abs/2610.12304v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+注意力头功能图的小世界指数（SWI）与流体推理一致正相关；重要头呈高 core、低 bridge 分数，据此提出 Small-World Allocation 剪枝分配，6 个 LLM 上更好保持小世界组织与性能（WikiText 困惑度最多降 20%）。
+
+### 2026-10-09 · grasp: Learning Probabilistic Logic Programs with Functional Gradient Guided Language Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.12303v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+神经符号归纳推理：概率逻辑程序学习被表述为函数梯度提升，一阶规则作弱学习器、LLM 作假设生成 oracle 替代组合搜索；保留 boosting 保证与符号可解释性，四个关系基准超纯符号/神经/LLM 基线。
+
+### 2026-10-09 · Perception Test 2026: Challenge Summary and Extension to City-scale Audio-Visual Reasoning ⭐
+> [arXiv](https://arxiv.org/abs/2610.12081v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
+
+ECCV 2026 第四届挑战赛新增城市级步行视频轨道（KilometerAudio/KilometerVision）：复杂空间与多模态推理靠昂贵 agentic pipeline 可解，多模态模型单打独斗仍难——为推理系统的工程化路线提供证据。
+
 ### 2026-10-08 · VepAgent: Bridging Causal-Transition via Tool-Augmented Reinforcement Learning for Video Event Prediction ⭐
 > [arXiv](https://arxiv.org/abs/2610.06293) · upvotes: 54 · 推理相关性: 4/5 · 子方向: reasoning-other
 
@@ -383,78 +458,3 @@ LLM 已内在携带「话语所有权」因果信号，CASK commit 规则保留�
 > [arXiv](https://arxiv.org/abs/2610.02521) · upvotes: 57 · 推理相关性: 3/5 · 子方向: reasoning-other
 
 用理解模型（MLLM）管理长视频世界模型的长期空间记忆：SMI 框架引入空间聚类、簇内稀疏化、动作感知检索、可靠性感知过滤四个协调操作，系统化管理世界模型的长程空间上下文。跨多个世界模型骨干与基准，记忆稀疏度、生成稳定性、空间一致性全面改善。
-
-### 2026-10-09 · Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments? ⭐
-> [arXiv](https://arxiv.org/abs/2610.08215) · upvotes: 108 · 推理相关性: 4/5 · 子方向: reasoning-other
-
-用规则全新/反直觉的文字游戏区分「交互学习」与「既有知识推理」：完整保留动作反馈记录比总结成规则更利于学习，顶尖人类峰值仍高于 agent，固定 backbone 下换 harness 可降本增效。
-
-### 2026-10-09 · RISEBench++: Reasoning-Informed Visual Editing ⭐
-> [arXiv](https://arxiv.org/abs/2610.12343) · upvotes: 12 · 推理相关性: 4/5 · 子方向: reasoning-other
-
-首个推理驱动视觉编辑 benchmark：六维推理（时间/因果/空间/逻辑/反事实/混合）层级分类、1000 例中英标注；training-free 的 RISE-Agent 集成推理规划 + 工具执行 + verifier 精修。58 个方案中最强仅 56.6% 准确率。
-
-### 2026-10-09 · SpaceCast-Bench: Evaluating Predictive Spatial Reasoning in Vision-Language Models ⭐
-> [arXiv](https://arxiv.org/abs/2610.12402) · upvotes: 6 · 推理相关性: 5/5 · 子方向: reasoning-other
-
-首个预测性空间推理 benchmark：observe-transform-infer 框架下三层级任务（静态感知/局部预测/全局预测）。21 模型最强仅 58.0%（人类 87.2%）；程序化数据微调把 Qwen3-VL-4B 从 34.0% 提到 65.7% 且六个 OOD 基准平均提升。
-
-### 2026-10-09 · On-Policy Distillation Teaches New Skills but Not New Knowledge ⭐
-> [arXiv](https://arxiv.org/abs/2610.09639) · upvotes: 1 · 推理相关性: 5/5 · 子方向: reasoning-other
-
-受控实验证明 reverse-KL on-policy 蒸馏可靠迁移组合技能但极少迁移事实知识：换 forward KL 恢复事实迁移，student rollout 专益多步推理执行——OPD 不扩展参数化知识，而是教模型组织已有知识。
-
-### 2026-10-09 · GeoReform: Reflective Formalization Evolution for Multimodal Geometry Problem Solving ⭐
-> [arXiv](https://arxiv.org/abs/2610.12391v1) · upvotes: 0 · 推理相关性: 5/5 · 子方向: reasoning-other
-
-把几何形式化当作可优化策略而非固定解析器输出：执行推理管线→收集失败→诊断表示缺陷→变异形式化策略。Geometry3K 上 Qwen3VL-2B 42.0%→56.0%；关键在组织支持下游推理的表示，而非抽取更多事实。
-
-### 2026-10-09 · Learning to Plan by Looking Back: Hindsight Hierarchies for Training Reasoning Models ⭐
-> [arXiv](https://arxiv.org/abs/2610.12168v1) · upvotes: 0 · 推理相关性: 5/5 · 子方向: reasoning-other
-
-自改进闭环：联合训练「凭空想思路」「从已知解反推思路」「用思路解题」三能力，交替「反推→监督」循环；给出形式化规约与 Lean 定理证明实例，实证评估留作未来工作。
-
-### 2026-10-09 · MASS: Recursive Self-Improvement through Multi-Agent Self-Supervision ⭐
-> [arXiv](https://arxiv.org/abs/2610.12176v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
-
-单模型自举进化多智能体 workflow 再自蒸馏：结构护栏约束的进化搜索发现角色分工与信息路由，与自生成轨迹 SFT 交替。Qwen3.6-27B 两轮后四个开放基准每 token 性能 1.2-1.6x；多智能体轨迹训练效率更高。
-
-### 2026-10-09 · SGUID: Selecting a Compact Skill Bank for Model-Skill Co-Evolution ⭐
-> [arXiv](https://arxiv.org/abs/2610.12367v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
-
-检索技能不到 25% 有蒸馏价值：SGUID 只保留训练中持续产生有效学习信号的技能，6 个精选技能匹敌全库蒸馏（库大至 11x），支持多轮模型-技能共同进化，不过滤直接更新反而掉点。
-
-### 2026-10-09 · UTT: Universal Textual Teaching for LLMs ⭐
-> [arXiv](https://arxiv.org/abs/2610.12114v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
-
-零参数更新的知识蒸馏：师生知识差距经多角色迭代（学生做题/Prompter 转指令/教师示范/Synthesizer 沉淀）蒸馏成可复用自然语言 Primer。KernelBench 9.4%→48.6%、数学推理 27.6%→51.7%，Primer 可跨学生泛化。
-
-### 2026-10-09 · ARC: A Reasoning Recipe for Robot Foundation Models ⭐
-> [arXiv](https://arxiv.org/abs/2610.12386v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
-
-扎根下一步动作、解释因果结构（为何合适、产生何效果）的推理轨迹 + 从既有演示自动标注（ARC-Trace-DROID）+ 架构定制微调。RoboLab-Reasoning-50 提升最高 50 点，真机把 π0.5 成功率提高 82.2 点。
-
-### 2026-10-09 · WOVEN: Weaving Visual World Modeling into Multimodal LLMs ⭐
-> [arXiv](https://arxiv.org/abs/2610.12417v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
-
-视觉转移推理作为可复用训练原语：36076 例按场景/动作/推理类型组织；38 个前沿 MLLM 呈系统性短板；~2000 条子集即提升 26 个外部基准中的 22 个（最高 27.3 点），配方为按推理操作选监督、偏好更大视觉状态变化。
-
-### 2026-10-09 · FlowMem: Recompose and Refine Latent Reasoning Flows for VLA Models ⭐
-> [arXiv](https://arxiv.org/abs/2610.12090v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
-
-把 VLA 成功的 latent 推理计算存成记忆，按情境动态检索重组兼容片段成推理路线，再用当前视觉/本体感觉证据精炼后条件动作生成。RoboMME 48.0%、LIBERO-Plus 77.3%，分别超无记忆策略 1.7/4.1 点。
-
-### 2026-10-09 · Looking Inside LLMs: Small-World Connectivity as a Signature of Reasoning Performance ⭐
-> [arXiv](https://arxiv.org/abs/2610.12304v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
-
-注意力头功能图的小世界指数（SWI）与流体推理一致正相关；重要头呈高 core、低 bridge 分数，据此提出 Small-World Allocation 剪枝分配，6 个 LLM 上更好保持小世界组织与性能（WikiText 困惑度最多降 20%）。
-
-### 2026-10-09 · grasp: Learning Probabilistic Logic Programs with Functional Gradient Guided Language Models ⭐
-> [arXiv](https://arxiv.org/abs/2610.12303v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
-
-神经符号归纳推理：概率逻辑程序学习被表述为函数梯度提升，一阶规则作弱学习器、LLM 作假设生成 oracle 替代组合搜索；保留 boosting 保证与符号可解释性，四个关系基准超纯符号/神经/LLM 基线。
-
-### 2026-10-09 · Perception Test 2026: Challenge Summary and Extension to City-scale Audio-Visual Reasoning ⭐
-> [arXiv](https://arxiv.org/abs/2610.12081v1) · upvotes: 0 · 推理相关性: 4/5 · 子方向: reasoning-other
-
-ECCV 2026 第四届挑战赛新增城市级步行视频轨道（KilometerAudio/KilometerVision）：复杂空间与多模态推理靠昂贵 agentic pipeline 可解，多模态模型单打独斗仍难——为推理系统的工程化路线提供证据。
