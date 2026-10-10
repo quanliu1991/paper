@@ -5,3 +5,4 @@
 | 加入日期 | 论文 | arXiv | 优先级 | 状态 | 笔记 |
 |---|---|---|---|---|---|
 | 2026-10-10 | TokenRouter: Efficient Serving System for Token-Level LLM Routing | 2610.12242 | 1 | done | [notes/papers/2026-10-10-tokenrouter.md](notes/papers/2026-10-10-tokenrouter.md) |
+| 2026-10-10 | DLoop: Looped Speculative Decoding | 2610.07659 | 2 | pending | |
