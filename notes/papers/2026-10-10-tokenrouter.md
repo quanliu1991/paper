@@ -68,3 +68,15 @@ arxiv: 2610.12242
 - token-level routing（token 级路由，已加入词汇表 learning）
 - step desynchronization / batch admission delay（已加入 learning）
 - R2R（Route-to-Reason，5% token 给大模型追平质量，已加入 learning）
+
+## Q&A
+
+### Q1（2026-10-10）：delayed-batching 的最优阈值 B* 具体怎么推导？为什么不直接手调一个经验值？
+
+> 摘自论文 §4.3「Throughput-optimal threshold」（全文缓存 `.fulltext/2610.12242.txt`）：
+>
+> 推导方式是把路由过程建模为 **离散时间马尔可夫链（DTMC）**：给定路由算法、并发数 N、路由概率矩阵 P、每个 LLM 的单步解码延迟 L_i，模型推出吞吐关于阈值 B 的解析函数，搜索使吞吐最大的 B*（完整推导在附录 D）。
+>
+> 不能手调的原因是 B 存在严格的双向权衡：B 太小 → 批准入延迟大（token 路由下模型切换频繁、到达稀疏）；B 太大 → 请求困在队列、SLM 缺活干（starvation）。且最优值随负载/路由概率动态变化，经验值无法覆盖。实测该数学推导在紧 SLO 下收益最大（吞吐比 R2R 官方实现高 18.58x）。
+>
+> 关联：这呼应了 serving 领域「用排队论/马尔可夫模型做调度决策」的传统（如经典文献对 M/G/1 批处理的建模），值得在 notes/insights/ 里沉淀一篇「吞吐模型驱动的调度调参」主题笔记。

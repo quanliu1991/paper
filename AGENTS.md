@@ -144,6 +144,8 @@ serving-system（serving 系统/引擎/集群）/ kv-cache（KV cache 与显存�
 - 完成后：reading-list 该行状态改 done、笔记列填链接；当日速览「💎 今日深读」节引用该笔记。
 - 用户在对话中说「把 X 加入待读」：查 arXiv ID/标题（可从 index.json 或当日数据找），追加行（状态 pending，优先级默认 2，用户指定则用之）。
 - 对话中说「精读 X」：**立即**执行精读流程（不等每日任务），产出同上。
+- **精读时必须缓存全文**：WebFetch 后把全文写入 `notes/papers/.fulltext/<arxiv-id>.txt`（git 忽略），后续追问直接读缓存。
+- **追问处理**：用户对精读笔记追问时，读 `.fulltext/` 缓存（无则补抓）作答，答案引用论文具体章节；有价值的 Q&A 追加到笔记 `## Q&A` 节（详见 notes/papers/README.md「追问处理规范」）。
 
 ## 月度 digest 任务（每月 1 日的每日任务附加步骤）
 
