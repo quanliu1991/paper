@@ -185,6 +185,11 @@ terms:
     解释: token 级模型路由——每个 token 都可切换生成模型，比 query 级路由粒度细得多
     相关: [serving-system]
     首见: 2026-10-10 TokenRouter
+  Query-level Routing:
+    level: learning
+    解释: query 级模型路由——整条请求只绑一个模型，判断一刀切；生产系统主流做法（RouteLLM 等）
+    相关: [serving-system]
+    首见: 2026-10-10 TokenRouter
   R2R (Route-to-Reason):
     level: learning
     解释: token 路由算法，仅 5% 难 token 给 32B 模型即可追平其质量
