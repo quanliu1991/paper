@@ -66,6 +66,7 @@ def arxiv_id_from_url(url: str) -> str:
 
 
 def hit_reasoning(text: str, keywords: list) -> bool:
+    """标题/摘要是否命中关键词表（通用子串匹配，供 infra_hit 等使用）。"""
     low = text.lower()
     return any(k.lower() in low for k in keywords)
 
@@ -214,27 +215,27 @@ def main() -> int:
             merged[pid]["upvotes"] = merged[pid]["upvotes"] or 0
 
     known = set(index["papers"].keys())
-    reasoning_kws = cfg.get("reasoning_keywords", [])
+    infra_kws = cfg.get("infra_keywords", [])
     feat_th = int(cfg.get("featured_threshold_upvotes", 10))
 
     fresh = []
     for pid, p in merged.items():
         if pid in known:
             continue
-        p["reasoning_hit"] = hit_reasoning(p["title"] + " " + p["abstract"], reasoning_kws)
-        p["featured"] = (p["upvotes"] >= feat_th) or p["reasoning_hit"]
+        p["infra_hit"] = hit_reasoning(p["title"] + " " + p["abstract"], infra_kws)
+        p["featured"] = (p["upvotes"] >= feat_th) or p["infra_hit"]
         fresh.append(p)
 
-    # 排序：精选在前，upvotes 降序，命中推理词优先
-    fresh.sort(key=lambda x: (not x["featured"], -x["upvotes"], not x["reasoning_hit"]))
+    # 排序：精选在前，upvotes 降序，命中 infra 词优先
+    fresh.sort(key=lambda x: (not x["featured"], -x["upvotes"], not x["infra_hit"]))
 
     PENDING_DIR.mkdir(parents=True, exist_ok=True)
     out = PENDING_DIR / f"{date}.json"
     with open(out, "w", encoding="utf-8") as f:
         json.dump({"date": date, "count": len(fresh), "papers": fresh}, f, ensure_ascii=False, indent=2)
 
-    n_reason = sum(1 for p in fresh if p["reasoning_hit"])
-    print(f"[fetch] 合计 {len(merged)} 篇，去重后新增 {len(fresh)} 篇（命中推理词 {n_reason} 篇）")
+    n_infra = sum(1 for p in fresh if p["infra_hit"])
+    print(f"[fetch] 合计 {len(merged)} 篇，去重后新增 {len(fresh)} 篇（命中 infra 推理词 {n_infra} 篇）")
     print(f"[fetch] 待分析清单 -> {out}")
     return 0
 

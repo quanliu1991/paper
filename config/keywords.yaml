@@ -1,23 +1,31 @@
 # AI 论文知识库配置
-# 每日抓取 HuggingFace Daily Papers + arXiv 关键词订阅，重点沉淀推理类技术
+# 每日抓取 HuggingFace Daily Papers + arXiv 关键词订阅，重点沉淀 AI Infra 推理（inference/serving）方向
+# 「推理」口径 = 模型推理服务与加速（KV cache、投机解码、量化、调度、并行），不是思维链/认知推理
 
 # arXiv 订阅关键词（可自由增删；抓取时按 OR 组合，按提交日期倒序）
 arxiv_keywords:
-  - reasoning
-  - chain-of-thought
-  - test-time scaling
-  - test-time compute
-  - inference-time
-  - large reasoning model
-  - LLM agent
-  - tool use LLM
+  - LLM inference
+  - LLM serving
   - inference acceleration
+  - KV cache
+  - speculative decoding
+  - continuous batching
+  - prefix caching
+  - model quantization
+  - disaggregated inference
+  - inference cluster
+  - tensor parallelism
+  - MoE inference
+  - long context inference
+  - vision-language model serving
 
 # arXiv 分类限定（cat: 前缀语法）
 arxiv_categories:
   - cs.CL
   - cs.AI
   - cs.LG
+  - cs.DC
+  - cs.AR
 
 # 每个关键词抓取的最大条数（arXiv API）
 arxiv_max_per_query: 15
@@ -25,47 +33,103 @@ arxiv_max_per_query: 15
 # arXiv 关键词来源每日最多贡献篇数（HF Daily 全保留）
 arxiv_daily_cap: 30
 
-# 推理相关关键词（用于标记 reasoning_hit：标题/摘要命中即算）
-reasoning_keywords:
-  - reasoning
-  - chain-of-thought
-  - test-time
-  - inference-time
-  - deliberation
-  - verifier
-  - verification
-  - reward model
-  - self-refine
-  - reflection
-  - thinking model
-  - long chain-of-thought
-  - overthinking
-  - budget forcing
-  - rlhf
-  - grpo
+# AI Infra 推理命中关键词（用于标记 infra_hit：标题/摘要命中即算）
+infra_keywords:
+  - inference
+  - serving
+  - kv cache
+  - kv-cache
+  - speculative decoding
+  - draft model
+  - quantization
+  - quantized
+  - awq
+  - gptq
+  - continuous batching
+  - prefix caching
+  - pagedattention
+  - flashattention
+  - prefill
+  - decode
+  - decoding
+  - throughput
+  - latency
+  - scheduling
+  - scheduler
+  - disaggregat
+  - tensor parallel
+  - pipeline parallel
+  - expert parallel
+  - moe
+  - mixture-of-experts
+  - offloading
+  - sparsity
+  - sparsified
+  - cuda
+  - gpu
+  - tpu
+  - npu
+  - kernel
+  - fused
+  - distillation
+  - compression
+  - pruning
+  - memory
+  - long context
+  - long-context
+  - batching
+  - vllm
+  - sglang
+  - triton
+  - compilation
+  - compiler
+  - distributed
 
-# 精选阈值：HF upvotes >= threshold 或命中推理关键词 → 精选 ⭐
+# 精选阈值：HF upvotes >= threshold 或命中 infra 关键词 → 精选 ⭐
 featured_threshold_upvotes: 10
 
 # 主题分类定义（Agent 分析时参考，论文按第一匹配归类）
+# inference 是重点专题（AI Infra 推理），reasoning 指认知推理（CoT 等），仅作普通主题
 topics:
-  - id: reasoning
-    name: 推理
-    description: 测试时扩展、RL 训练推理、CoT、验证与奖励、高效推理
+  - id: inference
+    name: 推理 Infra
+    description: ★ 重点：推理服务与加速（KV cache、投机解码、量化、调度并行、MoE 推理、长上下文、VLM serving、推理集群）
   - id: models
     name: 模型架构
     description: 新架构（MoE、线性注意力、SSM 等）、模型设计
   - id: training
     name: 训练方法
     description: 预训练、后训练、SFT/RLHF、数据合成、蒸馏
+  - id: reasoning
+    name: 认知推理
+    description: 思维链、test-time scaling、RL 训推理、验证与奖励（非重点，正常归档）
   - id: agents
     name: 智能体
-    description: 智能体框架、工具调用、多智能体、规划、环境交互
+    description: 涉及智能体框架、工具调用、多智能体、规划
   - id: applications
     name: 应用与评测
     description: 下游应用、benchmark、评测方法、安全
 
-# 推理子方向（topics/reasoning/papers.md 分节用）
+# AI Infra 推理子方向（topics/inference/papers.md 分节用）
+inference_subtopics:
+  - id: serving-system
+    name: Serving 系统
+  - id: kv-cache
+    name: KV Cache 与显存
+  - id: speculative-decoding
+    name: 投机解码
+  - id: quantization-compression
+    name: 量化与压缩
+  - id: parallelism-scheduling
+    name: 并行与调度
+  - id: moe-inference
+    name: MoE 推理
+  - id: long-context-vlm
+    name: 长上下文与 VLM
+  - id: inference-other
+    name: Others
+
+# 认知推理论文子方向（topics/reasoning/papers.md 分节用，保留既有结构）
 reasoning_subtopics:
   - id: test-time-scaling
     name: Test-time Scaling

@@ -38,6 +38,7 @@ def main() -> int:
                 "date_added": d.get("date", ""),
                 "source": p.get("source", ""),
                 "upvotes": p.get("upvotes", 0),
+                "infra_hit": p.get("infra_hit", False),
                 "reasoning_hit": p.get("reasoning_hit", False),
                 "arxiv_url": p.get("arxiv_url", ""),
             }

@@ -2,6 +2,8 @@
 
 你是本论文知识库的值班 Agent。被定时唤醒（或手动执行本 prompt）时，严格按以下步骤操作。所有格式规范见 `AGENTS.md`。
 
+> **「推理」口径**：AI Infra 的推理（inference/serving）——serving 系统、KV cache、投机解码、量化、并行调度、MoE 推理、长上下文/VLM serving。思维链/认知推理类论文归「认知推理」普通主题。
+
 工作目录：仓库根目录（本文件所在处）。
 
 ## 步骤
@@ -18,16 +20,17 @@ python3 scripts/fetch_papers.py --date <d>
 
 ### 3. 分析（对 data/pending/<d>.json 中每篇论文）
 - 读标题+摘要，生成中文速读：一句话总结 / 核心方法 / 关键结果。
-- 按下表打推理相关性分（0-5，标准见 AGENTS.md），并指定主题（reasoning/models/training/agents/applications）。
-- reasoning 相关（≥1）的论文进推理节；推理分 ≥4 或（featured 且推理相关）→ 归档条目。
+- 按下表打 infra 相关性分（0-5，标准见 AGENTS.md），并指定主题（inference/models/training/reasoning/agents/applications）。
+- infra 相关（≥1）的论文进「🚀 推理 Infra」节；infra 分 ≥4 → 归档到 `topics/inference/papers.md`。
+- 思维链/认知推理论文（CoT、test-time scaling、RL 训推理）→ 「认知推理」普通节，重点者归档 `topics/reasoning/papers.md`。
 
 ### 4. 深读 Top 论文
-- 选 upvotes 最高 + 推理分最高的 3-5 篇，用 WebFetch 抓 `arxiv_url`（abs 页）深入分析。
-- 每篇写深度笔记到 `topics/reasoning/notes/<d>-<slug>.md`（模板见 AGENTS.md）。
-- 仅当推理分 ≥4 的论文才值得深读；若当日无高分推理论文，可深读 featured 且推理相关的。
+- 选 upvotes 最高 + infra 分最高的 3-5 篇，用 WebFetch 抓 `arxiv_url`（abs 页）深入分析。
+- 每篇写深度笔记到 `topics/inference/notes/<d>-<slug>.md`（模板见 AGENTS.md）。
+- 仅当 infra 分 ≥4 的论文才值得深读；若当日无高分 infra 论文，可深读 featured 且 infra 相关的。
 
 ### 5. 写入产出
-- `daily/<YYYY>/<MM>/<d>.md` 每日速览（模板见 AGENTS.md，推理节排最前）。
+- `daily/<YYYY>/<MM>/<d>.md` 每日速览（模板见 AGENTS.md，推理 Infra 节排最前）。
 - 重点论文追加到 `topics/<topic>/papers.md`（按子方向小节、日期倒序插入）。
 - **归档安全**：写 topics 前必须重新 Read 目标文件最新内容，只做插入/追加，严禁整文件重写（详见 AGENTS.md「归档写入安全」）。
 - **每个日期处理完后立即运行** `python3 scripts/update_index.py`（重建去重索引，防止后续日期重复抓取已收录论文），不要手动编辑 index.json。
@@ -35,7 +38,7 @@ python3 scripts/fetch_papers.py --date <d>
 
 ### 6. 提交
 ```bash
-bash scripts/git_commit.sh "daily: <d>（N 篇，推理 K 篇）"
+bash scripts/git_commit.sh "daily: <d>（N 篇，推理 Infra K 篇）"
 ```
 （push 在所有日期处理完后统一做，避免多次推送。）
 
@@ -46,7 +49,8 @@ bash scripts/git_push.sh
 （远程为 SSH over 443；脚本内置 pull --rebase 重试。**注意**：不要直接在命令行写 `git commit`——Cursor 会注入旧版 git 不支持的 --trailer 参数，必须用 scripts/git_commit.sh。）
 
 ## 约束
-- 80 篇/天为正常规模；单日超过 120 篇时只精读 featured + reasoning_hit 的，其余写一行速记。
+- 80 篇/天为正常规模；单日超过 120 篇时只精读 featured + infra_hit 的，其余写一行速记。
 - 速读必须基于真实摘要内容，禁止编造；摘要太短（<50 词）可 WebFetch arXiv 页补充。
 - 所有输出中文（术语保留英文）。
-- 完成后在会话里简报：日期、总篇数、推理篇数、深读篇数、push 状态。
+- infra 关键词命中但内容明显无关（如医学 inference）→ 低分 1-2 并标注，不入重点节。
+- 完成后在会话里简报：日期、总篇数、infra 篇数、深读篇数、push 状态。

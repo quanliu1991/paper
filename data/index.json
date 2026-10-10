@@ -5,7 +5,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 276,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.01780"
   },
   "2609.38879": {
@@ -13,7 +14,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 120,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.38879"
   },
   "2609.38839": {
@@ -21,6 +23,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 112,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.38839"
   },
@@ -29,7 +32,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 111,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.38078"
   },
   "2610.02826": {
@@ -37,7 +41,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 103,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02826"
   },
   "2610.02508": {
@@ -45,6 +50,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 96,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02508"
   },
@@ -53,6 +59,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 88,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03391"
   },
@@ -61,6 +68,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 87,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.36659"
   },
@@ -69,6 +77,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 70,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02381"
   },
@@ -77,7 +86,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 64,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.39071"
   },
   "2610.03665": {
@@ -85,7 +95,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 62,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03665"
   },
   "2609.34715": {
@@ -93,6 +104,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 62,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.34715"
   },
@@ -101,6 +113,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 61,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02840"
   },
@@ -109,6 +122,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 60,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03574"
   },
@@ -117,7 +131,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 59,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.00531"
   },
   "2610.00972": {
@@ -125,7 +140,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 58,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.00972"
   },
   "2610.02298": {
@@ -133,6 +149,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 58,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02298"
   },
@@ -141,7 +158,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 57,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02521"
   },
   "2610.02304": {
@@ -149,6 +167,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 54,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02304"
   },
@@ -157,6 +176,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 54,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03632"
   },
@@ -165,7 +185,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 51,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03367"
   },
   "2610.01257": {
@@ -173,6 +194,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 45,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.01257"
   },
@@ -181,6 +203,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 45,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03195"
   },
@@ -189,7 +212,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 37,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03695"
   },
   "2609.38123": {
@@ -197,6 +221,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 37,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.38123"
   },
@@ -205,6 +230,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 37,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.36529"
   },
@@ -213,7 +239,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 34,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.32777"
   },
   "2610.02824": {
@@ -221,7 +248,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 33,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02824"
   },
   "2610.03664": {
@@ -229,7 +257,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 32,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03664"
   },
   "2610.03715": {
@@ -237,6 +266,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 31,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03715"
   },
@@ -245,6 +275,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 29,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.39820"
   },
@@ -253,6 +284,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 29,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03675"
   },
@@ -261,6 +293,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 28,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02126"
   },
@@ -269,6 +302,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 27,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.28339"
   },
@@ -277,6 +311,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 25,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.36887"
   },
@@ -285,6 +320,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 23,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2608.26762"
   },
@@ -293,6 +329,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 23,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.37925"
   },
@@ -301,6 +338,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 23,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.01153"
   },
@@ -309,7 +347,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 22,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.30467"
   },
   "2609.39963": {
@@ -317,6 +356,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 21,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.39963"
   },
@@ -325,6 +365,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 20,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02179"
   },
@@ -333,6 +374,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 20,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03240"
   },
@@ -341,6 +383,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 19,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.38096"
   },
@@ -349,6 +392,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 19,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.34895"
   },
@@ -357,7 +401,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 18,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02788"
   },
   "2609.26425": {
@@ -365,6 +410,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 18,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.26425"
   },
@@ -373,6 +419,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 18,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.39050"
   },
@@ -381,7 +428,8 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 17,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03509"
   },
   "2609.33804": {
@@ -389,6 +437,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 16,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.33804"
   },
@@ -397,6 +446,7 @@
    "date_added": "2026-10-05",
    "source": "hf_daily",
    "upvotes": 16,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02388"
   },
@@ -405,7 +455,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09219v1"
   },
   "2610.09202v1": {
@@ -413,7 +464,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09202v1"
   },
   "2610.09186v1": {
@@ -421,7 +473,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09186v1"
   },
   "2610.09174v1": {
@@ -429,7 +482,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09174v1"
   },
   "2610.09152v1": {
@@ -437,7 +491,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09152v1"
   },
   "2610.09146v1": {
@@ -445,7 +500,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09146v1"
   },
   "2610.09145v2": {
@@ -453,7 +509,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09145v2"
   },
   "2610.09087v1": {
@@ -461,7 +518,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09087v1"
   },
   "2610.09074v1": {
@@ -469,7 +527,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09074v1"
   },
   "2610.09026v1": {
@@ -477,7 +536,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09026v1"
   },
   "2610.09015v1": {
@@ -485,7 +545,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09015v1"
   },
   "2610.09008v1": {
@@ -493,7 +554,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09008v1"
   },
   "2610.09007v1": {
@@ -501,7 +563,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09007v1"
   },
   "2610.09003v1": {
@@ -509,7 +572,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09003v1"
   },
   "2610.08993v1": {
@@ -517,7 +581,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08993v1"
   },
   "2610.08966v2": {
@@ -525,7 +590,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08966v2"
   },
   "2610.08963v1": {
@@ -533,7 +599,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08963v1"
   },
   "2610.08959v1": {
@@ -541,7 +608,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08959v1"
   },
   "2610.08954v1": {
@@ -549,7 +617,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08954v1"
   },
   "2610.08923v1": {
@@ -557,7 +626,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08923v1"
   },
   "2610.08780v1": {
@@ -565,7 +635,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08780v1"
   },
   "2610.08901v1": {
@@ -573,7 +644,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08901v1"
   },
   "2610.08761v1": {
@@ -581,7 +653,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08761v1"
   },
   "2610.08726v1": {
@@ -589,7 +662,8 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08726v1"
   },
   "2610.09115v1": {
@@ -597,6 +671,7 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09115v1"
   },
@@ -605,6 +680,7 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09112v1"
   },
@@ -613,6 +689,7 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09048v1"
   },
@@ -621,6 +698,7 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09034v1"
   },
@@ -629,6 +707,7 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08781v1"
   },
@@ -637,6 +716,7 @@
    "date_added": "2026-10-05",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08775v1"
   },
@@ -645,6 +725,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 160,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05608"
   },
@@ -653,7 +734,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 120,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06647"
   },
   "2610.04198": {
@@ -661,6 +743,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 74,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04198"
   },
@@ -669,7 +752,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 59,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05162"
   },
   "2610.03120": {
@@ -677,7 +761,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 49,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03120"
   },
   "2609.37267": {
@@ -685,6 +770,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 40,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.37267"
   },
@@ -693,7 +779,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 38,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04292"
   },
   "2610.04109": {
@@ -701,7 +788,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 32,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04109"
   },
   "2610.06648": {
@@ -709,6 +797,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 31,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06648"
   },
@@ -717,6 +806,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 31,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05719"
   },
@@ -725,6 +815,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 30,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06833"
   },
@@ -733,6 +824,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 29,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02331"
   },
@@ -741,7 +833,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 28,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.24890"
   },
   "2609.39490": {
@@ -749,7 +842,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 27,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.39490"
   },
   "2609.36099": {
@@ -757,6 +851,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 27,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.36099"
   },
@@ -765,7 +860,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 25,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05076"
   },
   "2610.06577": {
@@ -773,6 +869,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 24,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06577"
   },
@@ -781,7 +878,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 23,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05107"
   },
   "2610.06851": {
@@ -789,7 +887,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 23,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06851"
   },
   "2610.05303": {
@@ -797,7 +896,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 23,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05303"
   },
   "2610.00923": {
@@ -805,6 +905,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 23,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.00923"
   },
@@ -813,7 +914,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 21,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05622"
   },
   "2609.36684": {
@@ -821,7 +923,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 20,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.36684"
   },
   "2610.05739": {
@@ -829,6 +932,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 20,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05739"
   },
@@ -837,6 +941,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 19,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04929"
   },
@@ -845,6 +950,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 19,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06617"
   },
@@ -853,7 +959,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 18,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05750"
   },
   "2610.06361": {
@@ -861,6 +968,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 18,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06361"
   },
@@ -869,6 +977,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 18,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04616"
   },
@@ -877,6 +986,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 18,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.39420"
   },
@@ -885,6 +995,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 17,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04318"
   },
@@ -893,6 +1004,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 16,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.34227"
   },
@@ -901,6 +1013,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 16,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.36691"
   },
@@ -909,6 +1022,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 16,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05894"
   },
@@ -917,6 +1031,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 16,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05870"
   },
@@ -925,6 +1040,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 16,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05416"
   },
@@ -933,6 +1049,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 15,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02320"
   },
@@ -941,7 +1058,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 14,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02191"
   },
   "2610.06666": {
@@ -949,7 +1067,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 13,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06666"
   },
   "2610.02076": {
@@ -957,6 +1076,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 13,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02076"
   },
@@ -965,6 +1085,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 13,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.35751"
   },
@@ -973,6 +1094,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 12,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05538"
   },
@@ -981,6 +1103,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 12,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04128"
   },
@@ -989,6 +1112,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 12,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02150"
   },
@@ -997,6 +1121,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 12,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04137"
   },
@@ -1005,6 +1130,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 11,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06545"
   },
@@ -1013,6 +1139,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 10,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04226"
   },
@@ -1021,7 +1148,8 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 9,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2605.21318"
   },
   "2610.10996v1": {
@@ -1029,7 +1157,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10996v1"
   },
   "2610.10978v1": {
@@ -1037,7 +1166,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10978v1"
   },
   "2610.10962v1": {
@@ -1045,7 +1175,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10962v1"
   },
   "2610.10942v1": {
@@ -1053,7 +1184,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10942v1"
   },
   "2610.10878v1": {
@@ -1061,7 +1193,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10878v1"
   },
   "2610.10858v1": {
@@ -1069,7 +1202,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10858v1"
   },
   "2610.10854v1": {
@@ -1077,7 +1211,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10854v1"
   },
   "2610.10833v1": {
@@ -1085,7 +1220,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10833v1"
   },
   "2610.10787v1": {
@@ -1093,7 +1229,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10787v1"
   },
   "2610.10782v1": {
@@ -1101,7 +1238,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10782v1"
   },
   "2610.10742v1": {
@@ -1109,7 +1247,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10742v1"
   },
   "2610.10536v1": {
@@ -1117,7 +1256,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10536v1"
   },
   "2610.10533v1": {
@@ -1125,7 +1265,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10533v1"
   },
   "2610.10462v1": {
@@ -1133,7 +1274,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10462v1"
   },
   "2610.10455v1": {
@@ -1141,7 +1283,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10455v1"
   },
   "2610.10447v1": {
@@ -1149,7 +1292,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10447v1"
   },
   "2610.10415v1": {
@@ -1157,7 +1301,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10415v1"
   },
   "2610.10411v1": {
@@ -1165,7 +1310,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10411v1"
   },
   "2610.10405v1": {
@@ -1173,7 +1319,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10405v1"
   },
   "2610.10381v1": {
@@ -1181,7 +1328,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10381v1"
   },
   "2610.10374v1": {
@@ -1189,7 +1337,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10374v1"
   },
   "2610.10655v1": {
@@ -1197,7 +1346,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10655v1"
   },
   "2610.10332v1": {
@@ -1205,7 +1355,8 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10332v1"
   },
   "2610.04047": {
@@ -1213,6 +1364,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 9,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04047"
   },
@@ -1221,6 +1373,7 @@
    "date_added": "2026-10-06",
    "source": "hf_daily",
    "upvotes": 9,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03872"
   },
@@ -1229,6 +1382,7 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.11008v1"
   },
@@ -1237,6 +1391,7 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.11007v1"
   },
@@ -1245,6 +1400,7 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10906v1"
   },
@@ -1253,6 +1409,7 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10857v1"
   },
@@ -1261,6 +1418,7 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10805v1"
   },
@@ -1269,6 +1427,7 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10444v1"
   },
@@ -1277,6 +1436,7 @@
    "date_added": "2026-10-06",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10407v1"
   },
@@ -1285,7 +1445,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 177,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08448"
   },
   "2610.07767": {
@@ -1293,7 +1454,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 101,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07767"
   },
   "2610.03543": {
@@ -1301,6 +1463,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 84,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03543"
   },
@@ -1309,6 +1472,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 43,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05030"
   },
@@ -1317,6 +1481,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 42,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.00864"
   },
@@ -1325,6 +1490,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 41,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07753"
   },
@@ -1333,7 +1499,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 35,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07043"
   },
   "2610.05140": {
@@ -1341,7 +1508,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 32,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05140"
   },
   "2609.37334": {
@@ -1349,6 +1517,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 32,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.37334"
   },
@@ -1357,6 +1526,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 32,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05966"
   },
@@ -1365,6 +1535,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 28,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05912"
   },
@@ -1373,6 +1544,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 24,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09455"
   },
@@ -1381,6 +1553,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 24,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03607"
   },
@@ -1389,7 +1562,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 19,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.29792"
   },
   "2610.08463": {
@@ -1397,6 +1571,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 18,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08463"
   },
@@ -1405,7 +1580,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 17,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.01892"
   },
   "2610.01218": {
@@ -1413,6 +1589,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 17,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.01218"
   },
@@ -1421,7 +1598,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 16,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04596"
   },
   "2609.38972": {
@@ -1429,7 +1607,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 16,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.38972"
   },
   "2610.08430": {
@@ -1437,6 +1616,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 16,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08430"
   },
@@ -1445,6 +1625,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 14,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.34117"
   },
@@ -1453,6 +1634,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 14,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08791"
   },
@@ -1461,7 +1643,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 13,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07342"
   },
   "2610.00948": {
@@ -1469,7 +1652,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 13,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.00948"
   },
   "2610.07969": {
@@ -1477,6 +1661,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 13,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07969"
   },
@@ -1485,7 +1670,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 12,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04933"
   },
   "2609.32921": {
@@ -1493,6 +1679,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 12,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.32921"
   },
@@ -1501,6 +1688,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 11,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08778"
   },
@@ -1509,6 +1697,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 11,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.40127"
   },
@@ -1517,7 +1706,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 10,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02781"
   },
   "2610.02858": {
@@ -1525,7 +1715,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 10,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02858"
   },
   "2610.07510": {
@@ -1533,6 +1724,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 10,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07510"
   },
@@ -1541,6 +1733,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 10,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07641"
   },
@@ -1549,7 +1742,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 8,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07727"
   },
   "2610.08048": {
@@ -1557,7 +1751,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 7,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08048"
   },
   "2610.07832": {
@@ -1565,7 +1760,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 7,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07832"
   },
   "2609.35378": {
@@ -1573,7 +1769,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 6,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.35378"
   },
   "2610.08761": {
@@ -1581,7 +1778,8 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 5,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08761"
   },
   "2610.12417v1": {
@@ -1589,7 +1787,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12417v1"
   },
   "2610.12416v1": {
@@ -1597,7 +1796,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12416v1"
   },
   "2610.12402v1": {
@@ -1605,7 +1805,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12402v1"
   },
   "2610.12391v1": {
@@ -1613,7 +1814,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12391v1"
   },
   "2610.12386v1": {
@@ -1621,7 +1823,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12386v1"
   },
   "2610.12367v1": {
@@ -1629,7 +1832,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12367v1"
   },
   "2610.12361v1": {
@@ -1637,7 +1841,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12361v1"
   },
   "2610.12355v1": {
@@ -1645,7 +1850,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12355v1"
   },
   "2610.12333v1": {
@@ -1653,7 +1859,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12333v1"
   },
   "2610.12304v1": {
@@ -1661,7 +1868,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12304v1"
   },
   "2610.12303v1": {
@@ -1669,7 +1877,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12303v1"
   },
   "2610.12281v1": {
@@ -1677,7 +1886,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12281v1"
   },
   "2610.12235v1": {
@@ -1685,7 +1895,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12235v1"
   },
   "2610.12176v1": {
@@ -1693,7 +1904,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12176v1"
   },
   "2610.12168v1": {
@@ -1701,7 +1913,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12168v1"
   },
   "2610.12161v1": {
@@ -1709,7 +1922,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12161v1"
   },
   "2610.12137v1": {
@@ -1717,7 +1931,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12137v1"
   },
   "2610.12114v1": {
@@ -1725,7 +1940,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12114v1"
   },
   "2610.12104v1": {
@@ -1733,7 +1949,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12104v1"
   },
   "2610.12090v1": {
@@ -1741,7 +1958,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12090v1"
   },
   "2610.12081v1": {
@@ -1749,7 +1967,8 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12081v1"
   },
   "2610.09243": {
@@ -1757,6 +1976,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 8,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09243"
   },
@@ -1765,6 +1985,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 8,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08773"
   },
@@ -1773,6 +1994,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 7,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06844"
   },
@@ -1781,6 +2003,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 7,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05842"
   },
@@ -1789,6 +2012,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 7,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08630"
   },
@@ -1797,6 +2021,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 7,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06960"
   },
@@ -1805,6 +2030,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 6,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.29123"
   },
@@ -1813,6 +2039,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 6,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07588"
   },
@@ -1821,6 +2048,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 6,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08790"
   },
@@ -1829,6 +2057,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 5,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07785"
   },
@@ -1837,6 +2066,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 5,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08779"
   },
@@ -1845,6 +2075,7 @@
    "date_added": "2026-10-07",
    "source": "hf_daily",
    "upvotes": 4,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.39096"
   },
@@ -1853,6 +2084,7 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12452v1"
   },
@@ -1861,6 +2093,7 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12445v1"
   },
@@ -1869,6 +2102,7 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12375v1"
   },
@@ -1877,6 +2111,7 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12360v1"
   },
@@ -1885,6 +2120,7 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12274v1"
   },
@@ -1893,6 +2129,7 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12212v1"
   },
@@ -1901,6 +2138,7 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12183v1"
   },
@@ -1909,6 +2147,7 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12135v1"
   },
@@ -1917,6 +2156,7 @@
    "date_added": "2026-10-09",
    "source": "arxiv_kw",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12124v1"
   },
@@ -1925,7 +2165,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 115,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08077"
   },
   "2609.38169": {
@@ -1933,6 +2174,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 107,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.38169"
   },
@@ -1941,6 +2183,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 98,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08699"
   },
@@ -1949,6 +2192,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 97,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10528"
   },
@@ -1957,6 +2201,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 91,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09823"
   },
@@ -1965,6 +2210,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 85,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08621"
   },
@@ -1973,6 +2219,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 75,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10524"
   },
@@ -1981,7 +2228,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 68,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04299"
   },
   "2610.07967": {
@@ -1989,6 +2237,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 68,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07967"
   },
@@ -1997,6 +2246,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 55,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10429"
   },
@@ -2005,7 +2255,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 54,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06293"
   },
   "2610.02054": {
@@ -2013,7 +2264,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 53,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02054"
   },
   "2610.10539": {
@@ -2021,6 +2273,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 43,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10539"
   },
@@ -2029,7 +2282,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 37,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.40360"
   },
   "2610.10444": {
@@ -2037,6 +2291,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 34,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10444"
   },
@@ -2045,6 +2300,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 33,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08760"
   },
@@ -2053,6 +2309,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 33,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.39306"
   },
@@ -2061,6 +2318,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 31,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10409"
   },
@@ -2069,6 +2327,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 31,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10114"
   },
@@ -2077,7 +2336,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 29,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03185"
   },
   "2610.08995": {
@@ -2085,6 +2345,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 29,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08995"
   },
@@ -2093,6 +2354,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 27,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07591"
   },
@@ -2101,7 +2363,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 25,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.00994"
   },
   "2609.33678": {
@@ -2109,6 +2372,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 25,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.33678"
   },
@@ -2117,6 +2381,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 20,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09920"
   },
@@ -2125,7 +2390,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 19,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09484"
   },
   "2610.08963": {
@@ -2133,7 +2399,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 19,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08963"
   },
   "2610.04722": {
@@ -2141,6 +2408,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 19,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04722"
   },
@@ -2149,6 +2417,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 19,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05034"
   },
@@ -2157,7 +2426,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 18,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07226"
   },
   "2610.10437": {
@@ -2165,6 +2435,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 18,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10437"
   },
@@ -2173,7 +2444,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 17,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07874"
   },
   "2610.03036": {
@@ -2181,7 +2453,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 17,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03036"
   },
   "2610.10047": {
@@ -2189,6 +2462,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 17,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10047"
   },
@@ -2197,6 +2471,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 17,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05289"
   },
@@ -2205,7 +2480,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 16,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09684"
   },
   "2610.07862": {
@@ -2213,7 +2489,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 13,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07862"
   },
   "2610.07659": {
@@ -2221,7 +2498,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 12,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07659"
   },
   "2610.10497": {
@@ -2229,6 +2507,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 12,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10497"
   },
@@ -2237,7 +2516,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 10,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07250"
   },
   "2610.09127": {
@@ -2245,6 +2525,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 10,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09127"
   },
@@ -2253,7 +2534,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 7,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10533"
   },
   "2610.02396": {
@@ -2261,7 +2543,8 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 5,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02396"
   },
   "2610.06505": {
@@ -2269,6 +2552,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 9,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06505"
   },
@@ -2277,6 +2561,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 8,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10460"
   },
@@ -2285,6 +2570,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 8,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09832"
   },
@@ -2293,6 +2579,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 8,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.33659"
   },
@@ -2301,6 +2588,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 7,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09450"
   },
@@ -2309,6 +2597,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 7,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.05336"
   },
@@ -2317,6 +2606,7 @@
    "date_added": "2026-10-08",
    "source": "hf_daily",
    "upvotes": 7,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.10164"
   },
@@ -2325,6 +2615,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 117,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12374"
   },
@@ -2333,7 +2624,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 108,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08215"
   },
   "2610.12242": {
@@ -2341,6 +2633,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 87,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12242"
   },
@@ -2349,6 +2642,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 72,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06100"
   },
@@ -2357,6 +2651,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 60,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12126"
   },
@@ -2365,6 +2660,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 46,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.11959"
   },
@@ -2373,6 +2669,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 38,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.38173"
   },
@@ -2381,6 +2678,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 37,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12299"
   },
@@ -2389,7 +2687,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 32,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12468"
   },
   "2610.12461": {
@@ -2397,6 +2696,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 25,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12461"
   },
@@ -2405,6 +2705,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 25,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06801"
   },
@@ -2413,6 +2714,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 24,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12421"
   },
@@ -2421,6 +2723,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 23,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12289"
   },
@@ -2429,6 +2732,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 20,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.02967"
   },
@@ -2437,6 +2741,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 19,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12327"
   },
@@ -2445,6 +2750,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 17,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12442"
   },
@@ -2453,6 +2759,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 13,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12419"
   },
@@ -2461,7 +2768,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 12,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06406"
   },
   "2610.12343": {
@@ -2469,7 +2777,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 12,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12343"
   },
   "2610.12229": {
@@ -2477,6 +2786,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 12,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12229"
   },
@@ -2485,6 +2795,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 12,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.11322"
   },
@@ -2493,7 +2804,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 10,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09087"
   },
   "2610.12458": {
@@ -2501,7 +2813,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 9,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12458"
   },
   "2609.35433": {
@@ -2509,7 +2822,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 7,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.35433"
   },
   "2610.07730": {
@@ -2517,7 +2831,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 7,
-   "reasoning_hit": true,
+   "infra_hit": false,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.07730"
   },
   "2610.12402": {
@@ -2525,7 +2840,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 6,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12402"
   },
   "2610.11366": {
@@ -2533,7 +2849,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 6,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.11366"
   },
   "2610.12459": {
@@ -2541,7 +2858,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 4,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12459"
   },
   "2501.09223": {
@@ -2549,7 +2867,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 2,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2501.09223"
   },
   "2610.11570": {
@@ -2557,7 +2876,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 2,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.11570"
   },
   "2610.09639": {
@@ -2565,7 +2885,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 1,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09639"
   },
   "2610.12355": {
@@ -2573,7 +2894,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 1,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12355"
   },
   "2609.34344": {
@@ -2581,7 +2903,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.34344"
   },
   "2609.31507": {
@@ -2589,7 +2912,8 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 0,
-   "reasoning_hit": true,
+   "infra_hit": true,
+   "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.31507"
   },
   "2609.39068": {
@@ -2597,6 +2921,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 9,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2609.39068"
   },
@@ -2605,6 +2930,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 9,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12403"
   },
@@ -2613,6 +2939,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 8,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.11251"
   },
@@ -2621,6 +2948,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 7,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.04977"
   },
@@ -2629,6 +2957,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 6,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12230"
   },
@@ -2637,6 +2966,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 5,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.03858"
   },
@@ -2645,6 +2975,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 4,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.11816"
   },
@@ -2653,6 +2984,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 2,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.11287"
   },
@@ -2661,6 +2993,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 2,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12360"
   },
@@ -2669,6 +3002,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 1,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.09059"
   },
@@ -2677,6 +3011,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 1,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08917"
   },
@@ -2685,6 +3020,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 1,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12452"
   },
@@ -2693,6 +3029,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.06496"
   },
@@ -2701,6 +3038,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.12399"
   },
@@ -2709,6 +3047,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 0,
+   "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2605.22949"
   },
@@ -2717,6 +3056,7 @@
    "date_added": "2026-10-09",
    "source": "hf_daily",
    "upvotes": 0,
+   "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08941"
   }

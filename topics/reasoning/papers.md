@@ -1,6 +1,6 @@
-# 推理 Reasoning · 论文归档
+# 认知推理 · 论文归档
 
-> 重点专题。条目按日期倒序，仅收录推理相关性 ≥4 或精选推理论文。子方向定义见 `config/keywords.yaml`。
+> 思维链、test-time scaling、RL 训推理、验证与奖励等**认知推理**方向（非重点专题——本库「推理」指 AI Infra 的 inference/serving，见 `topics/inference/`）。条目按日期倒序，收录认知推理相关性 ≥4 或精选论文。子方向定义见 `config/keywords.yaml`。
 
 ## Test-time Scaling
 
