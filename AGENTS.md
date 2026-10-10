@@ -10,9 +10,16 @@
 |---|---|
 | `scripts/fetch_papers.py` | 抓取 HF Daily Papers + arXiv 关键词，输出 `data/pending/YYYY-MM-DD.json` |
 | `data/index.json` | 已收录论文索引（arXiv ID 主键，去重用） |
-| `daily/YYYY/MM/YYYY-MM-DD.md` | 每日速览（推理 Infra 类单独成节排最前） |
+| `daily/YYYY/MM/YYYY-MM-DD.md` | 每日速览（推理 Infra 类单独成节排最前；保留 90 天后清理） |
 | `topics/inference/papers.md` | ★ 重点专题：推理 Infra 归档（按子方向分节） |
 | `topics/<topic>/papers.md` | 其他主题归档（models/training/reasoning/agents/applications） |
+| `digest/YYYY-MM.md` | 月度压缩层：当月 infra 精选 + 趋势 + 新术语（一年后只看这层也够） |
+| `reading-list.md` | 待读队列：用户加入，每日任务消化优先级最高的 1-2 篇 |
+| `glossary/terms.yaml` | 个人术语词典（known/learning/unknown 分级） |
+| `glossary/profile.md` | 个人知识画像（领域雷达 + 成长轨迹，月度更新） |
+| `notes/papers/` | 单篇精读笔记（含复现要点） |
+| `notes/insights/` | 主题式知识结晶（跨论文方法地图） |
+| `profile/interests.yaml` | 兴趣配置：子方向权重、每日深读/队列消化上限 |
 | `README.md` | 知识库说明 + 最近 7 天速览链接 |
 
 ## 每日速览模板（daily/YYYY/MM/DD.md）
@@ -38,12 +45,16 @@
 - **标题** — 一句话总结 [arXiv](...)
 
 ## 💎 今日 Top 深读
-- [笔记标题](../topics/inference/notes/YYYY-MM-DD-xxx.md) — 一句话说明为何值得深读
+- [笔记标题](../notes/papers/YYYY-MM-DD-xxx.md) — 一句话说明为何值得深读
+
+## 📖 今日新词
+- **术语**（level）：一句话解释（learning/unknown 术语集中区；known 不列）
 ```
 
 规则：
 - 推理 Infra 节内按「精选+infra 分」降序；其他节每篇一行速记（**标题 — 一句话总结**）。
 - 全部中文速读，术语保留英文（如 KV cache、speculative decoding、PagedAttention）。
+- **术语渲染**：按 glossary/terms.yaml 的 level——known 裸奔；learning/unknown 当日首次出现带括号一句话解释；尾部「今日新词」节集中列出（详见 AGENTS.md「术语渲染规则」）。
 - upvotes 为 HF 社区热度，`⭐` = upvotes ≥ 10 或命中 infra 关键词。
 - 思维链/认知推理类论文（CoT、test-time scaling 等）放「认知推理」普通节，不进推理 Infra 节。
 
@@ -115,3 +126,38 @@ serving-system（serving 系统/引擎/集群）/ kv-cache（KV cache 与显存�
 - HF/arXiv API 失败：脚本已内置 warn + 降级（空列表），照常产出（哪怕 0 篇也写当日速览说明情况）。
 - 当日 0 篇新增（全部已收录）：写一行说明即可，不要重复归档。
 - WebFetch 失败：笔记降级为仅基于摘要，标注「仅摘要分析」。
+
+## 术语渲染规则（glossary 驱动）
+
+每日速览与笔记写作时，对领域术语按 `glossary/terms.yaml` 的 level 处理：
+
+- **known**：直接使用，不解释（用户已熟悉）。
+- **learning / unknown**：当日速览中**首次出现**时带一句话括号解释，如「PagedAttention（分页管理 KV cache 的显存技术）」；之后裸奔。
+- 每日速览尾部加「📖 今日新词」小节：集中列出当日出现的 learning/unknown 术语及解释（从 terms.yaml 取）。
+- 遇到未收录的领域核心术语（当日 ≥2 篇论文涉及）：自动追加到 terms.yaml（level: learning，附一句话解释与相关子方向）。
+- **用户口头校正**（对话中）：「这词我熟」→ 改 known；「这个词不懂」→ 改 unknown 并当场解释。精读笔记中标注「新学到的术语」也同步入表。
+- 术语等级调整后无需重写旧速览，只影响后续产出。
+
+## 待读队列处理（reading-list.md）
+
+- 每日任务（步骤 4.5）：读 `reading-list.md`，取状态 pending 中优先级最高（同优先级按日期先到先做）的 N 篇（N=`profile/interests.yaml` 的 `daily_queue_reads`，默认 2）执行精读流程（WebFetch arXiv abs/HTML → `notes/papers/YYYY-MM-DD-<slug>.md`，模板见 notes/papers/README.md）。
+- 完成后：reading-list 该行状态改 done、笔记列填链接；当日速览「💎 今日深读」节引用该笔记。
+- 用户在对话中说「把 X 加入待读」：查 arXiv ID/标题（可从 index.json 或当日数据找），追加行（状态 pending，优先级默认 2，用户指定则用之）。
+- 对话中说「精读 X」：**立即**执行精读流程（不等每日任务），产出同上。
+
+## 月度 digest 任务（每月 1 日的每日任务附加步骤）
+
+- 触发：每日任务开始时检查当天是否为当月 1 日（或 digest/ 缺上月文件）。
+- 流程：
+  1. `python3 scripts/make_digest.py --month <上月YYYY-MM> --clean` 生成草稿（含当月 infra 归档全量 + 超期 daily 清理）。
+  2. Agent 润色草稿为 `digest/<YYYY-MM>.md`：补「子方向趋势」（如「本月投机解码 5 篇，主流路线从 draft-model 转向 draft-tree」）与「新术语」节（当月 terms.yaml 新增项）。
+  3. 更新 `glossary/profile.md`：按当月 terms level 变化 + 精读记录更新领域雷达与成长轨迹。
+  4. insights 检查：某子方向归档累计 ≥5 篇且无对应 `notes/insights/<主题>.md` → 新建主题笔记骨架。
+- `daily/` 保留 90 天；超期由脚本 `--clean` 删除（git 历史永久可查，README 已说明查法）。
+
+## insights 主题笔记规范
+
+- 命名：`notes/insights/<子方向或主题>-<视角>.md`（如 `kv-cache-landscape.md`、`spec-decoding-comparison.md`）。
+- front-matter 必含 `来源论文: [arXiv IDs]` 与 `更新: 日期`，保证可溯源。
+- 内容结构：问题定义 / 方法流派对比 / 演进脉络 / 个人观点 / 待验证问题。是**知识结晶**不是论文流水。
+- 更新时机：月度 digest 任务；或用户对话中要求「总结一下 X 方向」。

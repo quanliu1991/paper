@@ -1,0 +1,28 @@
+# 兴趣配置（每日分析侧重）
+
+# 各子方向权重：Agent 分析速览时按权重决定篇幅与深读候选倾向；0 = 不关注
+# 每日任务也可以临时按当日热点调整，但默认遵循此配置
+
+weights:
+  serving-system: 1.0
+  kv-cache: 1.0
+  speculative-decoding: 1.0
+  quantization-compression: 1.0
+  parallelism-scheduling: 1.0
+  moe-inference: 1.0
+  long-context-vlm: 1.0
+  inference-other: 0.5
+
+# 普通主题（速览保留但篇幅低）
+topic_weights:
+  models: 0.5
+  training: 0.5
+  reasoning: 0.5
+  agents: 0.5
+  applications: 0.5
+
+# 每日深读篇数上限
+daily_deep_reads: 3
+
+# 每日待读队列消化篇数
+daily_queue_reads: 2

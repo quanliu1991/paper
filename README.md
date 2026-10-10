@@ -13,14 +13,28 @@
 
 | 目录 | 内容 |
 |---|---|
-| [daily/](daily/) | 每日速览（推理 Infra 类排最前，精选 ⭐ 置顶） |
-| [topics/inference/](topics/inference/) | ★ 重点：推理 Infra 专题（serving / KV cache / 投机解码 / 量化 / 并行调度 / MoE / 长上下文 VLM） |
-| [topics/inference/notes/](topics/inference/notes/) | 重点论文深度笔记 |
+| [daily/](daily/) | 每日速览（推理 Infra 类排最前；保留 90 天，旧文查 git 历史） |
+| [digest/](digest/) | ★ 月度回顾：infra 精选 + 趋势 + 新术语（压缩层） |
+| [topics/inference/](topics/inference/) | ★ 重点：推理 Infra 归档（serving / KV cache / 投机解码 / 量化 / 并行调度 / MoE / 长上下文 VLM） |
+| [notes/papers/](notes/papers/) | 单篇精读笔记（含复现要点） |
+| [notes/insights/](notes/insights/) | 主题式知识结晶（跨论文方法地图） |
+| [reading-list.md](reading-list.md) | 待读队列（对话中让 Agent 添加，每日自动消化） |
+| [glossary/terms.yaml](glossary/terms.yaml) | 个人术语词典（熟词裸奔、生词自动解释） |
+| [glossary/profile.md](glossary/profile.md) | 个人知识画像（领域雷达 + 成长轨迹） |
+| [profile/interests.yaml](profile/interests.yaml) | 方向权重配置（调整每日侧重与深读上限） |
 | [topics/models/](topics/models/) | 模型架构 |
 | [topics/training/](topics/training/) | 训练方法 |
 | [topics/reasoning/](topics/reasoning/) | 认知推理（CoT、test-time scaling 等） |
 | [topics/agents/](topics/agents/) | 智能体 |
 | [topics/applications/](topics/applications/) | 应用与评测 |
+
+## 个人使用方式
+
+- 每天扫一眼当日 `daily/`（生词自动带解释）
+- 想精读：对话说「精读 X」或「把 X 加入待读」（每日 21:00 自动消化队列）
+- 想看积累：`topics/inference/`（论文流水）+ `notes/insights/`（方法地图）+ `digest/`（月度回顾）
+- 术语错了说「这词我熟」/「这个词不懂」；画像每月自动更新
+- 查 90 天前的旧速览：`git log --all -- 'daily/**'` 或问 Agent
 
 ## 最近 7 天
 

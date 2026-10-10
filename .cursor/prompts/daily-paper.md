@@ -25,16 +25,25 @@ python3 scripts/fetch_papers.py --date <d>
 - 思维链/认知推理论文（CoT、test-time scaling、RL 训推理）→ 「认知推理」普通节，重点者归档 `topics/reasoning/papers.md`。
 
 ### 4. 深读 Top 论文
-- 选 upvotes 最高 + infra 分最高的 3-5 篇，用 WebFetch 抓 `arxiv_url`（abs 页）深入分析。
-- 每篇写深度笔记到 `topics/inference/notes/<d>-<slug>.md`（模板见 AGENTS.md）。
+- 选 upvotes 最高 + infra 分最高的 3-5 篇（上限 `profile/interests.yaml` 的 `daily_deep_reads`，子方向按权重倾斜），用 WebFetch 抓 `arxiv_url`（abs 页）深入分析。
+- 每篇写深度笔记到 `notes/papers/<d>-<slug>.md`（模板见 notes/papers/README.md，必含「复现要点」节）。
 - 仅当 infra 分 ≥4 的论文才值得深读；若当日无高分 infra 论文，可深读 featured 且 infra 相关的。
 
+### 4.5 消化待读队列（reading-list.md）
+- 读 reading-list.md，取 pending 中优先级最高的 N 篇（N=interests.yaml 的 daily_queue_reads，默认 2），执行与步骤 4 相同的精读流程。
+- 完成后该行改 done、填笔记链接；当日速览「💎 今日深读」引用。
+- 若当日抓取数据里出现与队列某篇相同的 arXiv ID，一并处理（去重）。
+
 ### 5. 写入产出
-- `daily/<YYYY>/<MM>/<d>.md` 每日速览（模板见 AGENTS.md，推理 Infra 节排最前）。
+- `daily/<YYYY>/<MM>/<d>.md` 每日速览（模板见 AGENTS.md，推理 Infra 节排最前，尾部「📖 今日新词」节按术语渲染规则生成）。
 - 重点论文追加到 `topics/<topic>/papers.md`（按子方向小节、日期倒序插入）。
 - **归档安全**：写 topics 前必须重新 Read 目标文件最新内容，只做插入/追加，严禁整文件重写（详见 AGENTS.md「归档写入安全」）。
 - **每个日期处理完后立即运行** `python3 scripts/update_index.py`（重建去重索引，防止后续日期重复抓取已收录论文），不要手动编辑 index.json。
 - 更新 `README.md` 的「最近 7 天」链接列表（含每日篇数）。
+- **术语维护**：当日出现 ≥2 篇论文共用的未收录核心术语 → 追加 glossary/terms.yaml（level: learning）。
+
+### 5.5 月度任务（仅当今天是当月 1 日，或 digest/ 缺上月文件）
+- 按 AGENTS.md「月度 digest 任务」执行：make_digest.py 生成草稿并润色、更新 glossary/profile.md、检查 insights 主题笔记缺口。
 
 ### 6. 提交
 ```bash
@@ -51,6 +60,6 @@ bash scripts/git_push.sh
 ## 约束
 - 80 篇/天为正常规模；单日超过 120 篇时只精读 featured + infra_hit 的，其余写一行速记。
 - 速读必须基于真实摘要内容，禁止编造；摘要太短（<50 词）可 WebFetch arXiv 页补充。
-- 所有输出中文（术语保留英文）。
+- 所有输出中文（术语保留英文），**术语按 glossary/terms.yaml level 渲染**（详见 AGENTS.md「术语渲染规则」）。
 - infra 关键词命中但内容明显无关（如医学 inference）→ 低分 1-2 并标注，不入重点节。
-- 完成后在会话里简报：日期、总篇数、infra 篇数、深读篇数、push 状态。
+- 完成后在会话里简报：日期、总篇数、infra 篇数、深读篇数、队列消化篇数、push 状态。
