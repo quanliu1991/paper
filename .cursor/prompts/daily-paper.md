@@ -35,6 +35,11 @@ python3 scripts/fetch_papers.py --date <d>
 - 完成后该行改 done、填笔记链接；当日速览「💎 今日深读」引用。
 - 若当日抓取数据里出现与队列某篇相同的 arXiv ID，一并处理（去重）。
 
+### 4.6 回答笔记中的未决追问
+- 扫描 notes/papers/*.md 中 `> ❓ **Q:**` 且尚无 **A:** 的条目。
+- 按 AGENTS.md「精读追问机制」回答：可答的原位展开为问答对；涉及论文细节先 WebFetch 对应章节；无法回答的标注「待论文开源/待实测」。
+- 新术语同步 glossary/terms.yaml。
+
 ### 5. 写入产出
 - `daily/<YYYY>/<MM>/<d>.md` 每日速览（模板见 AGENTS.md，推理 Infra 节排最前，尾部「📖 今日新词」节按术语渲染规则生成）。
 - 重点论文追加到 `topics/<topic>/papers.md`（按子方向小节、日期倒序插入）。
