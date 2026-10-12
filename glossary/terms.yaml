@@ -215,3 +215,18 @@ terms:
     解释: 让 draft 模型适应「以自身 hidden states 为输入继续起草」这一新分布的轻量训练
     相关: [speculative-decoding]
     首见: 2026-10-10 DLoop
+  RoPE:
+    level: learning
+    解释: 旋转位置编码，把位置信息以旋转矩阵写进 Q/K；KV 复用时可按新位置重做旋转实现对齐
+    相关: [kv-cache, models]
+    首见: 2026-10-12 KV-Repurpose
+  PIC (Position-Independent Caching):
+    level: learning
+    解释: 位置无关缓存——KV 段脱离原前缀在新位置复用（CacheBlend/EPIC 等），与 prefix caching 相对
+    相关: [kv-cache]
+    首见: 2026-10-12 KV-Repurpose
+  LMCache:
+    level: learning
+    解释: vLLM 的 KV cache 扩展层，支持分层存储，但复用仍以精确前缀匹配为主
+    相关: [kv-cache, serving-system]
+    首见: 2026-10-12 KV-Repurpose
