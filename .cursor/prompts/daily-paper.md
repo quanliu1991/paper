@@ -26,7 +26,7 @@ python3 scripts/fetch_papers.py --date <d>
 
 ### 4. 深读 Top 论文
 - 选 upvotes 最高 + infra 分最高的 3-5 篇（上限 `profile/interests.yaml` 的 `daily_deep_reads`，子方向按权重倾斜），用 WebFetch 抓 `arxiv_url`（abs 页）深入分析。
-- **关键图表**：curl 抓 `https://arxiv.org/html/<arxiv_id>` 提取 `<figure>` 块（图片 URL 相对路径需拼 `https://arxiv.org/html/<arxiv_id>v<N>/` 前缀）；位图下载到 `notes/papers/assets/<arxiv_id>-fig<N>-<slug>.png` 嵌入笔记；SVG/matplotlib 图给 arXiv HTML 锚点链接（`https://arxiv.org/html/<id>#<fig_id>`）；关键数据表转 markdown 表格。
+- **关键图表**：curl 抓 `https://arxiv.org/html/<arxiv_id>` 提取 `<figure>` 块（图片 URL 相对路径需拼 `https://arxiv.org/html/<arxiv_id>v<N>/` 前缀）；位图下载到 `notes/papers/assets/<arxiv_id>-fig<N>-<slug>.png` 嵌入笔记；SVG 图也**下载嵌入**（`<object data="*.svg">` 引用的外部 SVG 直接下载到 `assets/<arxiv_id>-fig<N>-<slug>.svg`，`![描述](...)` 嵌入；markdown 里 SVG 可直接渲染，比链接体验好），嵌入时每图配图注+arXiv 锚点链接；关键数据表转 markdown 表格。SVG 单张可能几 MB，curl 加 `--max-time 120` 逐张下载。
 - 每篇写深度笔记到 `notes/papers/<d>-<slug>.md`（模板见 notes/papers/README.md，必含「复现要点」节）。
 - **抓取后把全文缓存到 `notes/papers/.fulltext/<arxiv-id>.txt`**（供用户后续追问，秒级读取）。
 - 仅当 infra 分 ≥4 的论文才值得深读；若当日无高分 infra 论文，可深读 featured 且 infra 相关的。
