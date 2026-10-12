@@ -44,6 +44,7 @@
 | `topics/<topic>/papers.md` | 其他主题归档（models/training/reasoning/agents/applications） |
 | `digest/YYYY-MM.md` | 月度压缩层：当月 infra 精选 + 趋势 + 新术语（一年后只看这层也够） |
 | `reading-list.md` | 待读队列：用户加入，每日任务消化优先级最高的 1-2 篇 |
+| `profile/preferences.yaml` | 阅读偏好账本：行为信号（精读/待读/追问/口头反馈）按子方向累计，驱动每日推荐 |
 | `glossary/terms.yaml` | 个人术语词典（known/learning/unknown 分级） |
 | `glossary/profile.md` | 个人知识画像（领域雷达 + 成长轨迹，月度更新） |
 | `notes/papers/` | 单篇精读笔记（含复现要点） |
@@ -75,6 +76,10 @@
 
 ## 💎 今日 Top 深读
 - [笔记标题](../notes/papers/YYYY-MM-DD-xxx.md) — 一句话说明为何值得深读
+
+## 👓 今日推荐
+- 标题 — 推荐理由（子方向 + 偏好依据）[arXiv](...)
+- （按 preferences.yaml 推荐分选 2 个方向；无偏好信号时按 featured+infra 选）
 
 ## 📖 今日新词
 - **术语**（level）：一句话解释（learning/unknown 术语集中区；known 不列）
@@ -175,6 +180,13 @@ serving-system（serving 系统/引擎/集群）/ kv-cache（KV cache 与显存�
 - 对话中说「精读 X」：**立即**执行精读流程（不等每日任务），产出同上。
 - **精读时必须缓存全文**：WebFetch 后把全文写入 `notes/papers/.fulltext/<arxiv-id>.txt`（git 忽略），后续追问直接读缓存。
 - **追问处理**：用户对精读笔记追问时，读 `.fulltext/` 缓存（无则补抓）作答，答案引用论文具体章节；有价值的 Q&A 追加到笔记 `## Q&A` 节（详见 notes/papers/README.md「追问处理规范」）。
+
+## 个性化推荐（profile/preferences.yaml 驱动）
+
+- **信号累计**：精读完成（子方向 +2）、加入待读（+1）、追问涉及（+0.5）、口头反馈「喜欢这类」（+3）/「不感兴趣」（-2，记 explicit）。每日任务步骤 4.5b 更新。
+- **推荐分** = interests.yaml 基础权重 × (1 + score/10)；每日速览「👓 今日推荐」节按分挑 2 个方向的未读论文，注明推荐依据（如「你精读过 2 篇 serving-system」）。
+- 推荐不自动入待读队列；explicit 负反馈方向 30 天内不推荐；冷启动（全 0）退化按 featured+infra。
+- 用户口头说「最近老推 X，腻了」等负反馈 → 记入 explicit 并当轮生效。
 
 ## 精读追问机制（notes/papers/ 配套）
 

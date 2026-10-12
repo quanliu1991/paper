@@ -15,6 +15,8 @@ arxiv: 2610.xxxxx
 
 # 标题
 
+> 原文：[abs](https://arxiv.org/abs/2610.xxxxx) · [PDF](https://arxiv.org/pdf/2610.13060)
+
 ## 背景与动机（解决什么问题，为什么难；类比开头，直接写进正文，别加「白话版」之类的标签）
 ## 方法（核心思路 + 伪代码/示意）
 ### 关键图表（位图下载到 assets/ 嵌入；SVG 给 arXiv HTML 锚点链接；关键表格转 markdown）

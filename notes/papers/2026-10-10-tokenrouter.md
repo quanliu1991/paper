@@ -8,6 +8,8 @@ arxiv: 2610.12242
 
 # TokenRouter: Efficient Serving System for Token-Level LLM Routing
 
+> 原文：[abs](https://arxiv.org/abs/2610.12242) · [PDF](https://arxiv.org/pdf/2610.12242)
+
 > 清华 NICS 组。解决 token 级 LLM 路由（token-level routing）在现有 serving 系统上跑不起来的问题。
 
 ## 背景与动机

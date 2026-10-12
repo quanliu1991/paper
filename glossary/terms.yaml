@@ -230,3 +230,18 @@ terms:
     解释: vLLM 的 KV cache 扩展层，支持分层存储，但复用仍以精确前缀匹配为主
     相关: [kv-cache, serving-system]
     首见: 2026-10-12 KV-Repurpose
+  BPE (Byte-Pair Encoding):
+    level: learning
+    解释: 从字节对逐步合并出 token 的分词算法，GPT-2/Llama/Qwen 等主流 tokenizer 的核心；合并在 pre-token 内按 rank 有序进行
+    相关: [serving-system]
+    首见: 2026-10-12 GraphTok
+  Pre-tokenization:
+    level: learning
+    解释: BPE 前用正则把文本切成 pre-token 小段、合并不许跨界的一步；删掉它会改变最终 token 序列
+    相关: [serving-system]
+    首见: 2026-10-12 GraphTok
+  gigatoken:
+    level: learning
+    解释: 目前最强的 CPU BPE tokenizer 库（Rust，SIMD + pre-token 缓存），serving 论文常见最强 CPU 基线
+    相关: [serving-system]
+    首见: 2026-10-12 GraphTok
