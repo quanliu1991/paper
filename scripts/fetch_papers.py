@@ -60,9 +60,14 @@ def load_index() -> dict:
 
 
 def arxiv_id_from_url(url: str) -> str:
-    # https://huggingface.co/papers/2610.08077 -> 2610.08077
+    # https://huggingface.co/papers/2610.08077 -> 2610.08077（剥离 vN 版本号，保证跨源去重）
     m = re.search(r"(\d{4}\.\d{4,6})(v\d+)?$", url.strip())
     return m.group(1) if m else url.strip("/").split("/")[-1]
+
+
+def norm_id(pid: str) -> str:
+    """统一去掉 arXiv ID 尾部版本号（2610.12939v1 -> 2610.12939），跨源去重主键。"""
+    return re.sub(r"v\d+$", "", pid)
 
 
 def hit_reasoning(text: str, keywords: list) -> bool:
@@ -143,7 +148,7 @@ def fetch_arxiv(cfg: dict, date: str) -> list:
         pid_el = entry.find(f"{ATOM_NS}id")
         if pid_el is None:
             continue
-        m = re.search(r"abs/([\w.\-]+)(v\d+)?$", pid_el.text or "")
+        m = re.search(r"abs/([\w.\-]+?)(v\d+)?$", pid_el.text or "")
         if not m:
             continue
         pid = m.group(1)
@@ -202,10 +207,11 @@ def main() -> int:
     if len(ax) > ax_cap:
         ax = ax[:ax_cap]
 
-    # 合并去重（同 ID 时保留 HF 记录，其 upvotes 更可信）
+    # 合并去重（同 ID 时保留 HF 记录，其 upvotes 更可信；ID 统一去掉 vN 后缀）
     merged = {}
     for p in hf + ax:
-        pid = p["arxiv_id"]
+        pid = norm_id(p["arxiv_id"])
+        p["arxiv_id"] = pid
         if pid not in merged:
             merged[pid] = p
         elif p["source"] == "hf_daily":

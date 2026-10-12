@@ -23,8 +23,7 @@ signals:
     精读: 1        # KV-Repurpose
     待读加入: 0
     追问: 0
-    score: 2.0
-  quantization-compression: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
+    score: 2.0  quantization-compression: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   parallelism-scheduling: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   moe-inference: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   long-context-vlm: {精读: 0, 待读加入: 0, 追问: 0, score: 0}

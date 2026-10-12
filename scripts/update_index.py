@@ -33,6 +33,7 @@ def main() -> int:
             pid = p.get("arxiv_id")
             if not pid:
                 continue
+            pid = re.sub(r"v\d+$", "", pid)  # 统一剥离版本号，跨源去重主键
             papers[pid] = {
                 "title": p.get("title", ""),
                 "date_added": d.get("date", ""),

@@ -27,6 +27,11 @@ agentic 负载反复重发几乎不变的超长上下文，prefix caching 省掉
 
 ## KV Cache 与显存
 
+### 2026-10-12 · QuantMLA: Function-Aligned Dual-Path Quantization for Low-Bit MLA KV Caching ⭐
+> [arXiv](https://arxiv.org/abs/2609.36760) · upvotes: 1 · infra 相关性: 5/5 · 子方向: kv-cache
+
+MLA（DeepSeek 式潜在注意力）的 cache 含内容路与 RoPE 路，低比特量化一直难做。QuantMLA 系统建模双路量化误差对注意力输出失真的不同影响（RoPE 路误差被显著放大），推导保精度的路径专属变换空间且可离线融合进权重、零在线开销；content 路以注意力输出重构为目标、RoPE 路以 QK 重构为目标并给出失真上界。首个 content+RoPE 双 INT4 联合缓存方案（4 个 MLA 模型族精度几乎不掉），content 再压 INT2 仍有竞争力；原生低比特 MLA attention kernel 融合解包与反量化，128K 物理 cache 布局压缩 3.59x，cache 压力负载整卡输出吞吐 5.17x。
+
 ### 2026-10-10 · KV-Repurpose: A Testbed for Evaluating Non-Prefix KV-Cache Reuse ⭐
 > [arXiv](https://arxiv.org/abs/2610.13060) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
 
@@ -65,6 +70,11 @@ Looped Transformer 的 KV cache 随循环次数线性膨胀成为解码吞吐与
 
 ## 投机解码
 
+### 2026-10-12 · Contextual Correction of Parallel Drafts for Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.12570) · upvotes: 18 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+并行 drafter（DFlash 一类）一次并行预测多个未来位置的 token，但块内 token 看不到彼此的实现身份，丢了自回归天然具备的块内依赖。DCOCO（DFlash Contextual Corrector）不提交各位置 top-1，保留多候选 token 并行评估相邻位置的上下文兼容性再做选择，轻量地恢复块内依赖。4 种 verifier × 10 基准全部最高吞吐（greedy/随机解码最高 6.6x）；4–32 并发 serving 下比最强对手快 6–23%，而串行式纠正器在高并发下反而低于不加纠正的 DFlash。
+
 ### 2026-10-10 · S$^3$R: Fast and Faithful RL Rollouts via Self-Sparse Speculative Decoding ⭐
 > [arXiv](https://arxiv.org/abs/2610.13202) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
 
@@ -87,6 +97,11 @@ RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间�
 
 
 ## 量化与压缩
+
+### 2026-10-12 · SoloQ: Calibration-Free Quantization for Diffusion Language Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.07121) · upvotes: 30 · infra 相关性: 5/5 · 子方向: quantization-compression
+
+扩散语言模型（dLLM）部署贵的两处：全序列去噪反复跑计算密集前向，块扩散模型还引入访存密集的 KV cache；而现有 dLLM 后训练量化都要校准数据，激活分布还随 masking 状态与去噪步漂移。SoloQ 免校准：结构化 K-RPBH 旋转把权重/激活映到边缘分布可预测的规范基，支持分布匹配码本与 NVFP4；块扩散模型对持久 KV cache 做 commit 时量化，不扰动正在去噪的块。LLaDA/Dream/Fast-dLLM v2/Nemotron-Labs-Diffusion 上 4-bit 保精度且反超校准式基线；NVFP4 峰值显存降 2.61x、端到端加速 2.24x。
 
 ### 2026-10-09 · SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference ⭐
 > [arXiv](https://arxiv.org/abs/2610.12327) · upvotes: 19 · infra 相关性: 5/5 · 子方向: quantization-compression
@@ -153,6 +168,16 @@ RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间�
 
 ## 长上下文与 VLM
 
+### 2026-10-12 · VisionWeave: Weaving Elastic Visual Representations as a Native Capability of MLLMs ⭐
+> [arXiv](https://arxiv.org/abs/2610.07987) · upvotes: 52 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+视觉 token 该细处细、该粗处粗——把「弹性视觉表示编织」训成 MLLM 原生能力：gated spatial pooler 在共享 MRoPE 坐标内同时构造粗/细两级表示，granularity router 按内容自适应分配；纯自蒸馏训练并从 Qwen3.5-4B 扩到 Qwen3.8-27B（30K+ A100 时）。平均省 43.0% token 保留 98.9% 性能（固定 50% 剪枝基线只保 88%）；SGLang 部署吞吐 2.3x、mean TTFT 降 54.4%、TPOT 降 60.6%。
+
+### 2026-10-12 · MixTok: Adaptive Visual Tokenization with Global 1D Tokens and Sparse 2D Refinement ⭐
+> [arXiv](https://arxiv.org/abs/2610.13181) · upvotes: 11 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+混合视觉 tokenizer：全局用紧凑 1D token、内容自适应 router 只在高细化优先级位置稀疏补 2D token 做局部精修（预算内定数量），高分位置 2D 特征替换 1D 恢复的空间特征后共享 decoder 重建。ImageNet 256² 平均约 128 content token 即达 rFID 1.195 / gFID 1.95。
+
 ### 2026-10-09 · REMORY: Learning Residual Memory for Context Compaction
 > [arXiv](https://arxiv.org/abs/2610.11287) · upvotes: 2 · infra 相关性: 4/5 · 子方向: long-context-vlm
 
@@ -190,6 +215,21 @@ RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间�
 
 
 ## Others
+
+### 2026-10-12 · PreSTO: Predictive Subtree Prefetching for Fast LLM Power Sampling ⭐
+> [arXiv](https://arxiv.org/abs/2610.13171) · upvotes: 9 · infra 相关性: 4/5 · 子方向: inference-other
+
+PowerMH（test-time 从锐化分布采样的 MH 采样器）慢在接受/拒绝决策串行：每次决策决定下一提议的起点。PreSTO 把未来 MH 结果看成接受/拒绝决策树，一次模型调用批量预取一棵子树的全部提议，沿真实路径用原 MH 接受规则走——可证明不改变 MH 转移核；再利用「MH 只走到树的稀疏近单叉区域」设计预测式遍历。7 数据集 × 5 模型，PowerMH/EntropyCut/MultiTryMH 中位加速 1.71/1.91/2.33x，模型调用少 3.9x。
+
+### 2026-10-12 · Stateless Language Agents: Scaling Long-Horizon Automated Research ⭐
+> [arXiv](https://arxiv.org/abs/2610.07625) · upvotes: 9 · infra 相关性: 4/5 · 子方向: inference-other
+
+长时程自动化研究的两个失败根源：研究状态存在对话里（历史越滚越长）、下一步做什么由 agent 自己决定（重复劳动）。SLA 反其道：harness 持有研究状态（候选解+实验结果），每次调用重建角色专属新鲜上下文；Advisor 读全局证据派实验、并行 Worker 执行。十亿 token 预算下所有任务最佳，追平最强 kernel 基线只用 17% token；Advisor 仅耗 0.6% token。
+
+### 2026-10-12 · MetaKernelBench: Measuring GPU Kernel Knowledge Transfer Beyond Code ⭐
+> [arXiv](https://arxiv.org/abs/2610.05014) · upvotes: 11 · infra 相关性: 4/5 · 子方向: inference-other
+
+测 GPU kernel 优化 agent 蒸馏经验的跨 DSL 复用价值：74 对只差 DSL（CuTe vs TIRx）的孪生题，agent 先解一个变体、把所学蒸馏成自然语言技能，同模型带技能解另一变体。6 模型双向配对提升 -19% 到 +29%，每个模型/方向都有 16–45% 的题回退——kernel 经验迁移并非稳赚，给「agent 记忆沉淀」热潮泼了盆冷水。
 
 ### 2026-10-09 · CARE: Certifying Acceleration for Vision-Language-Action Inference
 > [arXiv](https://arxiv.org/abs/2610.08917) · upvotes: 1 · infra 相关性: 4/5 · 子方向: inference-other
