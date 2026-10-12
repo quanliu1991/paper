@@ -4,6 +4,11 @@
 
 ## Serving 系统
 
+### 2026-10-10 · Taking Tokenization off the Host for Agentic LLM Serving ⭐
+> [arXiv](https://arxiv.org/abs/2610.13325) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
+
+agentic 负载反复重发几乎不变的超长上下文，prefix caching 省掉重复 prefill 后，全量 tokenization 反而成为 TTFT 的最大组成与前端 GPU 喂数瓶颈。GraphTok 把预分词、BPE 合并、token ID 拼装整条流水线做成一个可重放 CUDA Graph，bit 级复现 GPT-2/Llama 3/Qwen 2.5/DeepSeek-V3/Gemma 3 结果，短输入回落 CPU，即插即用接入 vLLM 与 NVIDIA Dynamo。100 万 GPT-2 token 编码仅 1.7–3.2ms，比最强 CPU tokenizer gigatoken 快 4.7–6.0x；vLLM 缓存命中场景平均 TTFT 降 2.1–2.4x；2s P99 目标下单 Dynamo 前端撑起 518 req/s 的 121K token 流量（默认 tokenizer 仅 18.5）。
+
 ### 2026-10-09 · TokenRouter: Efficient Serving System for Token-Level LLM Routing ⭐
 > [arXiv](https://arxiv.org/abs/2610.12242) · upvotes: 87 · infra 相关性: 5/5 · 子方向: serving-system
 
@@ -21,6 +26,11 @@
 
 
 ## KV Cache 与显存
+
+### 2026-10-10 · KV-Repurpose: A Testbed for Evaluating Non-Prefix KV-Cache Reuse ⭐
+> [arXiv](https://arxiv.org/abs/2610.13060) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+KV cache 复用目前基本局限于完全一致的 prompt 前缀，同一篇检索文档跟在不同 system prompt 或对话历史后面时无法复用。KV-Repurpose 是开源的 vLLM 修正版试验台，支持段级（segment-wise）非前缀 KV 复用的开发与评测，含 cache 感知段调度、prompt 构造、容量管理、负载生成与运行时监控。Zipfian RAG 负载下（20% 请求共享固定前缀），30GB 缓存时段级复用 token 命中率 63.9% vs prefix caching 3.3%；后者即便 1TB 缓存也只到 17.9%。
 
 ### 2026-10-09 · MC-Sparse: Deconstructing and Closing the Dense-Sparse Attention Gap in Diffusion Transformers ⭐
 > [arXiv](https://arxiv.org/abs/2610.06801) · upvotes: 25 · infra 相关性: 5/5 · 子方向: kv-cache
@@ -54,6 +64,16 @@ Looped Transformer 的 KV cache 随循环次数线性膨胀成为解码吞吐与
 
 
 ## 投机解码
+
+### 2026-10-10 · S$^3$R: Fast and Faithful RL Rollouts via Self-Sparse Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.13202) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间的 72–76%，但直接用稀疏注意力采样会改变训练所依赖的 response group 分布，group-relative 优化下连精确的 response 级重加权也无法恢复期望的稠密策略更新。S³R 用稀疏注意力起草 token、全注意力验证并做精确投机采样，draft 与验证共享同一策略参数免训 drafter，KV-aware 调度器限制 KV cache 反复 offload/恢复。Qwen3 长上下文数学推理端到端训练吞吐 1.35–1.39x，任务表现持平；对照的稀疏直接采样 + 训练侧修正方案训练失稳。
+
+### 2026-10-10 · Surfing the Activation Wave: Analyzing the Information and Geometry of LLM Hidden States for Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.12939) · upvotes: 0 · infra 相关性: 4/5 · 子方向: speculative-decoding
+
+投机解码的 draft model 从 target 哪几层取 hidden states 通常靠位置启发式（如 EAGLE3 默认 [2, N//2, N-3]）。该工作给出 principled 的层选择框架：matrix-entropy 衡量信息量、CKA 衡量冗余度，并加 token-entropy 过滤剔除低预测熵 token 的 hidden states 改善统计质量。在 EAGLE3 式投机解码上，选出的层集合优于固定默认规则，并解释了为什么某些默认选择碰巧有竞争力。
 
 ### 2026-10-08 · DLoop: Looped Speculative Decoding ⭐
 > [arXiv](https://arxiv.org/abs/2610.07659) · upvotes: 12 · infra 相关性: 5/5 · 子方向: speculative-decoding

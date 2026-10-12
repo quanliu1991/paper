@@ -3059,6 +3059,60 @@
    "infra_hit": true,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.08941"
+  },
+  "2610.13370v1": {
+   "title": "Overcoming Data Imbalances with Expert Selection Biases",
+   "date_added": "2026-10-10",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.13370v1"
+  },
+  "2610.13325v1": {
+   "title": "Taking Tokenization off the Host for Agentic LLM Serving",
+   "date_added": "2026-10-10",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.13325v1"
+  },
+  "2610.13202v1": {
+   "title": "S$^3$R: Fast and Faithful RL Rollouts via Self-Sparse Speculative Decoding",
+   "date_added": "2026-10-10",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.13202v1"
+  },
+  "2610.13132v1": {
+   "title": "DP-MIND: Differentially private memory-guided Long context Inference",
+   "date_added": "2026-10-10",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.13132v1"
+  },
+  "2610.13060v1": {
+   "title": "KV-Repurpose: A Testbed for Evaluating Non-Prefix KV-Cache Reuse",
+   "date_added": "2026-10-10",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.13060v1"
+  },
+  "2610.12939v1": {
+   "title": "Surfing the Activation Wave: Analyzing the Information and Geometry of LLM Hidden States for Speculative Decoding",
+   "date_added": "2026-10-10",
+   "source": "arxiv_kw",
+   "upvotes": 0,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12939v1"
   }
  }
 }

@@ -205,3 +205,13 @@ terms:
     解释: 请求到达时目标模型正忙，须等下一批才能入队的延迟，token 路由下尤其严重
     相关: [serving-system, parallelism-scheduling]
     首见: 2026-10-10 TokenRouter
+  Verification (投机解码):
+    level: learning
+    解释: 投机解码中 target 模型一次前向同时验证多个 draft token 的环节，前向代价高
+    相关: [speculative-decoding]
+    首见: 2026-10-10 DLoop
+  Loop-aware Training:
+    level: learning
+    解释: 让 draft 模型适应「以自身 hidden states 为输入继续起草」这一新分布的轻量训练
+    相关: [speculative-decoding]
+    首见: 2026-10-10 DLoop
