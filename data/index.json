@@ -3428,6 +3428,141 @@
    "infra_hit": false,
    "reasoning_hit": false,
    "arxiv_url": "https://arxiv.org/abs/2610.13316"
+  },
+  "2609.39601": {
+   "title": "GroundingPI: A Grounding Foundation Model towards Physical Intelligence with Visual Primitives",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 178,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.39601"
+  },
+  "2610.13361": {
+   "title": "AgentSWE: Can Coding Agents Build the Agent You Actually Want?",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 162,
+   "infra_hit": false,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.13361"
+  },
+  "2610.13166": {
+   "title": "Scaling Agentic Data for Long-Horizon Terminal Intelligence",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 110,
+   "infra_hit": false,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.13166"
+  },
+  "2610.11765": {
+   "title": "Thinking Inertia: LLMs Keep Thinking When Told Not To",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 103,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.11765"
+  },
+  "2610.09326": {
+   "title": "VIS-Ground: Video Interactive Storytelling with Contextual Grounding",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 61,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09326"
+  },
+  "2610.13630": {
+   "title": "Multi-Stream Attention Residuals",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 32,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.13630"
+  },
+  "2609.33304": {
+   "title": "Relevance Does Not Imply Applicability: Experience Activation for Personal GUI Agents",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 28,
+   "infra_hit": false,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.33304"
+  },
+  "2609.36616": {
+   "title": "CrossTimeEdit: A Decade-Spanning Cross-View Dataset and Reward-Guided Editing for Historical Street-View Generation",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 19,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.36616"
+  },
+  "2609.39600": {
+   "title": "GroundAnything: Reconciling Parallel Decoding with Precise Visual Grounding at Flash Speed",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 17,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.39600"
+  },
+  "2610.13832": {
+   "title": "SpatialASM: Internalizing Active Mentalization for Spatial Reasoning",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 15,
+   "infra_hit": false,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.13832"
+  },
+  "2609.35965": {
+   "title": "Systematic Multi-Agent Vision-and-Language Navigation: Formulation, Benchmark, and Method",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 9,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2609.35965"
+  },
+  "2610.03308": {
+   "title": "T3lescope: Arbitrary-Resolution High-Fidelity Generative Surface Reconstruction from Images",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 8,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.03308"
+  },
+  "2610.09396": {
+   "title": "ARCS: Towards Precise Text-to-SQL via Structured Disambiguation",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 5,
+   "infra_hit": true,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09396"
+  },
+  "2610.12933": {
+   "title": "Learning More by Training Less: Uncertainty-Guided Progressive Contraction for Efficient Reasoning Post-Training",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 5,
+   "infra_hit": false,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.12933"
+  },
+  "2610.09116": {
+   "title": "SPLATIFY: Reproduce, Discover, Innovate! From Papers and Ideas to Trainable 3DGS Code",
+   "date_added": "2026-10-13",
+   "source": "hf_daily",
+   "upvotes": 1,
+   "infra_hit": false,
+   "reasoning_hit": false,
+   "arxiv_url": "https://arxiv.org/abs/2610.09116"
   }
  }
 }
