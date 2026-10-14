@@ -4,6 +4,11 @@
 
 ## Papers
 
+### 2026-10-14 · TPPO: Tracking-Value PPO For Language Model Reasoning ⭐
+> [arXiv](https://arxiv.org/abs/2610.16794) · upvotes: 60 · infra 相关性: 2/5 · 子方向: training
+
+RLVR 里标准 critic 在稀疏终端奖励下跟不住轨迹上的 value 演化。TPPO 分析相邻前缀 value 的贝叶斯分解，发现 log-odds 空间存在可加更新结构，据此构造累积 value 参数化（逐位置标量输出求和成 value logits），用终端结果监督训练。Qwen3-4B/8B-Base 数学推理超 PPO 7.0/8.4 分，OOD 泛化也更好，value 演化追踪与 advantage 估计更准。
+
 ### 2026-10-14 · Reinforcement Learning for LLMs: The Complete Guide ⭐
 > [Substack · Cameron R. Wolfe](https://cameronrwolfe.substack.com/p/llm-rl) · upvotes: 0 · 教程长文（非 arXiv）
 

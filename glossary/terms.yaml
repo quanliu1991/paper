@@ -310,3 +310,58 @@ terms:
     解释: clip 后 ratio 做 stop-gradient 权重而非梯度归零，保护 "wait"/"aha" 等稀有反思 token，MiniMax-M1 采用
     相关: [training]
     首见: 2026-10-14 LLM RL Complete Guide
+  Execution Bubble:
+    level: learning
+    解释: 调度中本可被合法工作填上的空闲批位；混合架构下 head-of-line blocking 的产物
+    相关: [serving-system]
+    首见: 2026-10-14 RadixFlow
+  Hybrid LLM:
+    level: learning
+    解释: linear attention（Mamba2 等）与 full attention 交错的架构（Qwen3.5/Nemotron v2），KV cache 外还有 recurrent state 需要 prefix 复用时同步
+    相关: [serving-system, kv-cache, models]
+    首见: 2026-10-14 RadixFlow
+  State-ready Traversal:
+    level: learning
+    解释: 扫描等待队列时只阻塞同轮依赖的消费者、继续检查后续就绪分支的调度规则
+    相关: [serving-system]
+    首见: 2026-10-14 RadixFlow
+  Behavior-Aligned Compression:
+    level: learning
+    解释: 压缩目标盯最终行为（注意力分布/输出）而非中间量重建误差；softmax 曲率项让目标 query-aware
+    相关: [kv-cache, quantization-compression]
+    首见: 2026-10-14 BELT
+  Learned Rank Allocation:
+    level: learning
+    解释: 跨层跨 head 学 rank 分配——软门控 top-k 训练 + 硬预算部署，替代统一 rank 或启发式敏感度搜索
+    相关: [kv-cache, quantization-compression]
+    首见: 2026-10-14 BELT
+  Palu:
+    level: learning
+    解释: 低秩 KV cache 压缩与量化的代表方法系列（含 Palu-Q 量化器）
+    相关: [kv-cache]
+    首见: 2026-10-14 BELT
+  STAR-KV:
+    level: learning
+    解释: 自适应 rank 控制的 SOTA 低秩 KV 压缩方法（学习块阈值）
+    相关: [kv-cache]
+    首见: 2026-10-14 BELT
+  Self-Speculative Decoding:
+    level: learning
+    解释: 用目标模型自身的变体（跳层/稀疏注意力/量化）做 drafter 的投机解码，免训练独立小模型
+    相关: [speculative-decoding]
+    首见: 2026-10-14 S3R
+  Behavior Policy Mismatch:
+    level: learning
+    解释: RL 中采样策略与被优化策略不一致（稀疏/低精度/过期 drafter 都会引起），GRPO 类组相对算法尤其敏感
+    相关: [training, speculative-decoding]
+    首见: 2026-10-14 S3R
+  Block Efficiency:
+    level: learning
+    解释: 投机解码每轮平均产出 token 数（含修正/bonus token），决定验证成本能否被摊薄
+    相关: [speculative-decoding]
+    首见: 2026-10-14 S3R
+  AIMD 调度:
+    level: learning
+    解释: 加性增、乘性减的并发/速率控制（TCP 拥塞控制同款），S3R 用于 RL rollout 的 KV 显存压力自适应
+    相关: [serving-system, parallelism-scheduling]
+    首见: 2026-10-14 S3R

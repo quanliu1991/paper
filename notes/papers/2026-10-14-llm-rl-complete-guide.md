@@ -75,6 +75,8 @@ DeepSeekMath 提出的动机很实在：critic 太贵了。GRPO 的替代方案�
 
 代价是每个 prompt 要多采样（一个 completion 构造不出组内基线），rollout 侧多花钱换训练侧砍掉一整个待训练模型——省下的是最贵的那种显存。某种意义上 GRPO = RLOO 的组基线 + PPO 的 clip 外壳。
 
+> 数值模拟走一遍完整训练流程（GSM8K + Qwen2.5-1.5B + RLVR，逐步张量与梯度账本）：[GRPO 训练全流程数值模拟](2026-10-14-grpo-training-simulation.md)
+
 ### GRPO++：规模化的补丁
 
 R1 开源后大家复现不动，补丁潮涌现。共同点：不重造轮子，只修细节——而细节在规模上就是生死。

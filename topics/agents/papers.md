@@ -4,6 +4,11 @@
 
 ## Papers
 
+### 2026-10-14 · Agent-Reflex: Teaching Language Agents to Act Reflectively ⭐
+> [arXiv](https://arxiv.org/abs/2610.17953) · upvotes: 107 · infra 相关性: 2/5
+
+agent 部署中 MCP 工具返回噪声反馈、用户中途纠正，但反思学习缺乏监督信号。三阶段训练框架：环境反思技能发现（注入工具反馈扰动 + 挖掘成败对 + 总结可复用反思元技能）→ 反思 SFT（把技能转成自反思/技能恢复/用户纠正监督）→ ORPO（噪声交互 agentic RL + 反思引导在线蒸馏）。Qwen3-8B 上五个长时程工具基准总分 58.6，AgentNoiseBench 29.1，超环境扩展与反思基线。
+
 ### 2026-10-09 · AgentGarten: Code Worlds for Evolving Agents ⭐
 > [arXiv](https://arxiv.org/abs/2610.12374) · upvotes: 0
 

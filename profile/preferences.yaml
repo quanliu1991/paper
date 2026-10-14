@@ -15,20 +15,20 @@ signals:
     追问: 0
     score: 2.0
   serving-system:
-    精读: 2        # TokenRouter、GraphTok
+    精读: 3        # TokenRouter、GraphTok、RadixFlow
     待读加入: 1    # TokenRouter
     追问: 1        # delayed-batching 推导、GPU 共卡账、SLO
-    score: 5.5
+    score: 7.5
   speculative-decoding:
-    精读: 1        # DLoop
+    精读: 2        # DLoop、S3R
     待读加入: 1    # DLoop
     追问: 1        # 与 token 路由对比、无损性
-    score: 3.5
+    score: 4.5
   kv-cache:
-    精读: 1        # KV-Repurpose
+    精读: 2        # KV-Repurpose、BELT
     待读加入: 0
     追问: 0
-    score: 2.0  quantization-compression: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
+    score: 4.0  quantization-compression: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   parallelism-scheduling: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   moe-inference: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   long-context-vlm: {精读: 0, 待读加入: 0, 追问: 0, score: 0}

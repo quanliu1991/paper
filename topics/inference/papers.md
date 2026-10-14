@@ -4,6 +4,21 @@
 
 ## Serving 系统
 
+### 2026-10-14 · RadixFlow: Filling Execution Bubbles in Prefix-Cached Hybrid LLM Serving ⭐
+> [arXiv](https://arxiv.org/abs/2610.18143) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
+
+混合架构（linear + full attention 混血）的 prefix cache 有隐藏陷阱：命中前缀也未必能跑——恢复分支还需要匹配边界处的 recurrent state，而它可能正被同轮 producer 分支计算。原生调度器扫到阻塞的 consumer 就终止整条等待队列扫描，head-of-line blocking 留下本可填满的空批位（execution bubble）。RadixFlow 的 state-ready traversal 只阻塞 consumer 本人、继续扫描独立分支，下轮唤醒重查；不改缓存存储与原生 state check，已集成 vLLM。五个混合模型（Qwen3.5 0.8B-27B、Nemotron-9B）平均延迟降 3-24%、轮次降 11-44%，复用率几乎不动；全注意力对照组延迟不变，证明收益确实来自混合架构依赖处理。精读笔记见 [notes/papers/2026-10-14-radixflow.md](../../notes/papers/2026-10-14-radixflow.md)。
+
+### 2026-10-14 · Stable Token-level Scheduling for Serverless LLM Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.17689) · upvotes: 0 · infra 相关性: 4/5 · 子方向: serving-system
+
+Serverless 推理只优化 TTFT、忽视 token 间延迟（ITL）的稳定：新请求入批会打断正在进行的 decode 造成延迟尖峰。TWP（Token Window Pacing）用 ITL/队列深度/负载特征的运行时反馈闭环，在 token 级而非 batch 级调节请求准入，配合 chunked prefill 最小化干扰。真实 serverless 负载上 TTFT 稳定、P99 尾延迟显著降、ITL 波动最小化，吞吐比 ServerlessLLM 高至 45%、比常规调度器高 58%。
+
+### 2026-10-14 · Quota-Based Aging for Prediction-Guided Scheduling in LLM Serving ⭐
+> [arXiv](https://arxiv.org/abs/2610.17795) · upvotes: 0 · infra 相关性: 4/5 · 子方向: parallelism-scheduling
+
+预测引导的短优先调度降平均延迟但会饿死长请求，无限制 aging 又会在拥塞时过度提拔。QBA 是轻量策略：预测短优先准入 + 配额约束、债务驱动的老化请求提拔，用校准自仿真轨迹的 M/G/n 排队代理解释一阶平均延迟趋势。事件驱动模拟器（decode 优先批处理、chunked prefill、token 预算、KV 安全准入）上，QBA 在激进短优先与无限制 aging 之间提供可控中间地带，保住大部分平均延迟收益的同时大幅压低长请求尾延迟。
+
 ### 2026-10-10 · Taking Tokenization off the Host for Agentic LLM Serving ⭐
 > [arXiv](https://arxiv.org/abs/2610.13325) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
 
@@ -26,6 +41,46 @@ agentic 负载反复重发几乎不变的超长上下文，prefix caching 省掉
 
 
 ## KV Cache 与显存
+
+### 2026-10-14 · BELT: BEhavior-Aligned Low-Rank KV Cache Compression with Learned Top-k Rank Allocation ⭐
+> [arXiv](https://arxiv.org/abs/2610.17966) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+低秩 KV 压缩的两个老病：目标只顾 KV 重建误差不看注意力行为（softmax 后分布可能完全走样）、rank 分配一刀切。BELT 的 key 侧目标定为注意力分布 KL（而非 pre-softmax logits），Taylor+Kronecker 展开成二次目标后有闭式加权 SVD 解；rank 用可微 top-k 软门控训练 + 硬预算部署全局学出。70% 压缩下 Qwen3-32B LongBench 超最强基线 23.3 分，叠 3-bit 量化总压缩 17.8× 只掉 1.9 分；Triton kernel 下注意力模块最高 2.7×、端到端 decode 吞吐最高 3.3×。精读笔记见 [notes/papers/2026-10-14-belt.md](../../notes/papers/2026-10-14-belt.md)。
+
+### 2026-10-14 · MultiAlloc: Budget-Aware Precision Allocation for KV Cache Quantization ⭐
+> [arXiv](https://arxiv.org/abs/2610.18642) · upvotes: 0 · infra 相关性: 4/5 · 子方向: kv-cache
+
+KV 量化压缩的真问题不是「怎么压」而是「固定显存预算下，层级精度增强与 token 级信息保留两种策略怎么分资源」。MultiAlloc 是 profiling 引导的精度分配框架，自适应地把有限量化资源在 layer-wise 精度提升与 token-wise 保留之间分配。长上下文与复杂推理场景（KV cache 显存大头）下比单一策略更优。
+
+### 2026-10-14 · AlignPred: Error-Controlled KV Cache Compression via Alignment and Predictive Coding ⭐
+> [arXiv](https://arxiv.org/abs/2610.17970) · upvotes: 0 · infra 相关性: 4/5 · 子方向: kv-cache
+
+长时 agent 的 KV cache 要跨轮次/会话保存数小时数天，压缩需要控重建误差。AlignPred 是「对齐 + 预测编码」codec：局部正交变换把相关 head/layer 对齐到共同坐标系，token 间预测与同 token 跨 head/layer 预测结合，残差在误差受限格子上量化 + 熵编码，无学习 predictor、无编码端模式搜索。同等重建误差下存储更省、解码至少快 1.6×；SGLang HiCache 集成下持久 KV 存储省 42-72%，128K LongBench-Pro 任务分接近原生。
+
+### 2026-10-14 · ChampionKV: Head-Wise Adaptive Budget Allocation for KV Cache Compression ⭐
+> [arXiv](https://arxiv.org/abs/2610.18026) · upvotes: 0 · infra 相关性: 4/5 · 子方向: kv-cache
+
+观察窗口类 KV 压缩器（SnapKV/PyramidKV）给各 head 统一或预设预算，忽视输入依赖的预算需求差异。ChampionKV 用观测窗口聚合注意力最大分作为注意力集中度的轻量代理：分散的 head 给大预算、集中的给小预算，加异常 head 掩码与保底预算。即插即用不改 token 选择流程，Llama3.1-70B 上收益最大且统计显著（紧预算下尤甚），7B/8B 上持平但混合。
+
+### 2026-10-14 · Virtual Head Attention ⭐
+> [arXiv](https://arxiv.org/abs/2610.17959) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+长上下文注意力设计的不可能三角：KV cache 大小、训练/prefill FLOPs、模型质量——GQA 质量好但 cache 贵，MLA/MFA 压 cache 但要么掉质量要么涨算力。VHA 用两个轻量线性操作同时改善三角：Q Premix 从减半的物理 query head 恢复虚拟 head 多样性，Linear Postmix 低秩残差融合 head 间特征；推理时可折叠回标准 GQA-2 结构，直接复用全部现有 GQA 优化。四个规模 50B token 预训练全面超 GQA 基线，KV cache 较 GQA-8 稠密规模降 4×。
+
+### 2026-10-14 · LatentRemedy: Efficient Remedy For Non-Prefix KV Cache Reuse in Multi-Agent Systems ⭐
+> [arXiv](https://arxiv.org/abs/2610.18014) · upvotes: 0 · infra 相关性: 4/5 · 子方向: kv-cache
+
+多 agent 共享上下文复用时除了 KV 表示失配，还有目标 agent「在自己的指令下解读共享上下文」的失配。LatentRemedy 用少量任务条件 latent token 帮目标 agent 利用复用上下文免重算：MLP 把目标前缀最后隐状态映射成几个 latent token 插在复用 KV 块后与共享上下文交互，通过全 prefill 蒸馏训练。冲突任务上一致超复用基线，cache 增大时 TTFT 保持接近直接复用。
+
+### 2026-10-14 · SparPR: Runtime KV-Cache Recovery for Resource-Constrained LLM Inference on Consumer Hardware ⭐
+> [arXiv](https://arxiv.org/abs/2610.18140) · upvotes: 0 · infra 相关性: 4/5 · 子方向: kv-cache
+
+消费级 GPU 跑 LLM 被 KV cache 卡死，SparPR（Sparse Partial Recomputation）是运行时恢复机制：不改权重、免离线训练。三个在线决策联动——query 感知的 key 块选择（历史块对当前 query 打分）、动态预算控制（按拷贝 vs 重算成本估计保留多少块）、按需局部重算与成本感知回落（保留块并成连续 span，按运行时成本比较切换稀疏重算与全量恢复）。单张 RTX 3070 Ti 8GB 笔记本上 1k/2k/4k prompt 端到端延迟降 31%/52%/63%，吞吐 1.4-2.7×，8k 任务 44 分钟跑完（FlexGen 基线超时）。
+
+### 2026-10-14 · Kwai Summary Attention V2 Technical Report ⭐
+> [arXiv](https://arxiv.org/abs/2610.18654) · upvotes: 0 · infra 相关性: 4/5 · 子方向: kv-cache
+
+Summary-token 架构（远上下文压成每 chunk 可学习 Summary token，与 full attention 层交错）的两个瓶颈：各层压缩 chunk 窗口被迫一致、full attention 层要为 summary token 付二次方 prefill。KSA V2 发现 summary token 可兼任 KV memory 与 sparse indexer 双角色，实现更灵活的分层压缩窗口并降低 full attention 层计算。
 
 ### 2026-10-12 · QuantMLA: Function-Aligned Dual-Path Quantization for Low-Bit MLA KV Caching ⭐
 > [arXiv](https://arxiv.org/abs/2609.36760) · upvotes: 1 · infra 相关性: 5/5 · 子方向: kv-cache
@@ -70,6 +125,11 @@ Looped Transformer 的 KV cache 随循环次数线性膨胀成为解码吞吐与
 
 ## 投机解码
 
+### 2026-10-14 · SP$^2$ec: Adaptive Self-Speculative Decoding for Vision-Language Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.18735) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+VLM 的多模态输入让固定训练的 drafter 吞吐不稳定，self-speculative（复用 target 模型部分结构起草）效率又取决于每个 prompt 选对 draft 配置。SP²ec 是 training-free 的 bandit 算法：利用现有 self-speculative 方法（SWIFT/KnapSpec/SpecVLM）普遍存在的「单峰吞吐模式」，在线为每个 query 自适应 draft 配置，显式最小化 wall-time regret（对应真实墙钟延迟，非接受率代理）。Qwen2.5-VL-7B 与 LLaVA-NeXT-Mistral-7B 上稳定超越原方法至 11%。
+
 ### 2026-10-12 · Contextual Correction of Parallel Drafts for Speculative Decoding ⭐
 > [arXiv](https://arxiv.org/abs/2610.12570) · upvotes: 18 · infra 相关性: 5/5 · 子方向: speculative-decoding
 
@@ -97,6 +157,16 @@ RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间�
 
 
 ## 量化与压缩
+
+### 2026-10-14 · Revisiting Error Feedback for Model Quantization ⭐
+> [arXiv](https://arxiv.org/abs/2610.18139) · upvotes: 0 · infra 相关性: 4/5 · 子方向: quantization-compression
+
+把因果 error-feedback 系数当量化设计变量研究：将瞬时量化误差建模为独立零均值同方差变量，构造度量依赖的迹问题设计反馈系数，形式类似固定阶 GPTQ/LDLQ 反馈并支持感知下游误差传播的 Jacobian-aware 设计。证明正定度量 H 下联合旋转-反馈迹最小值为 n·det(H)^(1/n) 并给出几何平均分解的 attain 对。实验揭示 trace 最优不必改善有限层级性能——理论最优与实际之间有缝。
+
+### 2026-10-14 · Towards Green AI: Evaluating Energy Efficiency for Quantized LLM Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.17531) · upvotes: 0 · infra 相关性: 4/5 · 子方向: quantization-compression
+
+首个统一评估权重-only 量化推理能耗的工作：5 模型 × 10 种 PTQ × 4 种 GPU（H100/A6000/A100/L4）× 多种输入输出长度。新发现：输入足够长、输出短时量化相对全精度能效峰值；batch 增大能效优势略增但有限；EETQ/Bitsandbytes int8 等 fused-kernel 实现省能最多至 4×（vs FP32 短文本生成）且精度几乎不掉；能耗与运行时强相关——实践中延迟优化约等于能耗优化。
 
 ### 2026-10-12 · SoloQ: Calibration-Free Quantization for Diffusion Language Models ⭐
 > [arXiv](https://arxiv.org/abs/2610.07121) · upvotes: 30 · infra 相关性: 5/5 · 子方向: quantization-compression
@@ -168,6 +238,16 @@ RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间�
 
 ## 长上下文与 VLM
 
+### 2026-10-14 · DoSA: Dots Sparse Attention ⭐
+> [arXiv](https://arxiv.org/abs/2610.13990) · upvotes: 59 · infra 相关性: 5/5 · 子方向: long-context-vlm
+
+稀疏注意力访问的 key 少，但找 Top-K 还是要每个 indexer head 给每个 key 打分。DoSA 是无损条件化计算的方法：Top-K 选择只需「足够证据排除候选」而非完整分数——种子集提供胜出阈值下界，非负 head 投影 + 联合残差上界定正贡献上限，激活感知聚合定负 head 扣减幅度；证书把全量打分导向仍合格的候选，精确分数过滤再省写回与选择。GPU 实现 indexer 比 SGLang 快至 2.74×（vs LiteTopK 1.69×），GLM-5.2/DeepSeek-V3.2 端到端 TTFT 提速至 1.94×/1.50×。
+
+### 2026-10-14 · Elephant in the Fridge: Constant-Memory Frame Packing for Long Video Understanding ⭐
+> [arXiv](https://arxiv.org/abs/2610.16118) · upvotes: 10 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+小时级视频把 VLM 推向显存极限：逐帧编码 token 数随视频长度线性涨，现有 token 缩减/关键帧选择仍留着 O(n) 增长。FramePack-U 是 training-free 的帧打包框架：按帧与 prompt 的语义相似度打分 + 多样性驱动排序选帧，选定帧以不同分辨率打包进固定长度上下文窗口——把任意长视频压成固定大小视觉表示，常数显存。即插即用于现成 VLM 推理时。
+
 ### 2026-10-12 · VisionWeave: Weaving Elastic Visual Representations as a Native Capability of MLLMs ⭐
 > [arXiv](https://arxiv.org/abs/2610.07987) · upvotes: 52 · infra 相关性: 4/5 · 子方向: long-context-vlm
 
@@ -215,6 +295,11 @@ RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间�
 
 
 ## Others
+
+### 2026-10-14 · Revisiting Cauchy-Schwarz Norm Bounds for SDC Detection in LLM Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.18557) · upvotes: 0 · infra 相关性: 4/5 · 子方向: inference-other
+
+LLM 每 token 数十亿次浮点操作，硬件故障可绕过系统级检测造成 Silent Data Corruption（SDC）。ABFT 是矩阵乘防错 SOTA 但开销不小还要调阈值。CSNB（Cauchy-Schwarz 范数界）作为低开销替代：控制故障注入实验显示，稠密线性层保留 ABFT 99% 检测能力的同时验证开销降 87%、阈值确定开销降 67%；但 MoE router gate 上只保留 55%——MoE 场景仍需 ABFT。
 
 ### 2026-10-12 · PreSTO: Predictive Subtree Prefetching for Fast LLM Power Sampling ⭐
 > [arXiv](https://arxiv.org/abs/2610.13171) · upvotes: 9 · infra 相关性: 4/5 · 子方向: inference-other
