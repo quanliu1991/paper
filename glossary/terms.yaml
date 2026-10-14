@@ -260,3 +260,53 @@ terms:
     解释: 目前最强的 CPU BPE tokenizer 库（Rust，SIMD + pre-token 缓存），serving 论文常见最强 CPU 基线
     相关: [serving-system]
     首见: 2026-10-12 GraphTok
+  RLHF:
+    level: learning
+    解释: 基于人类反馈的 RL——偏好数据训 reward model 打分；灵活但可被 reward hacking
+    相关: [training]
+    首见: 2026-10-14 LLM RL Complete Guide
+  RLVR:
+    level: learning
+    解释: 可验证奖励的 RL——规则验证器（答案匹配/单测）打分，防作弊支撑大规模训练，DeepSeek-R1 路线
+    相关: [training]
+    首见: 2026-10-14 LLM RL Complete Guide
+  Advantage (优势函数):
+    level: learning
+    解释: A = Q − V，动作比状态平均预期好多少；策略梯度的核心学习信号
+    相关: [training]
+    首见: 2026-10-14 LLM RL Complete Guide
+  GAE (广义优势估计):
+    level: learning
+    解释: 不同步数的 TD 优势估计按 λ 指数加权混合，调偏差-方差，常用 λ=0.95
+    相关: [training]
+    首见: 2026-10-14 LLM RL Complete Guide
+  Reward Hacking:
+    level: learning
+    解释: 模型学会骗打分器而非把任务做对；神经 reward model 的固有风险
+    相关: [training]
+    首见: 2026-10-14 LLM RL Complete Guide
+  Clip (PPO/GRPO 截断):
+    level: learning
+    解释: importance ratio 限制在 [1−ε, 1+ε]，拦「锦上添花」不拦「落井下石」的悲观下界
+    相关: [training]
+    首见: 2026-10-14 LLM RL Complete Guide
+  GSPO:
+    level: learning
+    解释: 序列级（几何平均）importance ratio + clip 的 GRPO 变体，Qwen3 训练采用，长序列/大 MoE 更稳
+    相关: [training]
+    首见: 2026-10-14 LLM RL Complete Guide
+  DAPO:
+    level: learning
+    解释: GRPO 补丁套餐——clip-higher、dynamic sampling、token 级聚合、overlong filtering
+    相关: [training]
+    首见: 2026-10-14 LLM RL Complete Guide
+  TIS (截断重要性采样):
+    level: learning
+    解释: 修训练引擎与推理引擎 token 概率不一致的 importance 修正，verl/OpenInstruct 已内置
+    相关: [training, serving-system]
+    首见: 2026-10-14 LLM RL Complete Guide
+  CISPO:
+    level: learning
+    解释: clip 后 ratio 做 stop-gradient 权重而非梯度归零，保护 "wait"/"aha" 等稀有反思 token，MiniMax-M1 采用
+    相关: [training]
+    首见: 2026-10-14 LLM RL Complete Guide

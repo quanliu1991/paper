@@ -6,9 +6,14 @@
 # 推荐分 = profile/interests.yaml 基础权重 × (1 + score/10)
 # 同分时比 infra 分，再比 upvotes。量小由 Agent 手动维护，无需脚本。
 
-更新: 2026-10-12
+更新: 2026-10-14
 
 signals:
+  training:
+    精读: 2        # LLM RL Complete Guide（用户主动点名）
+    待读加入: 0
+    追问: 0
+    score: 2.0
   serving-system:
     精读: 2        # TokenRouter、GraphTok
     待读加入: 1    # TokenRouter

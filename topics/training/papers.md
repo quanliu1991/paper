@@ -4,6 +4,11 @@
 
 ## Papers
 
+### 2026-10-14 · Reinforcement Learning for LLMs: The Complete Guide ⭐
+> [Substack · Cameron R. Wolfe](https://cameronrwolfe.substack.com/p/llm-rl) · upvotes: 0 · 教程长文（非 arXiv）
+
+RL 后训练全景综述：RLHF/RLVR → REINFORCE/PPO/GRPO → GSPO/DAPO/TIS/CISPO 补丁生态；对 infra 视角最有料的是 TIS 一节（rollout 引擎与训练引擎的 token 概率不一致是训练正确性问题）。精读笔记见 [notes/papers/2026-10-14-llm-rl-complete-guide.md](../../notes/papers/2026-10-14-llm-rl-complete-guide.md)。
+
 ### 2026-10-09 · SimpleICL: In-context Robot Learning Made Simple ⭐
 > [arXiv](https://arxiv.org/abs/2609.38173) · upvotes: 0
 
