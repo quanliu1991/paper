@@ -365,3 +365,33 @@ terms:
     解释: 加性增、乘性减的并发/速率控制（TCP 拥塞控制同款），S3R 用于 RL rollout 的 KV 显存压力自适应
     相关: [serving-system, parallelism-scheduling]
     首见: 2026-10-14 S3R
+  KV Concentration:
+    level: learning
+    解释: 异步 rollout 把同样的 KV 处理压进更少 decode step，单步 KV 负载结构性增大；回答长度方差越大越严重
+    相关: [kv-cache, serving-system]
+    首见: 2026-10-15 KV4-RL
+  Attention Sink:
+    level: learning
+    解释: 模型对序列开头少数 token 的异常高注意力，量化/压缩 KV 时开头位置需重点保护
+    相关: [kv-cache, quantization-compression]
+    首见: 2026-10-15 KV4-RL
+  Calibration-free 量化:
+    level: learning
+    解释: 不靠离线校准集、对每个新向量在线算量化参数，策略/分布漂移时天然免疫
+    相关: [quantization-compression, kv-cache]
+    首见: 2026-10-15 KV4-RL
+  Foresight Drafting:
+    level: learning
+    解释: 验证未结束时预测目标 hidden state 和验证结局，提前起草下一块，使起草脱离投机解码关键路径
+    相关: [speculative-decoding]
+    首见: 2026-10-15 JetSpec++
+  Jacobi 迭代起草:
+    level: learning
+    解释: 把草稿块当输入反复前向，每轮用前面位置的结果修正后面位置，逼近逐 token 因果分解
+    相关: [speculative-decoding]
+    首见: 2026-10-15 JetSpec++
+  Prefix-blind:
+    level: learning
+    解释: 并行预测各位置互看不到对方选的 token，可能拼出上下文不允许的组合（如「of problem」）
+    相关: [speculative-decoding]
+    首见: 2026-10-15 JetSpec++

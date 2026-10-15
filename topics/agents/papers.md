@@ -4,6 +4,21 @@
 
 ## Papers
 
+### 2026-10-15 · Any Time, Any Space: A World-State-Centric Framework for Agentic Video Generation ⭐
+> [arXiv](https://arxiv.org/abs/2610.20571) · upvotes: 211
+
+长篇智能体视频生成的时空一致性难题：prompt 或近邻帧传不出共享空间参照与时间索引。ATAS 把剧本编译成带位置/机位/事件时间引用的 shot 请求，生成前从场景记忆（注册静态几何）与事件记忆（动态观测）检索证据，跨非连续请求保持可回访可重放的世界状态。
+
+### 2026-10-15 · Player-1: Learning to Play from Synthetic Experience ⭐
+> [arXiv](https://arxiv.org/abs/2610.20584) · upvotes: 128
+
+游戏 agent 的后训练框架：不依赖大规模人类示范（对动态游戏状态覆盖有限），从合成经验学习游戏控制——可扩展交互环境的替代路线。
+
+### 2026-10-15 · Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents ⭐
+> [arXiv](https://arxiv.org/abs/2610.20344) · upvotes: 83
+
+现有基准在固定 harness 下测下游任务成功率，harness 工程本身无人考核。Doc2Harness 两阶段直接评测长时程 harness 工程：构建模型在固定 builder harness 内从接口契约骨架 + 开发文档出发交付可用 harness，再评测 harness 质量。
+
 ### 2026-10-14 · Agent-Reflex: Teaching Language Agents to Act Reflectively ⭐
 > [arXiv](https://arxiv.org/abs/2610.17953) · upvotes: 107 · infra 相关性: 2/5
 

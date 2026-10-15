@@ -4,6 +4,11 @@
 
 ## Papers
 
+### 2026-10-15 · Cortex: Consolidating Context into Parametric Memory ⭐
+> [arXiv](https://arxiv.org/abs/2610.20399) · upvotes: 54
+
+上下文带来的能力增益在上下文移除后即消失，Cortex 受生物系统巩固启发把增益内化进参数：生成前瞻查询预判上下文用途，蒸馏上下文条件输出为可合并的低秩/结构化 FFN 更新。4B–120B dense 与 MoE、纯文本与多模态全适用；14B 模型 50 次连续事实编辑后保留 88.9% 上下文增益、99.8% 原有能力，多数设置下位于 consolidation-retention Pareto 前沿。
+
 ### 2026-10-09 · TokenRouter: Efficient Serving System for Token-Level LLM Routing ⭐
 > [arXiv](https://arxiv.org/abs/2610.12242) · upvotes: 0
 

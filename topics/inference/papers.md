@@ -42,6 +42,21 @@ agentic 负载反复重发几乎不变的超长上下文，prefix caching 省掉
 
 ## KV Cache 与显存
 
+### 2026-10-15 · KV4-RL: Unlocking Faster Asynchronous Rollouts for RLVR with INT4 KV Cache Quantization ⭐
+> [arXiv](https://arxiv.org/abs/2610.14448) · upvotes: 26 · infra 相关性: 5/5 · 子方向: kv-cache
+
+异步 rollout 填平长尾利用率后带来结构性副作用 KV concentration：同样的 KV 处理被压进更少 decode step（浓度因子 E[max]/E[L]≥1，实测常驻 KV 体量 ×7.82、单步延迟 ×4.52），此时 KV 量化比权重量化加速大得多（KV4 前向 1.53–1.97× vs W4A16/W8A8 贴平）。但裸 INT4 rollout 即使带 TIS 修正仍让策略学坏（MATH-500 掉 5.24 分）。KV4-RL 全上下文 paged INT4（Hadamard 旋转 + 每 head affine 组，4.25 bit/元素，calibration-free）+ 有界 INT8 边车保护 attention sink（s=16）与最近窗口（w=128），双数值路径精确 softmax 合并。Qwen3-8B GRPO rollout 累计 1.80×、整迭代 1.27×，六基准均值与 BF16 差 <0.5 分。精读笔记见 [notes/papers/2026-10-15-kv4-rl.md](../../notes/papers/2026-10-15-kv4-rl.md)。
+
+### 2026-10-15 · JSSA: Joint Subspace Sparse Attention for Efficient Long-Context Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.19026) · upvotes: 3 · infra 相关性: 5/5 · 子方向: kv-cache
+
+token 级稀疏注意力两难：低维打分丢 query-key 结构导致排序不准，散乱 gather 又吃掉延迟收益。JSSA 学共享低维 query-key 子空间（非凸目标上界化后谱闭式解），配 GQA 布局下 gather-free 的 per-KV-head 索引注意力 kernel。GQA/hybrid 滑窗/MLA 三类模型贴近 full-KV 精度，长上下文解码延迟显著低于粗粒度稀疏基线。
+
+### 2026-10-15 · Latent Compaction with Test-Time Training ⭐
+> [arXiv](https://arxiv.org/abs/2610.20582) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+把 KV cache 当神经网络在推理时训练压缩：重建重要性 + 教师 attention + key 多样性初始化条目，先拟合 attention 输出再端到端蒸馏自全 cache 模型，模型权重全程冻结、只用文档相关通用 prompt（不碰下游问答）。RULER 32× 压缩下 96.7% 准确率（KVZip+ 40.0%），跨模型规模/家族迁移（Qwen3、MiniCPM5）。
+
 ### 2026-10-14 · BELT: BEhavior-Aligned Low-Rank KV Cache Compression with Learned Top-k Rank Allocation ⭐
 > [arXiv](https://arxiv.org/abs/2610.17966) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
 
@@ -125,6 +140,26 @@ Looped Transformer 的 KV cache 随循环次数线性膨胀成为解码吞吐与
 
 ## 投机解码
 
+### 2026-10-15 · JetSpec++: Foresight Parallel Drafting with Self Refinements ⭐
+> [arXiv](https://arxiv.org/abs/2610.19792) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+把起草成本赶出关键路径：大模型验证第 t 块时，draft 侧在另一张 GPU 上用 adapter 预测目标 hidden state、decoder 算结局分布 P(接受数 k, bonus a)，押注 B=16 条「世界线」预起草第 t+1 块存入 speculation cache（命中率 92.9%）；验证窗口内跑 Jacobi 自我精修 + context refresh/anchor replacement 修 prefix-blind。token 输入 + 干净前缀调度 + forward KL 是精修能力三要素。GB200 上单请求 1361 tok/s（AR 7.45×、DSpark 1.54×），τ=8.94 全面领先，输出分布严格不变；Qwen3.8-27B hybrid 上同样有效。代码开源。精读笔记见 [notes/papers/2026-10-15-jetspecpp.md](../../notes/papers/2026-10-15-jetspecpp.md)。
+
+### 2026-10-15 · ReaDy: Recurrent States as Dynamic Context for Speculative Drafting in Hybrid Linear Attention LLMs ⭐
+> [arXiv](https://arxiv.org/abs/2610.20503) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+hybrid 线性注意力模型的 recurrent state 天然积累历史关联，ReaDy 首个用它做投机解码上下文检索：每个 draft 位置学 query 从目标已提交 recurrent state 取补充上下文，轻量 state reader 残差注入，低秩 state 读 + 融合算子压开销；基于 DSpark 骨干两阶段适配。七个基准超越 DSpark 起草质量。
+
+### 2026-10-15 · FOLD: Position-Free Far Memory with Local Order for Long-Context Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.20392) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+长上下文 drafter 免训练方案：近处保精确位置，远处全部条目共享同一位置的「far memory」，注意力 dilution 用锐化 + 总权重控制对抗；drafter 轻量故全历史注意力付得起。6 组目标-drafter 对、最多 256K token 基准上多数最佳，最好 case 加速超 AR 2×。
+
+### 2026-10-15 · TreeSpark: Learning to Draft the Trees You Verify for Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.20175) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+并行 drafter 早期失配限制每块接受量，保留备选又引入父状态与候选选择缺监督。TreeSpark 扩展 DSpark 为统一训练推理框架：一次骨干前向构造父条件候选树，训练时重放展开/剪枝/装箱；survival NLL 按参考路径质量加权保留边 + capped coverage hinge 促进目标重要备选，两个目标都复用参考链分布零额外目标前向。Qwen3-4B/8B 上 τ 比 DSpark 高 23.4–31.6%，吞吐 +15.1–25.0%。
+
 ### 2026-10-14 · SP$^2$ec: Adaptive Self-Speculative Decoding for Vision-Language Models ⭐
 > [arXiv](https://arxiv.org/abs/2610.18735) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
 
@@ -157,6 +192,11 @@ RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间�
 
 
 ## 量化与压缩
+
+### 2026-10-15 · PN-Mix: Pair-Norm Guided Mixed-Precision Key Cache Quantization for Efficient Long-Output LLM Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.19605) · upvotes: 0 · infra 相关性: 5/5 · 子方向: quantization-compression
+
+2-bit KV 量化的敏感点在 RoPE 通道对：query-key pair-norm 乘积大的通道对量化误差显著放大 logit 扰动，只看 key 统计的 saliency 会漏判。PN-Mix 在 prefill 阶段一次性识别显著通道对、解码全程复用，RoPE decoder-only LLM 上 2.26-bit 平均精度追平先前 2.32–2.39 bit 方法，Pareto 扫描到 1.5 bit 仍优雅退化。
 
 ### 2026-10-14 · Revisiting Error Feedback for Model Quantization ⭐
 > [arXiv](https://arxiv.org/abs/2610.18139) · upvotes: 0 · infra 相关性: 4/5 · 子方向: quantization-compression
@@ -228,7 +268,22 @@ RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间�
 
 ## 并行与调度
 
+### 2026-10-15 · Scaling LLM Inference via Parallelism: Throughput-Latency Trade-off ⭐
+> [arXiv](https://arxiv.org/abs/2610.19405) · upvotes: 0 · infra 相关性: 5/5 · 子方向: parallelism-scheduling
+
+系统刻画 TP/PP/混合并行在 prefill（决定 TTFT）与 decode（决定 ITL）两阶段的不同 trade-off：构建不同负载组合下的 TTFT-ITL feasible sets 与 Pareto frontier，提出 parallelism operating regions 概念。结论是最优并行配置强依赖负载特征、延迟 SLO 与上下文长度，给出 SLO 感知的选择框架与长上下文可扩展性分析。
+
+### 2026-10-15 · Delta Tokenizer: Reference-Identical Tokenization of Session Deltas and Segment-Parallelism for Long Prompts on Multicore CPUs ⭐
+> [arXiv](https://arxiv.org/abs/2610.19801) · upvotes: 0 · infra 相关性: 4/5 · 子方向: serving-system
+
+agent 每轮只追加少量文本，但 CPU tokenizer 前端每次从头重分词全对话，拖长 TTFT 还吃 CPU。Delta Tokenizer 只对增量编码：保留旧 token 序列，只重编追加文本与其可能影响的短尾，在分词器切分规则不可移动的位置精确拼接；无状态长请求按切分规则分段多核并行再拼回，结果与参考实现完全一致。长会话 TTFT 显著下降。
+
 ## MoE 推理
+
+### 2026-10-15 · LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation ⭐
+> [arXiv](https://arxiv.org/abs/2610.19975) · upvotes: 56 · infra 相关性: 4/5 · 子方向: moe-inference
+
+looped MoE 两次循环角色不对称（首访 residual 系数天然小）：LatentLoop 压缩首访序列、次访保全分辨率，省下的算力加宽 hidden size；MoE 权重跨访共享 + attention 参数分离适配不同序列分辨率。1.3B–7B 15 配置（最大超 10^21 FLOPs）验证 NLL 一致更低，等 NLL 下更省算力。
 
 ### 2026-10-07 · SlimWise: Decoupling Expert Pruning Across Prefill and Decode for Efficient MoE Serving ⭐
 > [arXiv](https://arxiv.org/abs/2609.34117) · upvotes: 14 · infra 相关性: 5/5 · 子方向: moe-inference

@@ -6,7 +6,7 @@
 # 推荐分 = profile/interests.yaml 基础权重 × (1 + score/10)
 # 同分时比 infra 分，再比 upvotes。量小由 Agent 手动维护，无需脚本。
 
-更新: 2026-10-14
+更新: 2026-10-15
 
 signals:
   training:
@@ -20,15 +20,16 @@ signals:
     追问: 1        # delayed-batching 推导、GPU 共卡账、SLO
     score: 7.5
   speculative-decoding:
-    精读: 2        # DLoop、S3R
+    精读: 3        # DLoop、S3R、JetSpec++
     待读加入: 1    # DLoop
     追问: 1        # 与 token 路由对比、无损性
-    score: 4.5
+    score: 5.5
   kv-cache:
-    精读: 2        # KV-Repurpose、BELT
+    精读: 3        # KV-Repurpose、BELT、KV4-RL
     待读加入: 0
     追问: 0
-    score: 4.0  quantization-compression: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
+    score: 5.0
+  quantization-compression: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   parallelism-scheduling: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   moe-inference: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   long-context-vlm: {精读: 0, 待读加入: 0, 追问: 0, score: 0}

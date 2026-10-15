@@ -4,6 +4,16 @@
 
 ## Papers
 
+### 2026-10-15 · Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation ⭐
+> [arXiv](https://arxiv.org/abs/2610.13521) · upvotes: 145
+
+多教师在线策略蒸馏按域路由教师仍会梯度冲突：不同域的更新作用于共享参数，风格迥异的教师信号在联合优化中互相拉扯。Road MOPD 让非路由教师当跨域裁判，按教师一致性做 token 级信用分配（一致支持的加强、冲突的衰减）+ 预防性多教师更新协调，联合优化下保住各域能力。
+
+### 2026-10-15 · More Methods, Better Agents? A Reality Check on Self-Distillation in Agentic Reinforcement Learning ⭐
+> [arXiv](https://arxiv.org/abs/2610.19789) · upvotes: 47
+
+十种 agentic RL 自蒸馏方法在同一实验条件下的清醒对比：复用文献基线分数、缺乏同期直接对比、忽视训练稳定性与算力成本，让各家宣称的增益来源模糊。统一对比揭示竞争方法的真实强弱与适用边界，昂贵的 agent 训练更需共同比较基础。
+
 ### 2026-10-14 · TPPO: Tracking-Value PPO For Language Model Reasoning ⭐
 > [arXiv](https://arxiv.org/abs/2610.16794) · upvotes: 60 · infra 相关性: 2/5 · 子方向: training
 
