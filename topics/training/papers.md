@@ -4,6 +4,16 @@
 
 ## Papers
 
+### 2026-10-16 · Waypoint-OPD: Transferring RL-Induced Policy Shifts via Gated On-Policy Distillation ⭐
+> [arXiv](https://arxiv.org/abs/2610.21601) · upvotes: 181
+
+RL 训出的策略偏移如何蒸馏给别的模型：Waypoint-OPD 用门控在线策略蒸馏迁移 RL 诱导的策略变化，保留 RL 增益的同时适配学生模型。
+
+### 2026-10-16 · Routing Policy Optimization for Online Diffusion Reinforcement Learning ⭐
+> [arXiv](https://arxiv.org/abs/2610.22282) · upvotes: 19
+
+在线扩散 RL 的路由策略优化：对扩散模型的去噪步做路由决策，按步分配计算与更新信号。
+
 ### 2026-10-15 · Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation ⭐
 > [arXiv](https://arxiv.org/abs/2610.13521) · upvotes: 145
 

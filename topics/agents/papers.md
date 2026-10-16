@@ -4,6 +4,31 @@
 
 ## Papers
 
+### 2026-10-16 · Self-Evolving Agent Harness ⭐
+> [arXiv](https://arxiv.org/abs/2610.18813) · upvotes: 169
+
+agent harness 本身自我进化：不靠人工迭代 prompt 与工具配置，让 harness 根据任务反馈自动改进自身的结构与环境。
+
+### 2026-10-16 · OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use ⭐
+> [arXiv](https://arxiv.org/abs/2610.22200) · upvotes: 100
+
+通用计算机使用的全开源栈：模型、数据、训练到部署的完整开放方案。
+
+### 2026-10-16 · FDE-Gym: The Last Mile of AI Delivery ⭐
+> [arXiv](https://arxiv.org/abs/2610.22350) · upvotes: 103
+
+AI 交付最后一公里的 gym：面向实际部署环境中的反馈、修复、评测闭环。
+
+### 2026-10-16 · Terminal-RSI: Recursive Self-Improving Terminal Agents ⭐
+> [arXiv](https://arxiv.org/abs/2610.22192) · upvotes: 20
+
+终端 agent 的递归自我改进：递归自改写 + 策略-环境共进化。
+
+### 2026-10-16 · Trajectory-Level Speculation with Semantic Verification for Tool-Using Agents ⭐
+> [arXiv](https://arxiv.org/abs/2610.21463) · upvotes: 9 · infra 相关性: 4/5
+
+工具型 agent 的轨迹级投机 + 语义验证（详见 inference 归档投机解码节）。
+
 ### 2026-10-15 · Any Time, Any Space: A World-State-Centric Framework for Agentic Video Generation ⭐
 > [arXiv](https://arxiv.org/abs/2610.20571) · upvotes: 211
 

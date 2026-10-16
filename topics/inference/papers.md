@@ -4,6 +4,21 @@
 
 ## Serving 系统
 
+### 2026-10-16 · When the KV Cache Is Slower Than the GPU: Scaling Remote KV Tiers for Context-Parallel Prefill ⭐
+> [arXiv](https://arxiv.org/abs/2610.21500) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
+
+生产事故复盘：GLM-5.3（FP8 MoE+MLA）在 8×B300 上开远程 KV 层（LMCache+Valkey），16k prompt p99 从 3.96s 涨到 17.3s——命中 0.88s 比重算 0.31s 还慢。成本模型给出两个硬数字：盈亏平衡带宽 B\*=sR=2.53 GB/s（单 Valkey 实例只给 1.71），固定成本 T₀≈0.33s 意味着短于 17k token 的命中任何带宽下都不划算。修复：MLA KV 按 chunk 分片到 PCP rank（Proposition 1 证明现有 min-over-ranks 查找恰返回最长前缀）+ 每 rank 专属 Valkey（带宽 ×6.3 至 10.76 GB/s）+ 异步加载 + 三个客户端 bug 修复（含 RESP miss-key 挂死）。hit-heavy p99 83.32s→0.67s（124×），prefill 吞吐 +34%（含 FlashInfer kernel 修复），全部提上游。核心教训：recompute 是 demanding baseline，缓存层要对着 GPU 的 prefill 速率评，不是对着网络延迟。精读笔记见 [notes/papers/2026-10-16-remote-kv-tiers.md](../../notes/papers/2026-10-16-remote-kv-tiers.md)。
+
+### 2026-10-16 · Efficient KV Cache Migration for Geo-Distributed LLM Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.22172) · upvotes: 0 · infra 相关性: 4/5 · 子方向: serving-system
+
+地理分布协同边缘计算场景的 KV cache 迁移：会话异地续接时迁移 KV 状态而非重传全量上下文，降低跨域延迟与带宽成本。
+
+### 2026-10-16 · PriorityFEC: Deadline-Aware Streaming FEC for KV-Cache Handoff in Edge Multi-Agent Systems ⭐
+> [arXiv](https://arxiv.org/abs/2610.21390) · upvotes: 0 · infra 相关性: 4/5 · 子方向: serving-system
+
+边缘多 agent 系统的 KV handoff 丢包问题：deadline 感知的流式前向纠错，按 KV chunk 的时效性分配冗余度。
+
 ### 2026-10-14 · RadixFlow: Filling Execution Bubbles in Prefix-Cached Hybrid LLM Serving ⭐
 > [arXiv](https://arxiv.org/abs/2610.18143) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
 
@@ -41,6 +56,26 @@ agentic 负载反复重发几乎不变的超长上下文，prefix caching 省掉
 
 
 ## KV Cache 与显存
+
+### 2026-10-16 · Close Enough is Nowhere Near: Fidelity-Consumability Decoupling in KV Caches ⭐
+> [arXiv](https://arxiv.org/abs/2610.22016) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+跨模型 KV cache 零训练直换的系统性负结果：冻结 reader 只消费「自己会写出的那种 cache」（tolerable set），三组测量钉死其窄度——cosine 0.9999 已失效（而 cosine 更远的真 cache transfer 0.445，相似度把优劣排反）、28 层坏 1 层即全坏（无深度累积）、6000 真 key 库里最近的也进不去（流形成员是必要非充分）。机制是 attention softmax 竞争性：key 互相比赛而非对标阈值，微小位移翻转胜负。出路是 augmentation：reader 保留自己的 cache、把 sender 的当额外上下文 attend，query 侧 LoRA 追平 native 基线（0.695 vs 0.665）；多 sender 池 8 个仍可用。对用 cosine/MSE 证明 KV 压缩无损的工作是方法论警钟。精读笔记见 [notes/papers/2026-10-16-kv-fidelity-consumability.md](../../notes/papers/2026-10-16-kv-fidelity-consumability.md)。
+
+### 2026-10-16 · DropKV: Decoupled Residual-Output Perturbation for Near-Optimal KV-Cache Eviction ⭐
+> [arXiv](https://arxiv.org/abs/2610.22130) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+KV 驱逐的输出扰动最小化是 NP-hard 组合问题，现有方法要么数学上次优要么难以 kernel 化。DropKV 把联合驱逐决策解耦成独立逐 token 打分，在锥条件下（三个长上下文模型实测验证）获得可证明的常数因子近似保证，兼顾近最优质量与 kernel 友好实现。
+
+### 2026-10-16 · Compression Does Not End at Selection: Post-Selection Positional Geometry for Sparse KV Caches ⭐
+> [arXiv](https://arxiv.org/abs/2610.21126) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+稀疏 KV 压缩的隐藏后手：选择保留哪些 token 之后，RoPE 下被驱逐 token 留下的位置空洞仍在影响 query-key 匹配。RoPERelay 重排紧凑保序的 RoPE 坐标，逆旋转+重旋转搬迁 key 相位并同步 query 与后续生成；零重新选择、零 re-prefill、零额外预算，在固定选择器产出上直接提升答案质量。
+
+### 2026-10-16 · Augment the Cache, Replace the Activation: A 2x2 Study of Internal-State Sharing ⭐
+> [arXiv](https://arxiv.org/abs/2610.22026) · upvotes: 0 · infra 相关性: 4/5 · 子方向: kv-cache
+
+多 agent 内部状态共享从「点对点迁移桥」（每对 agent 一座桥）重构为「发布-订阅」：agent 把内部状态发布进池子，同伴通过一个不针对任何发送者拟合的机制读取，加 agent 只加发布者。2×2 因子实验（载体 × 融合机制）发现两个选择耦合、决定因素是消费发生在哪——与同日 Fidelity 论文互证。
 
 ### 2026-10-15 · KV4-RL: Unlocking Faster Asynchronous Rollouts for RLVR with INT4 KV Cache Quantization ⭐
 > [arXiv](https://arxiv.org/abs/2610.14448) · upvotes: 26 · infra 相关性: 5/5 · 子方向: kv-cache
@@ -139,6 +174,26 @@ Looped Transformer 的 KV cache 随循环次数线性膨胀成为解码吞吐与
 
 
 ## 投机解码
+
+### 2026-10-16 · LoopAhead: Speculating Ahead for Faster Decoding in Looped Language Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.21594) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+循环 Transformer 每 token 都要顺序过重复层、反复读权重，解码延迟高。LoopAhead 给不同循环深度分派互补角色：轻量 lookahead drafter 用 early-loop 状态多 token 起草，deep-loop 反馈纠正草稿方向——比现有 pipelined 自投机更长 lookahead，且不浪费算力验证错误分支。
+
+### 2026-10-16 · HyCo: Hybrid Drafting for Cost-Efficient Mobile-Cloud Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.21436) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+端云投机解码的分工重构：服务器模型的 MTP 头拿到手机 NPU 上跑（出深度），SLM 一次前向出分支，服务器只回传 hidden state/embedding/KV 而不执行串行步骤。量化+受限词表+1K 窗口把两个 drafter 塞进 NPU，ε-阈值规则放松精确分布保持。Galaxy S26 Ultra over LTE/5G，服务器 GPU 时间/token 比 MTP 自投机省 38.6%（Spec-Bench）/29.2%（32K 摘要）。
+
+### 2026-10-16 · Speculative Forcing for Efficient Autoregressive Video Generation ⭐
+> [arXiv](https://arxiv.org/abs/2610.22347) · upvotes: 67 · infra 相关性: 4/5 · 子方向: speculative-decoding
+
+投机解码方法论外溢到视频生成：少步 AR 视频生成器给每个 token 跑完整去噪是浪费——多数 token 早期就接近终值。把中间干净估计当草稿、逐 token 预测何时可安全提前接受，接受后冻结出场（KV 保留当上下文）；验证器有 training-free（相似度+稳定性）和 learned（读冻结生成器中间特征）两版。
+
+### 2026-10-16 · Trajectory-Level Speculation with Semantic Verification for Tool-Using Agents ⭐
+> [arXiv](https://arxiv.org/abs/2610.21463) · upvotes: 9 · infra 相关性: 4/5 · 子方向: speculative-decoding
+
+工具型 agent 的轨迹级投机：起草整段工具调用序列，用语义验证（而非逐 token 匹配）判定可否跳过中间执行步骤——投机解码思想在 agent 执行层的又一迁移。
 
 ### 2026-10-15 · JetSpec++: Foresight Parallel Drafting with Self Refinements ⭐
 > [arXiv](https://arxiv.org/abs/2610.19792) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
@@ -268,6 +323,11 @@ RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间�
 
 ## 并行与调度
 
+### 2026-10-16 · Exact Makespan Bounds and the GPipe Homogeneity Bias for Heterogeneous LLM Inference Pipelines ⭐
+> [arXiv](https://arxiv.org/abs/2610.21815) · upvotes: 0 · infra 相关性: 5/5 · 子方向: parallelism-scheduling
+
+异构 GPU 流水线 serving 的精确 makespan 定理：纯前向无通信下 T(M)=(M-1)τ_max+Στ_j（定理 1）；异步通信（现代 NCCL）加纯加性常数 Σd_j（定理 2）；阻塞通信下 T(M)=(M-1)σ_max+Σσ_s，通信进稳态斜率当且仅当某 d_s>τ_max-τ_s（定理 3）。经典 GPipe 同质公式在异构场景的偏差被分解为同质项 Σ(τ_max-τ_j) 与忽略通信项，为异构集群的流水线配置给出理论修正。
+
 ### 2026-10-15 · Scaling LLM Inference via Parallelism: Throughput-Latency Trade-off ⭐
 > [arXiv](https://arxiv.org/abs/2610.19405) · upvotes: 0 · infra 相关性: 5/5 · 子方向: parallelism-scheduling
 
@@ -279,6 +339,11 @@ RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间�
 agent 每轮只追加少量文本，但 CPU tokenizer 前端每次从头重分词全对话，拖长 TTFT 还吃 CPU。Delta Tokenizer 只对增量编码：保留旧 token 序列，只重编追加文本与其可能影响的短尾，在分词器切分规则不可移动的位置精确拼接；无状态长请求按切分规则分段多核并行再拼回，结果与参考实现完全一致。长会话 TTFT 显著下降。
 
 ## MoE 推理
+
+### 2026-10-16 · DPA-MoE: A Runtime Precision Control Framework for MoE Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.21378) · upvotes: 0 · infra 相关性: 5/5 · 子方向: moe-inference
+
+MoE 每个被路由到的 expert 仍以固定精度执行，DPA-MoE 让 routed experts 任意精度化：SharedScale AnyBCQ 把 expert FFN 权重编码为前缀可解码分块，离线画像每个 expert 的重建残差，推理时按 live router gate 分数在线分配精度 chunk——单一编码 checkpoint 在多个有效权重预算下运行，免重训免重编码。Qwen3-30B-A3B / DeepSeekMoE-16B 上同预算的 KL 与下游精度优于均匀分配，稳态吞吐开销温和。
 
 ### 2026-10-15 · LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation ⭐
 > [arXiv](https://arxiv.org/abs/2610.19975) · upvotes: 56 · infra 相关性: 4/5 · 子方向: moe-inference

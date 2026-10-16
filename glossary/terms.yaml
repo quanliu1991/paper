@@ -410,3 +410,28 @@ terms:
     解释: 任务重述技巧——把「做一个 X」换成「完成 X 所服务的动词性目的」，让跨领域方法自动浮现
     相关: [inference-other]
     首见: 2026-10-16 Ambitious with Models
+  Break-even Bandwidth (B*=sR):
+    level: learning
+    解释: 缓存命中开始划算所需的传输带宽 = 每 token KV 字节 × GPU prefill 速率；GPU 越快门槛越高，通用 KV 服务器难追
+    相关: [serving-system, kv-cache]
+    首见: 2026-10-16 Remote KV Tiers
+  Prefill Context Parallelism (PCP):
+    level: learning
+    解释: prompt 沿序列切到多 GPU，rank 间 AllGather 交换 KV 锁步推进；任何一个 rank 的停顿都拖住全体
+    相关: [parallelism-scheduling, serving-system]
+    首见: 2026-10-16 Remote KV Tiers
+  Tolerable Set:
+    level: learning
+    解释: 冻结 reader 能正确消费的 cache 邻域；各向异性——注意力不分辨的方向宽、分辨的方向极薄，范数指标测不出
+    相关: [kv-cache]
+    首见: 2026-10-16 KV Fidelity
+  Fidelity-Consumability 解耦:
+    level: learning
+    解释: cache 几何相似度（保真度）与 reader 能否实际使用（可消费性）是独立谓词；cosine/MSE 可优化到最优而可消费性缺席
+    相关: [kv-cache]
+    首见: 2026-10-16 KV Fidelity
+  Competitive Attention:
+    level: learning
+    解释: softmax 让 key 互相比赛而非对标阈值，输出由比赛胜负决定——微小位移可翻转势均力敌的比赛，KV 跨模型替换失败的机制根源
+    相关: [kv-cache]
+    首见: 2026-10-16 KV Fidelity
