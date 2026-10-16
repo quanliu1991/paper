@@ -395,3 +395,18 @@ terms:
     解释: 并行预测各位置互看不到对方选的 token，可能拼出上下文不允许的组合（如「of problem」）
     相关: [speculative-decoding]
     首见: 2026-10-15 JetSpec++
+  Self-efficacy:
+    level: learning
+    解释: 自我效能感——相信自己能做到的人真的 accomplish 更多；具体高目标优于「尽力就好」（Locke & Latham 目标设定研究）
+    相关: [inference-other]
+    首见: 2026-10-16 Ambitious with Models
+  Goal beyond the goal:
+    level: learning
+    解释: 用 AI 的 Altitude 技巧核心自问——当前任务完成后你想发生什么，把任务改写成结果导向
+    相关: [inference-other]
+    首见: 2026-10-16 Ambitious with Models
+  名词换动词 (Nouns to Verbs):
+    level: learning
+    解释: 任务重述技巧——把「做一个 X」换成「完成 X 所服务的动词性目的」，让跨领域方法自动浮现
+    相关: [inference-other]
+    首见: 2026-10-16 Ambitious with Models
