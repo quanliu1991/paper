@@ -4,6 +4,41 @@
 
 ## Serving 系统
 
+### 2026-10-18 · Tandem: Serving Hybrid Linear-Attention GUI Agents on Mobile NPUs ⭐
+> [arXiv](https://arxiv.org/abs/2610.26660) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
+
+手机 GUI agent 每步「读屏→问模型」累积延迟，hybrid 线性注意力模型省显存但 recurrent state 复用需要检查点，而 agent 请求「保留指令、改写近期历史」的模式让为聊天续写设计的 checkpoint 策略命不中可复用前缀。Tandem 为 agent 负载重新设计 checkpoint/rollback 策略，NPU 本地 serving，延迟与内存同时优化。
+
+### 2026-10-18 · CEMA-Router: Infrastructure-Aware Batch Routing for LLM Inference in Cloud-Edge Systems ⭐
+> [arXiv](https://arxiv.org/abs/2610.26171) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
+
+云边路由的两半脱节：LLM router 逐 query 看模型质量与 token 成本，云边调度器忽略部署模型的质量差异。CEMA-Router 做 batch 级路由，联合算力、能耗、网络、质量四方权衡，异构云边系统多目标优化。
+
+### 2026-10-17 · Conjugate Compilation: Self-Improving Agentic Co-Compilation for Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.25012) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
+
+投机解码把 draft/target 两个模型带进 serving，但分开编译让共享执行落在编译器优化边界之外。Conjugate Compilation 把投机解码重构为跨模型联合编译问题，draft 与 target 在共享执行内联合优化，agentic 自改进 co-compilation 循环持续提升 serving 吞吐。
+
+### 2026-10-17 · Koi: Evidence-Guided, Self-Calibrating Planning for Multi-Cloud, Heterogeneous LLM Inference Fleets ⭐
+> [arXiv](https://arxiv.org/abs/2610.24355) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
+
+部署一个 LLM 要在跨云/region/市场的 ~140 个变量里做决定，且最优解随负载漂移。Koi 用递归 LLM 层级提出部署假设、确定性组件预测 serving 行为提供证据，自校准闭环持续修正规划。
+
+### 2026-10-17 · KVCompass: A Discovery Plane for Internet-Scale Prefix Cache Sharing in LLM Serving ⭐
+> [arXiv](https://arxiv.org/abs/2610.24179) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
+
+同模型跨 region 部署时各 region 重复 prefill 相同热门前缀，浪费 GPU 且推高 TTFT。跨 region 复用先要发现「哪个 worker 手里有这段 KV」，而这个发现问题在结构上比常规对象查找难（非常规放置与失效模式）。KVCompass 提出互联网规模的 KV cache 发现平面。
+
+### 2026-10-17 · ATEST: Adaptive Resource-Aware Test-Time Scaling for LLM Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.25519) · upvotes: 0 · infra 相关性: 4/5 · 子方向: serving-system
+
+TTS 的采样预算固定，但同一 query 的能耗随 GPU 争用最高涨 4.1 倍。ATEST-Online 免离线校准：增量采样 + plurality 稳定性估计 + 当前 GPU 成本联合决定「再加一个样本值不值」，资源感知的 test-time scaling。
+
+### 2026-10-17 · System X: An LLM Decision Model That Replies from Its Own KV Cache ⭐
+> [arXiv](https://arxiv.org/abs/2610.25456) · upvotes: 0 · infra 相关性: 4/5 · 子方向: serving-system
+
+决策模型只输出选项概率，部署时需要文字回复时通常重跑 prefill。System X 给决策模型加文字回复选项，获胜或低置信时直接从决策计算的 KV cache 续写——免重复 prefill；Qwen3-0.6B+LoRA 上 JevBench 精度无统计显著变化（55.4%→54.5%，p=0.87），校准误差还降了。
+
 ### 2026-10-16 · When the KV Cache Is Slower Than the GPU: Scaling Remote KV Tiers for Context-Parallel Prefill ⭐
 > [arXiv](https://arxiv.org/abs/2610.21500) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
 
@@ -56,6 +91,41 @@ agentic 负载反复重发几乎不变的超长上下文，prefix caching 省掉
 
 
 ## KV Cache 与显存
+
+### 2026-10-18 · The KV-Surgeon: Compensation-Aware Offline KV-Cache Compaction ⭐
+> [arXiv](https://arxiv.org/abs/2610.25933) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+离线压缩固定上下文的 KV cache 供反复查询，难点在「删谁」。softmax 重归一化把删除决策非线性耦合——删一个条目会改变剩余所有条目的注意力权重，逐条独立打分次优。KV-Surgeon 的补偿感知删除把耦合纳入决策，与 10-16 Competitive Attention（softmax 是比赛）结论互证。
+
+### 2026-10-17 · Understanding KV Residency in Production-Scale Agentic LLM Workloads ⭐
+> [arXiv](https://arxiv.org/abs/2610.22863) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+微软 M365 四个生产负载（Deep Research / Enterprise Assistant / Coding Agent / Enterprise Chat）超 1.21 亿次模型调用的 KV 驻留画像：Deep Research 89% 调用由应用发起，上下文中位数从约 10K 涨到 68K token。agentic KV 驻留决策的一手生产数据。
+
+### 2026-10-17 · Certified Sparse Attention via Perturbed Retrieval ⭐
+> [arXiv](https://arxiv.org/abs/2610.24991) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+稀疏注意力首次带上误差保证：真实 KV cache 上现有方法的查询误差是重尾的。给每个 key 分数加独立 Exp(1) 扰动，threshold retrieval 变成按注意力权重采样；几何网格降阈值得嵌套样本 + Horvitz-Thompson 估计，全层置信界同时成立，每个 head 误差界内即停。
+
+### 2026-10-17 · MOSAIC: Multi-Objective Search for Allocating Inference Cache Across LLM Decoder Layers ⭐
+> [arXiv](https://arxiv.org/abs/2610.25431) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+SnapKV/H2O/AdaKV/L2Norm 等驱逐方法给每层发同样的 token 预算，但各层需要的 token 不同。MOSAIC 用多目标神经架构搜索学 per-layer KV 预算，一次搜索画出「平均预算 vs 任务分」权衡曲线，最优分配无需重搜即可迁移到任意目标预算——套在任何驱逐方法之上都有效。
+
+### 2026-10-17 · TideKV: Delayed KV Eviction via Layer-Wise Chunked Prefill for Memory-Efficient Long-Context LLM Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.24499) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+长上下文的显存峰值不只 decode：全量 prefill 期间要留全量 KV。在线 chunk 级驱逐省显存但每层没看完整 prompt 就选、伤质量。TideKV 用 layer-major 延迟驱逐——逐层 chunked prefill，每层看完整 prompt 后再驱逐，压掉构建期峰值同时保住驱逐质量。
+
+### 2026-10-17 · Prism Attention: Proposal-Refined Index Sharing Mechanism for Efficient LLMs Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.22985) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+token 级稀疏注意力反复重算各层索引的代价高，锚层静态共享又忽略层间演化。Prism Attention 两段式：锚层出 proposal 索引，非锚层低成本 refine 修正——介于「每层重算」与「静态复用」之间。
+
+### 2026-10-17 · HBFSim: A Simulator for Exploring HBF in Memory Hierarchies for LLMs ⭐
+> [arXiv](https://arxiv.org/abs/2610.23503) · upvotes: 64 · infra 相关性: 4/5 · 子方向: kv-cache
+
+高带宽 Flash（HBF）提供 TB 级 GPU 本地容量、带宽接近 HBM，但 NAND 的长延迟/乱位更新/有限写寿命让效果难预测。HBFSim 是 LLM-aware 事件驱动模拟器，保留应用级内存轨迹保真度，系统评估 HBM+HBF 分层对性能与寿命的影响。
 
 ### 2026-10-16 · Close Enough is Nowhere Near: Fidelity-Consumability Decoupling in KV Caches ⭐
 > [arXiv](https://arxiv.org/abs/2610.22016) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
@@ -175,6 +245,51 @@ Looped Transformer 的 KV cache 随循环次数线性膨胀成为解码吞吐与
 
 ## 投机解码
 
+### 2026-10-20 · DScout: Factorization-Guided Training and Inference for Diffusion-Drafted Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.23935) · upvotes: 5 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+扩散 drafter 的提案容量与 MAT 涨不等于吞吐涨：验证只接受连续前缀，早拒作废后面的正确预测；每轮延迟也随容量涨。DScout 用训练与推理两侧的互补因子分解分别治理两个失效模式——一周内第二篇给接受率指标「祛魅」的工作（第一篇是 10-17 的 Acceptance Is Not Speed）。
+
+### 2026-10-18 · ReAnchor: Reusing Rejected Verifier States for Diffusion Drafting ⭐
+> [arXiv](https://arxiv.org/abs/2610.26531) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+块扩散 drafter 每次前向只从一个 target 生成的锚点出固定长度块，草稿延伸受限；而验证在首个拒绝点之后算出的 hidden states 通常被丢弃。ReAnchor training-free：用这些被丢弃的 verifier states 在移位位置重新锚定 drafter，并行生成多个 draft 块——与 JetSpec++ 的 foresight 同族：榨取验证阶段「顺带」的计算。
+
+### 2026-10-17 · When Does Better Acceptance Pay? A Controlled Study of Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.24993) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+投机解码论文的 drafter 对比大多训练/推理条件不对齐。建立横跨训练、推理、评测的对照协议：重测已发布 checkpoint + 在共享 target 生成数据上重训六种 drafter 配方（10 基准 × 2 target），对齐后发表对比里的大差距大幅缩水——「多接受一个 token 值不值」取决于接受长度与执行延迟的权衡。
+
+### 2026-10-17 · Acceptance Is Not Speed: Length Inflation in Training-Free Lossy Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.23818) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+宽松（lossy）验证接受的 token 会改变输出分布——识别 length inflation 现象：主要拉长 reasoning 轨迹，表面 accepted tokens/round 的增益大部分被完成长度增长抵消。training-free lossy 方法的真实提速要打折看。
+
+### 2026-10-17 · DLite: History-free Speculative Decoding for Agentic AI ⭐
+> [arXiv](https://arxiv.org/abs/2610.23787) · upvotes: 21 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+agentic 负载（长且不断演化的上下文、频繁多轮）让现有 drafter 接受长度掉最多 80%，维护 drafter 历史 KV cache 又有系统开销。DLite 刻画「增长历史上下文」对 acceptance 的伤害机制并设计 history-free drafting，与 GraphTok（tokenization 卸载）同属 agentic serving 前端优化线。
+
+### 2026-10-17 · FlashMap: Flow Map Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.24365) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+自回归 drafter 逐 token 起草慢，块扩散 drafter（DFlash）一次前向出整块但 token 间互相看不见。FlashMap 用连续 flow map 模型以 target hidden states 为条件生成整块草稿，建模块内依赖，接受长度与起草速度双升。
+
+### 2026-10-17 · BS-Spec: BFP-Based Bit-Sharing for Self-Speculative LLM Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.22877) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+自投机解码的 draft 配置不随负载变、混合精度执行低效。BS-Spec 用 block floating point 位共享一套框架同时管 draft 构造（免独立 drafter 的 KV cache）与 LUT 驱动的负载感知混合精度执行。
+
+### 2026-10-17 · Trajectory-Triggered Sparse Collaborative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.23613) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+sparse collaborative decoding 让 drafter 生成绝大多数 token、target 只在短纠正段被调用，关键在「何时叫 target」。局部不确定性是弱触发器：熵/NLL/logit margin/top-k mass/速度特征预测失败 AUC 仅 0.50-0.53（接近瞎猜）；聚合轨迹形状特征才有区分度。
+
+### 2026-10-17 · PV-Decoding: Progressive Verification Decoding with Decode Gating for Diffusion Language Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.24722) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+dLLM 的投机解码两难：同块内 token 相互依赖，激进接受错传、严格验证太贵。PV-Decoding 置信度驱动的渐进验证 + decode gating 控制提交节奏，安全提交成本降低。
+
 ### 2026-10-16 · LoopAhead: Speculating Ahead for Faster Decoding in Looped Language Models ⭐
 > [arXiv](https://arxiv.org/abs/2610.21594) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
 
@@ -247,6 +362,16 @@ RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间�
 
 
 ## 量化与压缩
+
+### 2026-10-18 · MX-Like Tensor Core for LLM Inference with NPU Integration via Hardware-Software Co-Design Exploration ⭐
+> [arXiv](https://arxiv.org/abs/2610.26083) · upvotes: 0 · infra 相关性: 5/5 · 子方向: quantization-compression
+
+MX/NVFP4 块缩放格式被广泛采用，但 shared scale × 权重 × 激活的格式组合空间没人系统扫过。软硬件协同设计探索该空间，给出 NPU 边缘部署的精度-硅面积 Pareto 前沿与 tensor core 微架构集成方案。
+
+### 2026-10-17 · FuTransformer: FP8 prefill and INT4 decode for Llama-style inference on Hopper ⭐
+> [arXiv](https://arxiv.org/abs/2610.23796) · upvotes: 0 · infra 相关性: 5/5 · 子方向: quantization-compression
+
+prefill 算力瓶颈用 FP8、decode 带宽瓶颈用 INT4（权重+KV cache）——按阶段选精度的 CUDA 实现：CODA 的 GEMM-plus-epilogue 搬到推理，直接 KV cache 放置、RMSNorm 增益折进权重、delayed scaling FP8 输出、无 padding prefill。
 
 ### 2026-10-15 · PN-Mix: Pair-Norm Guided Mixed-Precision Key Cache Quantization for Efficient Long-Output LLM Inference ⭐
 > [arXiv](https://arxiv.org/abs/2610.19605) · upvotes: 0 · infra 相关性: 5/5 · 子方向: quantization-compression
@@ -340,6 +465,11 @@ agent 每轮只追加少量文本，但 CPU tokenizer 前端每次从头重分�
 
 ## MoE 推理
 
+### 2026-10-17 · Efficient CPU-GPU collaborative MoE inference via Adaptive Expert Assignment ⭐
+> [arXiv](https://arxiv.org/abs/2610.23006) · upvotes: 0 · infra 相关性: 5/5 · 子方向: moe-inference
+
+MoE 专家内存超出 GPU 容量就要 offload，现有系统对 GPU-missed 专家要么搬上 GPU（PCIe 延迟）、要么 CPU 执行（算力瓶颈）。自适应专家分配按负载把 missed 专家动态分派到合适的执行侧，规避两种瓶颈。
+
 ### 2026-10-16 · DPA-MoE: A Runtime Precision Control Framework for MoE Inference ⭐
 > [arXiv](https://arxiv.org/abs/2610.21378) · upvotes: 0 · infra 相关性: 5/5 · 子方向: moe-inference
 
@@ -357,6 +487,41 @@ looped MoE 两次循环角色不对称（首访 residual 系数天然小）：La
 
 
 ## 长上下文与 VLM
+
+### 2026-10-20 · Remembering Has a Price: Learning Memory Worth under Resource Constraints ⭐
+> [arXiv](https://arxiv.org/abs/2610.26453) · upvotes: 5 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+资源稀缺让「记什么」本身变成高价值决策：生成/交互/记忆三重紧预算下，多个复杂终身记忆方法还不如简单检索甚至不记忆。提出 memory worth 的显式学习——负结果气质与 KV Fidelity 一脉相承。
+
+### 2026-10-20 · MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents ⭐
+> [arXiv](https://arxiv.org/abs/2610.06830) · upvotes: 21 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+agent 记忆系统大多查询无关地预处理一切，成本高且丢掉后来才知重要的细节。MemPilot 按需策展：运行时灵活编排记忆操作，性能/成本/延迟可控。
+
+### 2026-10-20 · KronLSTM: Kronecker Delta Rule for Long Context Linear Attention ⭐
+> [arXiv](https://arxiv.org/abs/2610.26834) · upvotes: 21 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+Kronecker delta 更新规则扩展 xLSTM 家族：矩阵记忆沿单一方向做最小侵入修订——改目标关联的同时不干扰已存信息，记忆动力学可描述为马尔可夫链，长上下文记忆干扰降低。
+
+### 2026-10-18 · MemT-1.0: Towards Memory-Native Evolution ⭐
+> [arXiv](https://arxiv.org/abs/2610.26825) · upvotes: 97 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+记忆原生架构：Gated DeltaNet-2 的 token 级稳定记忆更新 + Mixture-of-Storage 分层存储扩容，记忆内在化为模型计算的一部分；两阶段训练（继续预训练 + 记忆指令微调）。HF up 97。
+
+### 2026-10-17 · StreamAhead: Real-Time Streaming Video Question Answering via Adaptive Precomputation ⭐
+> [arXiv](https://arxiv.org/abs/2610.25551) · upvotes: 0 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+流式视频问答的根本权衡：视频到达时多算降低查询延迟但拖慢处理速率，延迟算则相反。查询通常只用前面几帧作证据，全量建 KV cache 浪费。自适应预计算策略动态平衡两边。
+
+### 2026-10-17 · ReTrace: Visual Backtracking for Efficient Multimodal Large Language Models ⭐
+> [arXiv](https://arxiv.org/abs/2610.25005) · upvotes: 0 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+视觉 token 压缩在浅层剪低显著 token，把「暂时不用」与「永久删除」耦合。层间注意力分析发现 Visual Backtracking：视觉 pivot 中层会回头检索内容。压缩设计保留回溯路径，MLLM 开销降而不伤检索。
+
+### 2026-10-17 · Improving the Expressive Power of Hybrid Sequence Models via Multi-Hop Retrieval ⭐
+> [arXiv](https://arxiv.org/abs/2610.25250) · upvotes: 0 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+混合架构中高效层（sparse attention/recurrent）依赖固定大小状态、够不到 full-attention 层维护的 KV cache。理论+实证分析多跳检索访问能买回多少表达力。
 
 ### 2026-10-14 · DoSA: Dots Sparse Attention ⭐
 > [arXiv](https://arxiv.org/abs/2610.13990) · upvotes: 59 · infra 相关性: 5/5 · 子方向: long-context-vlm
@@ -415,6 +580,21 @@ looped MoE 两次循环角色不对称（首访 residual 系数天然小）：La
 
 
 ## Others
+
+### 2026-10-20 · HSPR: Recovering Software-Agent Benchmark Scores via Hierarchical Posterior Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.24611) · upvotes: 3 · infra 相关性: 3/5 · 子方向: inference-other
+
+跑全基准贵、小子集分数不准。HSPR 组合源 agent 历史响应因子与组成功率不确定性，后验引导选题——低成本高精度恢复目标 agent 分数。
+
+### 2026-10-20 · A Conditional No-Hair Theorem for Transformers: How Language Models Forget Their Prompt ⭐
+> [arXiv](https://arxiv.org/abs/2610.24133) · upvotes: 4 · infra 相关性: 3/5 · 子方向: kv-cache
+
+模型生成 t 个 token 后对 prompt 的记忆按幂律 t^(-α) 衰减：训练过的模型忘得快（α≈0.55-0.7），未训练的慢（α≈0.2-0.5），偏移界 O(P(log t)^(L-1))。对 KV cache 生命周期管理（老上下文还值不值得留）有直接含义。
+
+### 2026-10-17 · ArchAgent: Agentic AI for Heterogeneous System Design Across Chip, Scale-Up, and Scale-Out Domains ⭐
+> [arXiv](https://arxiv.org/abs/2610.23724) · upvotes: 0 · infra 相关性: 4/5 · 子方向: inference-other
+
+AI/HPC 系统设计空间（GPU/数据流/RISC-V × HBM/GDDR/SRAM × NVLink/IB/UEthernet）组合爆炸。层级多 agent 框架：LLM planner 分解设计问题，子 agent 分域探索。
 
 ### 2026-10-14 · Revisiting Cauchy-Schwarz Norm Bounds for SDC Detection in LLM Inference ⭐
 > [arXiv](https://arxiv.org/abs/2610.18557) · upvotes: 0 · infra 相关性: 4/5 · 子方向: inference-other

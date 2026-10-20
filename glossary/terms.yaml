@@ -435,3 +435,63 @@ terms:
     解释: softmax 让 key 互相比赛而非对标阈值，输出由比赛胜负决定——微小位移可翻转势均力敌的比赛，KV 跨模型替换失败的机制根源
     相关: [kv-cache]
     首见: 2026-10-16 KV Fidelity
+  Length Inflation:
+    level: learning
+    解释: 宽松（lossy）验证的投机解码改变输出分布、主要拉长 reasoning 轨迹，表面接受率收益被完成长度增长吃掉
+    相关: [speculative-decoding]
+    首见: 2026-10-17 Acceptance Is Not Speed
+  Layer-major Delayed Eviction:
+    level: learning
+    解释: 逐层 chunked prefill、每层看完整 prompt 后再驱逐，压 prefill 显存峰值而不牺牲驱逐质量（TideKV）
+    相关: [kv-cache]
+    首见: 2026-10-17 TideKV
+  Trajectory-shape Trigger:
+    level: learning
+    解释: sparse collaborative decoding 的调用时机信号——局部熵/margin 无区分度（AUC≈0.5），聚合轨迹形状特征才有
+    相关: [speculative-decoding]
+    首见: 2026-10-17 Trajectory-Triggered Decoding
+  Proposal-Refined Index Sharing:
+    level: learning
+    解释: 稀疏注意力跨层共享索引的两段式——锚层出 proposal、非锚层低成本细化（Prism Attention）
+    相关: [kv-cache]
+    首见: 2026-10-17 Prism Attention
+  BFP Bit-Sharing:
+    level: learning
+    解释: block floating point 块内共享指数位，自投机解码中同时管 draft 构造与混合精度的框架（BS-Spec）
+    相关: [speculative-decoding, quantization-compression]
+    首见: 2026-10-17 BS-Spec
+  Compensation-aware Deletion:
+    level: learning
+    解释: KV 压缩的删除决策被 softmax 重归一化非线性耦合，删除需考虑对剩余条目的补偿（KV-Surgeon）
+    相关: [kv-cache]
+    首见: 2026-10-18 KV-Surgeon
+  Memory-native:
+    level: learning
+    解释: 把记忆作为模型计算的内生部分（token 级状态更新+分层存储），而非外挂检索（MemT-1.0）
+    相关: [long-context-vlm]
+    首见: 2026-10-18 MemT-1.0
+  MAT (Mean Accepted Tokens):
+    level: learning
+    解释: 投机解码每轮平均被接受 token 数；涨了吞吐未必涨——早拒作废后续+每轮延迟上升两个失效模式（DScout）
+    相关: [speculative-decoding]
+    首见: 2026-10-20 DScout
+  Memory Worth:
+    level: learning
+    解释: 资源约束下「这段经历值不值得记」本身成为学习问题；紧预算下多数复杂记忆方法不如简单检索
+    相关: [long-context-vlm]
+    首见: 2026-10-20 Remembering Has a Price
+  Competing Learning:
+    level: learning
+    解释: 混合架构中线性递归层与 softmax attention 抢学同一函数，一层学会抑制他层学习信号
+    相关: [models, long-context-vlm]
+    首见: 2026-10-20 Competing Learning in Hybrid Architectures
+  On-demand Memory Curation:
+    level: learning
+    解释: agent 记忆不做查询无关的全量预处理，运行时按查询编排策展操作（MemPilot）
+    相关: [long-context-vlm]
+    首见: 2026-10-20 MemPilot
+  No-hair 定理 (Transformer):
+    level: learning
+    解释: 不同 prompt 的 hidden state 距离随生成 token 数幂律衰减 t^-α；训练过的模型忘得快（α≈0.55-0.7），长上下文复用窗口有限
+    相关: [kv-cache]
+    首见: 2026-10-20 No-Hair Theorem
