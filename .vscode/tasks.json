@@ -1,0 +1,24 @@
+{
+  // 本工作区打开时自动检查每日论文任务唤醒循环是否存活（挂了会弹通知提醒）
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "paper-kb: 检查唤醒循环",
+      "type": "shell",
+      "command": "bash ${workspaceFolder}/scripts/check_paper_loop.sh",
+      "isBackground": false,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false,
+        "showReuseMessage": false,
+        "focus": false
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}
+ 
