@@ -4,11 +4,21 @@
 #   bash scripts/loop_paper_kb.sh
 # 说明: 机器重启后本进程会消失；重新运行上面这条命令即可。漏掉的日期由
 # .cursor/prompts/daily-paper.md 步骤 1 自动补齐。
+# 兼容性: macOS（BSD date -v）与 Linux/Windows Git Bash（GNU date -d）。
 while true; do
   now=$(date +%s)
-  target=$(date -v21H -v0M -v0S +%s)
-  if [ "$target" -le "$now" ]; then
-    target=$(date -v+1d -v21H -v0M -v0S +%s)
+  if date -v21H +%s >/dev/null 2>&1; then
+    # macOS (BSD date)
+    target=$(date -v21H -v0M -v0S +%s)
+    if [ "$target" -le "$now" ]; then
+      target=$(date -v+1d -v21H -v0M -v0S +%s)
+    fi
+  else
+    # GNU date（Linux / Windows Git Bash）
+    target=$(date -d 'today 21:00' +%s)
+    if [ "$target" -le "$now" ]; then
+      target=$(date -d 'tomorrow 21:00' +%s)
+    fi
   fi
   sleep $((target - now))
   echo 'AGENT_LOOP_TICK_paper_kb {"prompt":"执行 .cursor/prompts/daily-paper.md 每日任务（从 daily/ 最新日期的下一天开始补齐缺失日期，含今天），完成后简报并提交推送。"}'
