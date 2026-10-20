@@ -3,4 +3,7 @@
 # 用法: bash scripts/git_push.sh
 set -e
 cd "$(dirname "$0")/.."
-/usr/bin/git push origin main || (/usr/bin/git pull --rebase origin main && /usr/bin/git push origin main)
+# 跨平台：macOS 有 /usr/bin/git；Windows Git Bash 无此路径，退回 PATH 中的 git
+GIT=/usr/bin/git
+command -v "$GIT" >/dev/null 2>&1 || GIT=git
+"$GIT" push origin main || ("$GIT" pull --rebase origin main && "$GIT" push origin main)

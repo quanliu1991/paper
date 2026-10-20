@@ -7,5 +7,8 @@
 set -e
 cd "$(dirname "$0")/.."
 MSG="${1:?usage: git_commit.sh <message>}"
-/usr/bin/git add -A
-/usr/bin/git commit -m "$MSG" || true
+# 跨平台：macOS 有 /usr/bin/git；Windows Git Bash 无此路径，退回 PATH 中的 git
+GIT=/usr/bin/git
+command -v "$GIT" >/dev/null 2>&1 || GIT=git
+"$GIT" add -A
+"$GIT" commit -m "$MSG" || true
