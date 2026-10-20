@@ -13,7 +13,9 @@
 import argparse
 import datetime as dt
 import json
+import os
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -113,8 +115,12 @@ def main() -> int:
         for f in stale:
             print("   ", f.relative_to(ROOT))
         if args.clean:
+            # 跨平台：macOS 有 /usr/bin/git；Windows Git Bash 无此路径，退回 PATH 中的 git
+            git_bin = "/usr/bin/git" if os.path.exists("/usr/bin/git") else shutil.which("git")
+            if not git_bin:
+                git_bin = "git"
             for f in stale:
-                subprocess.run(["/usr/bin/git", "rm", "-q", str(f.relative_to(ROOT))], cwd=ROOT, check=False)
+                subprocess.run([git_bin, "rm", "-q", str(f.relative_to(ROOT))], cwd=ROOT, check=False)
             print("[clean] 已 git rm（git 历史仍可查：git show HEAD~1:daily/...）")
     else:
         print(f"[clean] 无超期（> {KEEP_DAYS} 天）daily 文件")
