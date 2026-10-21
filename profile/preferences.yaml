@@ -6,7 +6,7 @@
 # 推荐分 = profile/interests.yaml 基础权重 × (1 + score/10)
 # 同分时比 infra 分，再比 upvotes。量小由 Agent 手动维护，无需脚本。
 
-更新: 2026-10-16
+更新: 2026-10-21
 
 signals:
   training:
@@ -15,10 +15,10 @@ signals:
     追问: 0
     score: 3.0
   serving-system:
-    精读: 4        # TokenRouter、GraphTok、RadixFlow、Remote KV Tiers
+    精读: 5        # TokenRouter、GraphTok、RadixFlow、Remote KV Tiers、AgentPerfBench
     待读加入: 1    # TokenRouter
     追问: 1        # delayed-batching 推导、GPU 共卡账、SLO
-    score: 9.5
+    score: 11.5
   speculative-decoding:
     精读: 3        # DLoop、S3R、JetSpec++
     待读加入: 1    # DLoop

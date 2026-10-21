@@ -4,6 +4,11 @@
 
 ## Serving 系统
 
+### 2026-10-21 · AgentPerfBench: A Benchmarking and Evaluation Suite for Inference Performance of Agentic LLMs ⭐
+> [arXiv](https://arxiv.org/abs/2609.34683) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
+
+agentic 负载的推理基准：用 SWE-Bench/TerminalBench/OSWorld 真实 trace 构造多轮 profile（编码 agent ISL/OSL≈355:1、85 轮会话），饱和点测量 + OI/CF 双维 roofline + 14.8 万条 NCU kernel 记录。核心数字：LLaMA-3.1-8B@H100 上编码 agent TTFT 34×/吞吐 -82%（vs 聊天）；聊天 OI 181（带宽瓶颈）vs 编码 agent 2,409（8.2× ridge，计算瓶颈）；32K 上下文 C≈14 撞 80GB HBM 墙——双重压力论证 PDD。合成 replay 必须 prefix-aware（共享前缀把深轮误差从 31% 压到 3%）。精读笔记见 [notes/papers/2026-10-21-agentperfbench.md](../../notes/papers/2026-10-21-agentperfbench.md)。
+
 ### 2026-10-18 · Tandem: Serving Hybrid Linear-Attention GUI Agents on Mobile NPUs ⭐
 > [arXiv](https://arxiv.org/abs/2610.26660) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
 

@@ -495,3 +495,23 @@ terms:
     解释: 不同 prompt 的 hidden state 距离随生成 token 数幂律衰减 t^-α；训练过的模型忘得快（α≈0.55-0.7），长上下文复用窗口有限
     相关: [kv-cache]
     首见: 2026-10-20 No-Hair Theorem
+  Snowballing Effect:
+    level: learning
+    解释: 多轮 agent 会话每轮追加历史，ISL 滚雪球式增长——把 prefill 推向计算瓶颈、KV cache 推向容量墙的双重压力来源
+    相关: [serving-system, kv-cache]
+    首见: 2026-10-21 AgentPerfBench
+  Operational Intensity (OI):
+    level: learning
+    解释: FLOPs/DRAM bytes 比值，roofline 分析的核心量；prefill（L=ISL）趋向计算瓶颈、decode（L=1）贴带宽地板，H100 ridge=295 FLOP/byte
+    相关: [serving-system, parallelism-scheduling]
+    首见: 2026-10-21 AgentPerfBench
+  Capacity Footprint (CF):
+    level: learning
+    解释: 每 concurrent request 的 DRAM 字节（权重分摊+KV cache）；超 HBM 容量就要降批/paging/驱逐——roofline 的第二维度
+    相关: [serving-system, kv-cache]
+    首见: 2026-10-21 AgentPerfBench
+  Saturation-based Measurement:
+    level: learning
+    解释: 扫并发到吞吐不再上升（饱和点 C*）再报告指标的测量法；单工作点会被 KV 容量压力下的吞吐坍塌欺骗
+    相关: [serving-system]
+    首见: 2026-10-21 AgentPerfBench
