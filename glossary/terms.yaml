@@ -492,9 +492,29 @@ terms:
     首见: 2026-10-20 MemPilot
   No-hair 定理 (Transformer):
     level: learning
-    解释: 不同 prompt 的 hidden state 距离随生成 token 数幂律衰减 t^-α；训练过的模型忘得快（α≈0.55-0.7），长上下文复用窗口有限
+    解释: 借自黑洞物理——生成 t 个 token 后 prompt 在 hidden state 的印记按幂律 t^-α 衰减，理论上界 O(P(log t)^(L-1)/t)；训练过的模型忘得快（深层 α≈0.55-0.7 vs 未训练 0.2-0.5），幸存属性（如语言）由生成文本自身携带
     相关: [kv-cache]
     首见: 2026-10-20 No-Hair Theorem
+  Prompt Offset (prompt 偏移):
+    level: learning
+    解释: 两个不同 prompt 接同一段 continuation 时 hidden state 的差向量——把「记忆 prompt」从「回应不同文本」里剥离的对照测量量，衰减指数 α 是其幂律斜率
+    相关: [kv-cache]
+    首见: 2026-10-21 No-Hair Theorem
+  Dilution (注意力稀释):
+    level: learning
+    解释: prompt 长度固定而可见 key 数随生成增长，softmax 下 prompt 注意力份额至多 P/i 几何式萎缩——LLM 遗忘 prompt 的第一机制，logit 有界时严格成立
+    相关: [kv-cache, models]
+    首见: 2026-10-21 No-Hair Theorem
+  Relay (接力路径):
+    level: learning
+    解释: prompt 信息经 continuation token 中转传递的注意力路径（query 读已带 prompt 信息的后文）；每层 relay 至多贡献一个 log 因子，未训练网络的长尾记忆全是 relay，训练在前 1B token 内将其压制
+    相关: [kv-cache, models]
+    首见: 2026-10-21 No-Hair Theorem
+  Instruction Drift (指令漂移):
+    level: learning
+    解释: system prompt 全程在上下文里但模型遵从度随对话轮次下降的现象；机制根源是注意力稀释的 1/t 衰减，而非对话模式的人为产物
+    相关: [kv-cache, serving-system]
+    首见: 2026-10-21 No-Hair Theorem
   Snowballing Effect:
     level: learning
     解释: 多轮 agent 会话每轮追加历史，ISL 滚雪球式增长——把 prefill 推向计算瓶颈、KV cache 推向容量墙的双重压力来源

@@ -6,7 +6,7 @@
 # 推荐分 = profile/interests.yaml 基础权重 × (1 + score/10)
 # 同分时比 infra 分，再比 upvotes。量小由 Agent 手动维护，无需脚本。
 
-更新: 2026-10-21
+更新: 2026-10-21（No-Hair Theorem 精读，kv-cache +2）
 
 signals:
   training:
@@ -25,10 +25,10 @@ signals:
     追问: 1        # 与 token 路由对比、无损性
     score: 5.5
   kv-cache:
-    精读: 4        # KV-Repurpose、BELT、KV4-RL、KV Fidelity-Consumability
+    精读: 5        # KV-Repurpose、BELT、KV4-RL、KV Fidelity-Consumability、No-Hair Theorem
     待读加入: 0
     追问: 0
-    score: 6.0
+    score: 8.0
   quantization-compression: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   parallelism-scheduling: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   moe-inference: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
