@@ -4,6 +4,26 @@
 
 ## Serving 系统
 
+### 2026-10-21 · HAWK: Heterogeneity-Aware KV Cache Transfer for Efficient GPU-NPU Phase-Disaggregated LLM Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.29873) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
+
+GPU 干 prefill（tensor core 利用率 ~93%）、NPU 干 decode（GEMV 场景核利用率 79-81% vs GPU 12-13%，成本效率 5.88×）的异构 phase disaggregation，堵点是 KV cache 跨芯片搬家：通信栈不通 + 张量布局不同。HAWK 给 NPU 驱动写 peer memory client 打通 RDMA，NPU 侧每 DRAM 通道一个布局感知 buffer（数据落地即用零重排），GPU 侧发送前预重排让 RDMA 请求少而大。KV 传输与 GPU-GPU 直连差距 <1%；与 GPU-only 系统吞吐差 <7.88% 下功耗效率 1.26×、成本效率 1.72×（vs H100 decode 的 GGH-Direct 成本效率 2.7×）。精读笔记见 [notes/papers/2026-10-21-hawk-gpu-npu.md](../../notes/papers/2026-10-21-hawk-gpu-npu.md)。
+
+### 2026-10-21 · OrbitWeaver: Resuming Vision-Language Inference across Onboard Interruptions ⭐
+> [arXiv](https://arxiv.org/abs/2610.29183) · upvotes: 0 · infra 相关性: 4/5 · 子方向: serving-system
+
+低轨卫星上的 VLM 推理被断电/重启打断后 KV 与激活全丢、重启重算。OrbitWeaver 按视觉编码/prefill/decode 三阶段的state 寿命选检查点边界，依赖感知恢复调度跨层×token 块两维还原部分完成状态，检查点读写与重算重叠。在轨遥测负载端到端 4.07× 加速、SSD 写量 −3.56×，两颗卫星 72 小时在轨验证——非地面 serving 场景的一手系统工作。
+
+### 2026-10-21 · The Token-Energy Law of LLM Decode: Active Bytes and Realized Time Account for Joules per Token ⭐
+> [arXiv](https://arxiv.org/abs/2610.28576) · upvotes: 0 · infra 相关性: 4/5 · 子方向: serving-system
+
+每 token 能耗的紧凑可解释模型：活动字节数（批内共享的稠密权重读 + 每请求私有的 KV 读）与实际 decode 时间（总时长/输出 token 数）的仿射组合，系数按模型×硬件×运行时标定。三模型 × Hopper/Blackwell × TP2 验证，held-out 条件均值能耗预测误差 ≤3.73%。解释了批处理如何摊薄权重功耗、长历史如何推高 KV 私有需求——部署侧能耗建模的基础公式。
+
+### 2026-10-21 · Local Inference of LLMs on Long Contexts: A Data Systems Perspective ⭐
+> [arXiv](https://arxiv.org/abs/2610.28223) · upvotes: 0 · infra 相关性: 4/5 · 子方向: serving-system
+
+单 GPU 本地长上下文 serving 的系统瓶颈分析（跨多代 GPU）：自注意力主导运行时不出意料，意外的是自注意力的现有结构让关键 GPU 资源显著闲置、**最新的 GPU 反而服务得最差**。把问题翻译成数据管理语言（KV 分页、缓存利用率、GPU 内同步）抛给数据系统社区，附实验观察与建议清单。
+
 ### 2026-10-21 · AgentPerfBench: A Benchmarking and Evaluation Suite for Inference Performance of Agentic LLMs ⭐
 > [arXiv](https://arxiv.org/abs/2609.34683) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
 
@@ -96,6 +116,26 @@ agentic 负载反复重发几乎不变的超长上下文，prefix caching 省掉
 
 
 ## KV Cache 与显存
+
+### 2026-10-21 · Cache Engineering for Agents（AKV）⭐
+> [arXiv](https://arxiv.org/abs/2610.28577) · upvotes: 0（10-22 涨至 45） · infra 相关性: 5/5 · 子方向: kv-cache
+
+agent 历史管理的范式提议：别在文本层动刀（摘要/裁剪会作废后续 KV 触发 re-prefill），直接在 cache 层操作——append/drop/repos 三个原语，drop 把选中 KV 移出后续注意力、repos 用 RoPE 旋转重排保留 key 的位置编码，保留状态原地复用。关键发现：cache 状态是**历史依赖**的（同 token 前缀在不同操作序列下产生不同 KV），radix tree 前缀匹配复用会错——AKV 引擎用 drop/reposition 节点扩展 radix tree + segment-batch attention 单次前向恢复缺失状态。tool-response rolling drop 策略：成本 −27.7%、分数 +1.7 点、P95 延迟 1.5×、decode 提速主因是 full-attention 时间 −59.8%。与 AgentPerfBench 的 snowballing effect 观察直接呼应。精读笔记见 [notes/papers/2026-10-21-cache-engineering-akv.md](../../notes/papers/2026-10-21-cache-engineering-akv.md)。
+
+### 2026-10-21 · UlaCache: Unified Logical Addressing for Sparse LLM Serving ⭐
+> [arXiv](https://arxiv.org/abs/2610.29820) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+原生稀疏注意力模型（DeepSeek-V4.1-Flash/GLM-5/Qwen3.8-Flash-Next）的 KV 管理系统：GPU 池 + CPU 池统一逻辑地址空间，引擎拿稳定「门牌号」选址，数据搬家只改映射。TP 模式下历史按 t mod P 切到各卡，顺手解决 MLA 共享表示 head 切分切不开的 87.5% TP 复制；PB-LRU 桶式 bitmap 并行替换（调度比 naive LRU 快 1.5-2.3×，命中损失 <0.1pp）；CPU↔GPU 数据对调式交换后原子更新映射。GLM-5.3@8×B300 开投机解码峰值吞吐 vs HiSparse：DP 1.73× / TP 2.51×；不开投机 TP 达 SGLang 3.51×。精读笔记见 [notes/papers/2026-10-21-ulacache.md](../../notes/papers/2026-10-21-ulacache.md)。
+
+### 2026-10-21 · RISK-KV: Quality-Aware Selective KV Cache Reconstruction for Distributed LLM Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.29544) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+分布式推理的请求迁移/中断恢复别再全量搬历史 KV 或全量重放 token：用目标层两侧的精确 KV + 跨层岭回归**算出**缺失层的输入，再折叠原模型 KV 投影矩阵省 predictor 存储；NLL 变化度量重建风险做质量门控选层组。省 18.2-33.3% 历史 KV、困惑度变化 <0.5%，512-token 历史恢复比 Token Replay 快 1.51-3.31×。
+
+### 2026-10-21 · RACE: RoPE-Aligned Attention Compression Based on Query-Key Activation Energies ⭐
+> [arXiv](https://arxiv.org/abs/2610.28385) · upvotes: 0 · infra 相关性: 4/5 · 子方向: kv-cache
+
+head 维 KV 压缩的老毛病：推理时要重建全维表示，FLOPs 省不下来。RACE 把约简限制在**坐标选择**：共享投影作用在 Q/K 上保持同空间，且 RoPE 兼容的充要条件是保留完整旋转对——按 query-key 联合激活能挑 rotary pair，选完折叠进权重，免运行时重建免专用 kernel。KV 保留 50% @256K：总 FLOPs −47.8%、吞吐 1.79×、TTFT −43.2%、显存 −28.1%。与 KV-Repurpose（10-12）的 RoPE 重旋转同一条技术线。
 
 ### 2026-10-18 · The KV-Surgeon: Compensation-Aware Offline KV-Cache Compaction ⭐
 > [arXiv](https://arxiv.org/abs/2610.25933) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
@@ -250,6 +290,36 @@ Looped Transformer 的 KV cache 随循环次数线性膨胀成为解码吞吐与
 
 ## 投机解码
 
+### 2026-10-21 · TeCoP: Accelerating Diffusion LLM Decoding via Tentative Context Pipelining ⭐
+> [arXiv](https://arxiv.org/abs/2610.27583) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+dLLM（LLaDA/Dream）解码的通病：块间串行 + 已稳定预测反复重算。病根是把「预测可用于提交」和「预测可当上下文」耦合了。TeCoP 训练自由地把稳定未提交的预测当**临时跨块上下文**，提交由置信度+稳定性检查把关。前向评估次数 −87%，吞吐 7.50×（无 KV cache）/ 11.77×（有 cache），12 项模型-基准设置全胜 Fast-dLLM 与 DSB，精度差 <1pp——把投机思想从 AR 搬进扩散语言模型。
+
+### 2026-10-21 · ProVe: Proposer-Verifier Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.27815) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+投机解码角色反转：AR 大模型微调成 **proposer**——一次前向提出整块未来 token（block 16 时平均与 AR 贪心前缀吻合 6.6 个），再一次前向验证。proposer 自验证即 ProVe-lossless（严格复现贪心 AR 解码）：32B 下 2.5× AR 吞吐且不用训独立 draft head；换 3B 小 verifier 得 2.7× 换 2.6 点精度，速度-精度可调。draft 模型的训练/维护成本被绕开。
+
+### 2026-10-21 · D-PAL: Beyond the Point Mass — Acceptance-Derived Weights and Distributional Losses for Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.28355) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+draft 训练损失（D-PACE 系）把 target 当点质量只用记录 token 的概率——但拒绝采样下 draft token 的接受概率是两个分布的重叠度（1−TV）。D-PAL 从精确期望接受长度推导出重叠度逐位权重 + log-acceptance 损失，Rényi-1/2 散度可上下界夹住真实接受率。Qwen3-4B target 上平均接受长度 4.50→4.57（T=0），两个温度下吞吐一致更高——理论修补带来的一致但小幅的收益。
+
+### 2026-10-21 · Target Regeneration Shrinks the Gains of Draft-Training Objectives in Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.29013) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+方法论警示：新 draft 训练目标的接受率收益通常对着「外部语料 token」测，但很多管线会拿 target 重写数据——重写后蒸馏收益缩水、门控蒸馏收益近乎归零，且缩水跨数据顺序/位置权重/验证器/温度稳健存在。draft 训练目标应该对着 target-regenerated 基线、跨训练长度测。与「Acceptance Is Not Speed」（10-17）同属给投机解码评估祛魅的系列。
+
+### 2026-10-21 · Understanding Target Probability Reuse in Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.29210) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+target 验证产生的下一 token 分布能不能反哺下一次建树？精确复用要求在下一轮完整上下文处计算的分布，保留它会牺牲已接受 token——论文刻画了该损失持续的条件。可操作的结论：用单独一次 target 前向在当前上下文重排首 token 分支（尤其小树预算下提升期望接受），且目标概率在建树前可用时解码比 draft 排序更快。
+
+### 2026-10-21 · RCSD: Reinforcement and Continual Learning for Domain-Specific Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.29527) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+draft 蒸馏学 target 全分布（含高熵乱区）伤接受率。RCSD 改用推理时自然产生的接受/拒绝序列构造隐式偏好对做 RL，masked loss 不罚 target 对齐 token，接受长度对齐系统级目标。接受长度比 HASS +35%、端到端 1.35×。
+
 ### 2026-10-20 · DScout: Factorization-Guided Training and Inference for Diffusion-Drafted Speculative Decoding ⭐
 > [arXiv](https://arxiv.org/abs/2610.23935) · upvotes: 5 · infra 相关性: 5/5 · 子方向: speculative-decoding
 
@@ -368,6 +438,11 @@ RLVR 长上下文训练的 rollout 生成中 attention 占解码 kernel 时间�
 
 ## 量化与压缩
 
+### 2026-10-21 · Is 2:4 Sparsity Still Worth It? Semi-Structured Sparsity versus Quantization in LLM Inference ⭐
+> [arXiv](https://arxiv.org/abs/2610.28947) · upvotes: 0 · infra 相关性: 4/5 · 子方向: quantization-compression
+
+等 bit 等档位的系统对比（三代 GPU × transformer 全部六种 GEMM 操作数 × 在线剪枝量化）：只要还能降精度，「加 2:4 稀疏」就是更差的一步——2:4 每组丢掉的能量不随 bit 缩小而量化误差会缩。到了硬件最低精度（FP8）后 2:4 仍有 1.3-1.7× 线性层加速，重训练 2:4 FP8 vLLM prefill 吞吐 +27%（GSM8K 持平）；Blackwell 的 4:8 pairwise 稀疏损失更大且重训预算内没救回来。选型结论：先量化、后稀疏。
+
 ### 2026-10-18 · MX-Like Tensor Core for LLM Inference with NPU Integration via Hardware-Software Co-Design Exploration ⭐
 > [arXiv](https://arxiv.org/abs/2610.26083) · upvotes: 0 · infra 相关性: 5/5 · 子方向: quantization-compression
 
@@ -470,6 +545,11 @@ agent 每轮只追加少量文本，但 CPU tokenizer 前端每次从头重分�
 
 ## MoE 推理
 
+### 2026-10-21 · Specter: Fast MoE Inference via Quantization-Enabled Multi-Step Speculative Offloading ⭐
+> [arXiv](https://arxiv.org/abs/2511.14102) · upvotes: 20 · infra 相关性: 5/5 · 子方向: moe-inference
+
+单卡装不下 MoE、expert offloading 卡在 PCIe：数据依赖的路由让 expert 搬运在关键路径上。Specter 用轻量量化 draft 模型（保真 expert 激活模式）做多步 lookahead，预知未来要用哪些 expert，提前组织搬运与执行——验证和通信重叠。单请求 TPOT 平均 1.50×（最高 1.88×）于 SOTA offloading 系统，商品级单 GPU MoE 推理更实际了。
+
 ### 2026-10-17 · Efficient CPU-GPU collaborative MoE inference via Adaptive Expert Assignment ⭐
 > [arXiv](https://arxiv.org/abs/2610.23006) · upvotes: 0 · infra 相关性: 5/5 · 子方向: moe-inference
 
@@ -492,6 +572,21 @@ looped MoE 两次循环角色不对称（首访 residual 系数天然小）：La
 
 
 ## 长上下文与 VLM
+
+### 2026-10-21 · FrameBlend: Cache Locally, Recompute Selectively for Streaming Video Understanding ⭐
+> [arXiv](https://arxiv.org/abs/2610.29229) · upvotes: 0 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+流式视频理解的两难：空闲期 prefill 限制上下文（省算力）会导致「上下文错配」——缺查询需要的语境、又含查询无关的信息。FrameBlend 反着来：空闲期安心用短窗口，查询时把选中的关键视频 token 用查询相关上下文**重算 KV** 替换缓存值。精度最高 +3.9pp、每帧 prefill FLOPs −20%+、总处理时间 −14-59%（含重算成本）。即插即用免训练。
+
+### 2026-10-21 · Stratified Sparse Attention: Reducing the Sparse-to-Dense Gap at Extreme Sparsity ⭐
+> [arXiv](https://arxiv.org/abs/2610.28441) · upvotes: 0 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+极稀疏注意力下确定性检索（top-k）丢剩余质量、纯采样方差大——SSA 用 proxy 分数做分数引导采样 + 包含概率校正，统一 top-k/top-p/混合为特例。RULER-HARD 128K@50× 稀疏恢复稠密 85%（最强基线 63.8%→69.3%）；优化 CUDA kernel 下 1M 上下文 decode 2.96× 于 FlashInfer。
+
+### 2026-10-21 · CALM: Offline Makes Online Better — Calibrated Cache Compression for Video Generation ⭐
+> [arXiv](https://arxiv.org/abs/2610.28192) · upvotes: 0 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+自回归视频生成的 KV 压缩：各层各 head 对 token 合并的敏感度差异大但**跨 prompt 稳定**——离线用注意力输出误差当代理指标标定层-head 风险图，在线按 cache 预算动态规划最优合并比例分配。三个 AR 视频模型上同显存预算 LPIPS 降约 21%。与 ALLOT（10-22，视频扩散稀疏分配）是同一「敏感度按层稳定→离线标定」思想在两种生成范式上的并行展开。
 
 ### 2026-10-20 · Remembering Has a Price: Learning Memory Worth under Resource Constraints ⭐
 > [arXiv](https://arxiv.org/abs/2610.26453) · upvotes: 5 · infra 相关性: 4/5 · 子方向: long-context-vlm

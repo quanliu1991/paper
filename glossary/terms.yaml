@@ -535,3 +535,64 @@ terms:
     解释: 扫并发到吞吐不再上升（饱和点 C*）再报告指标的测量法；单工作点会被 KV 容量压力下的吞吐坍塌欺骗
     相关: [serving-system]
     首见: 2026-10-21 AgentPerfBench
+  ISL (Input Sequence Length):
+    level: learning
+    解释: 输入序列长度——一次请求的 prompt token 数，决定 prefill 计算量与 KV cache 占用；多轮 agent 会话的 ISL 滚雪球式增长
+    相关: [serving-system]
+    首见: 2026-10-21 AgentPerfBench
+  OSL (Output Sequence Length):
+    level: learning
+    解释: 输出序列长度——一次请求生成的 token 数，决定 decode 步数；编码 agent 的 OSL 中位仅 32，与 ISL 相差 355 倍
+    相关: [serving-system]
+    首见: 2026-10-21 AgentPerfBench
+
+  Cache Engineering:
+    level: learning
+    解释: 在 KV cache 层直接增删/重定位而非改写文本历史——避免 re-prefill，代价是 cache 状态变成历史依赖
+    相关: [kv-cache, serving-system]
+    首见: 2026-10-21 AKV
+  History Dependence:
+    level: learning
+    解释: 同样的 token 前缀在不同 cache 操作序列下产生不同 KV 状态——前缀匹配复用会出错，需把操作历史编进 radix tree
+    相关: [kv-cache, serving-system]
+    首见: 2026-10-21 AKV
+  Segment-batch Attention:
+    level: learning
+    解释: 恢复缺失 KV 时按 drop/repos 边界把 query 切段、各段用各自可见性，一次前向恢复全部状态
+    相关: [kv-cache, serving-system]
+    首见: 2026-10-21 AKV
+  统一逻辑地址空间 (Unified Logical Addressing):
+    level: learning
+    解释: GPU 与 CPU 的 KV 存储共用一套稳定逻辑地址，数据搬家只改映射不改地址——引擎与物理布局解耦
+    相关: [kv-cache]
+    首见: 2026-10-21 UlaCache
+  PB-LRU:
+    level: learning
+    解释: 并行桶式 LRU——GPU 槽按最近访问轮次分桶（bitmap 表示），并行更新 recency、层级摘要选淘汰对象
+    相关: [kv-cache]
+    首见: 2026-10-21 UlaCache
+  MLA TP 复制:
+    level: learning
+    解释: MLA 的 KV 是全头共享压缩表示，head 切分的张量并行切不开它——每卡一份完整副本，8 卡 TP 时 87.5% 分配冗余
+    相关: [kv-cache, parallelism-scheduling]
+    首见: 2026-10-21 UlaCache
+  Peer Memory Client:
+    level: learning
+    解释: 把设备内存暴露给 RDMA 子系统的驱动组件（NVIDIA 有 nvidia-peermem，NPU 要自己写），NIC 直访显存不走 host
+    相关: [serving-system]
+    首见: 2026-10-21 HAWK
+  GEMV 瓶颈:
+    level: learning
+    解释: decode 阶段逐 token 的矩阵向量乘——tile 并行度低复用少，GPU tensor core 利用率从 prefill 的 ~93% 掉到 ~36% 而功耗不变
+    相关: [serving-system, quantization-compression]
+    首见: 2026-10-21 HAWK
+  D-PAL (分布级接受损失):
+    level: learning
+    解释: draft 训练用接受概率=分布重叠度(1−TV)做逐位权重；Rényi-1/2 损失可上下界夹住真实接受率
+    相关: [speculative-decoding]
+    首见: 2026-10-21 Beyond the Point Mass
+  Token-Energy Law:
+    level: learning
+    解释: 每 token 能耗的仿射模型——活动字节数(共享权重+私有KV)与实际 decode 时间的线性组合，预测误差<3.73%
+    相关: [serving-system]
+    首见: 2026-10-21 Token-Energy Law
