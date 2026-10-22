@@ -6,7 +6,7 @@
 # 推荐分 = profile/interests.yaml 基础权重 × (1 + score/10)
 # 同分时比 infra 分，再比 upvotes。量小由 Agent 手动维护，无需脚本。
 
-更新: 2026-10-21（AKV/UlaCache 精读 kv-cache +4，HAWK 精读 serving-system +2）
+更新: 2026-10-22（ALLOT 精读 long-context-vlm +2）
 
 signals:
   training:
@@ -32,7 +32,11 @@ signals:
   quantization-compression: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   parallelism-scheduling: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   moe-inference: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
-  long-context-vlm: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
+  long-context-vlm:
+    精读: 1        # ALLOT
+    待读加入: 0
+    追问: 0
+    score: 2.0
   inference-other: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
 
 # 用户口头反馈（对话中说「喜欢这类」「对 X 不感兴趣」时记这里；负分方向 30 天内不主动推荐）

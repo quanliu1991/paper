@@ -596,3 +596,18 @@ terms:
     解释: 每 token 能耗的仿射模型——活动字节数(共享权重+私有KV)与实际 decode 时间的线性组合，预测误差<3.73%
     相关: [serving-system]
     首见: 2026-10-21 Token-Energy Law
+  层-步敏感度 (Layer-step Sensitivity):
+    level: learning
+    解释: 稀疏化某一层某一步的注意力对最终输出的伤害程度——跨层差可达 154 倍且模型间不同，但排序跨输入稳定，可离线标定复用
+    相关: [long-context-vlm]
+    首见: 2026-10-22 ALLOT
+  轨迹校准 (Trajectory Calibration):
+    level: learning
+    解释: 用窗口化完整生成测「误差跨步放大」——早步小误差会被后续去噪放大几百倍，单步误差完全看不出，必须对着最终输出校准
+    相关: [long-context-vlm]
+    首见: 2026-10-22 ALLOT
+  连续性捷径 (Continuity Shortcut):
+    level: learning
+    解释: 自回归视频模型在 teacher forcing 下靠相邻帧局部连续性「蒙」当前块去噪，逃避对场景真实演化的建模；预测隔断的远处块可逼出真演化建模
+    相关: [long-context-vlm]
+    首见: 2026-10-22 FCP

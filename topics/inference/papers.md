@@ -573,6 +573,11 @@ looped MoE 两次循环角色不对称（首访 residual 系数天然小）：La
 
 ## 长上下文与 VLM
 
+### 2026-10-22 · ALLOT: Sparsity Should Be ALLOTted by Output — Training-Free Allocation of Block-Sparse Attention for Video Diffusion Transformers ⭐
+> [arXiv](https://arxiv.org/abs/2610.29441) · upvotes: 11 · infra 相关性: 5/5 · 子方向: long-context-vlm
+
+视频扩散 Transformer 的块稀疏注意力里「每层每步保留多少块」一直靠启发式规则（前 30% 步稠密、第一层稠密）。ALLOT 的测量发现：层-步敏感度跨层差 154 倍且模型间不同（通用规则不可迁移），局部指标与最终视频损伤排序不一致（单步误差严重低估早步杀伤力），但**敏感度排序跨输入稳定**（Spearman 0.80-1.00）——离线标定一次全 prompt 复用。方法：cell probing（单层稀疏测层内误差）+ trajectory calibration（窗口化全生成捕捉跨步误差放大）+ 实测延迟表，Lagrangian 求解器 4 秒出表，warm-up 长度/稠密层选择/密度衰减形状全部从解里涌现。四模型 × 六选择策略：胜对比方法 1.53-7.31 dB；等墙钟 PSNR 25.37 vs 18.14；HunyuanVideo+SVOO +3.38 dB 同时加速 1.75×→1.90×。标定成本每模型 6-23 GPU 时一次性。精读笔记见 [notes/papers/2026-10-22-allot.md](../../notes/papers/2026-10-22-allot.md)。
+
 ### 2026-10-21 · FrameBlend: Cache Locally, Recompute Selectively for Streaming Video Understanding ⭐
 > [arXiv](https://arxiv.org/abs/2610.29229) · upvotes: 0 · infra 相关性: 4/5 · 子方向: long-context-vlm
 
