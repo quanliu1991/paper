@@ -41,11 +41,17 @@
 ## 最近 7 天
 
 <!-- AGENT:每日更新此列表，最新在最上 -->
+- [2026-10-22 · 42 篇](daily/2026/10/2026-10-22.md)（推理 Infra 28 篇；深读 ALLOT，与 CALM 收敛到同一方法论）
+- [2026-10-21 · 71 篇](daily/2026/10/2026-10-21.md)（推理 Infra 27 篇；深读 AKV/HAWK/UlaCache，cache engineering 成热词）
 - [2026-10-20 · 55 篇](daily/2026/10/2026-10-20.md)（推理 Infra 33 篇；DScout 给 MAT 指标祛魅、记忆资源经济学两连发）
 - [2026-10-19 · 65 篇](daily/2026/10/2026-10-19.md)（推理 Infra 42 篇；GPT-6-Astra 具身评测 up 420、投机采样外溢到交互视频）
 - [2026-10-18 · 19 篇](daily/2026/10/2026-10-18.md)（周日；KV-Surgeon 补偿感知删除、手机 NPU agent serving 两篇）
 - [2026-10-17 · 25 篇](daily/2026/10/2026-10-17.md)（周六；KV 驱逐精细化+投机解码系统性反思，Acceptance Is Not Speed 必读）
 - [2026-10-16 · 64 篇](daily/2026/10/2026-10-16.md)（推理 Infra 24 篇；深读 Remote KV Tiers/KV Fidelity，两篇反直觉）
+
+<details>
+<summary>更早的速览</summary>
+
 - [2026-10-15 · 60 篇](daily/2026/10/2026-10-15.md)（推理 Infra 22 篇，投机解码四连发；深读 KV4-RL/JetSpec++）
 - [2026-10-14 · 67 篇](daily/2026/10/2026-10-14.md)（推理 Infra 19 篇，KV cache 大丰收；深读 RadixFlow/BELT/S³R）
 - [2026-10-13 · 15 篇](daily/2026/10/2026-10-13.md)（推理 Infra 1 篇，小日）
@@ -54,6 +60,7 @@
 - [2026-10-05 · 80 篇](daily/2026/10/2026-10-05.md)
 - 2026-10-03/04 · 周末（HuggingFace Daily 无更新）
 
+</details>
 > 注：10-05 至 10-09 五天已按新口径完成 infra 重筛——[topics/inference/](topics/inference/) 收录 34 篇 infra 4 分+ 论文（量化压缩 10 · 长上下文/VLM 7 · KV cache 6 · Serving 3 · 投机解码 2 · MoE 1 · 其他 5）。五天的 daily 速览仍为旧口径（推理节=认知推理），自 10-10 起按新口径生成；认知推理归档保留在 [topics/reasoning/](topics/reasoning/)（89 条）。
 
 ## 使用
