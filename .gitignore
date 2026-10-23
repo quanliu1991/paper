@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 data/pending/
 notes/papers/.fulltext/
+data/logs/
