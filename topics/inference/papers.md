@@ -4,6 +4,31 @@
 
 ## Serving 系统
 
+### 2026-10-23 · BeNice! Closing Looping's Inference-Memory Gap via KV-Sharing ⭐
+> [arXiv](https://arxiv.org/abs/2610.31633) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache / models
+
+循环架构（同层块反复前向）参数不涨质量涨，但每次循环各自生成 KV cache，显存随循环数线性涨。已有 KV-sharing（末次循环的 KV 共享给前面）有时可行有时不行（KV-shareability 机制不明，同构训练也不稳定）。BeNice 两阶段：预训练用 stochastic depth 诱导收缩残差动力学（表示向公共极限收敛），后训练把末次循环 KV 广播进第一次循环、训「兼容残差」保质量——最终匹配不共享的 finetuning 困惑度，且与其他 KV 压缩方法可叠加。
+
+### 2026-10-23 · Evaluating the Applicability of LLM Inference Optimizations on Apple Silicon ⭐
+> [arXiv](https://arxiv.org/abs/2610.31479) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system / inference-other
+
+把四大推理优化家族从 NVIDIA 服务器搬到 Apple Silicon（单请求 decode 负载）系统重测：KV 剪枝在 Apple 上最高 1.75× 端到端吞吐（在桌面 NVIDIA 上反而可能降）；**所有测试的投机解码方法在 Apple 上全部降低吞吐**（服务器 GPU 上报 2-6×）——batch-one decode 没有验证带宽红利；CUDA kernel 移植只有部分可迁移（Metal 无异步拷贝），可迁移组件最高 1.20× decode。结论值得刻碑：**加速比不是技术本身的属性，是「技术×运行时×硬件契约×负载 regime」的联合函数**。
+
+### 2026-10-23 · Heartbeat Thinking: Speculative Reasoning and Tool Execution While Listening in Realtime Voice Agents ⭐
+> [arXiv](https://arxiv.org/abs/2610.26233) · upvotes: 17 · infra 相关性: 4/5 · 子方向: serving-system
+
+实时语音 agent 的用户说完还得干等——可执行信息其实早到了。已有的「边听边干」要么按 chunk 截断工具调用、要么一更新就打断。Heartbeat Thinking：新输入触发新 Thinker 调用，但**进行中的调用和已派发的工具跑完不被打断**，周期性调用读最新部分转写+共享的已完成推理/工具结果记录，跨语音更新累积准备。FDBench v3 工具覆盖率 +16pp、最终响应延迟 −36.4%。
+
+### 2026-10-23 · LLVMhammer: Amplifying Latency and Cost of LLM Inference via Rowhammer Attack ⭐
+> [arXiv](https://arxiv.org/abs/2610.30798) · upvotes: 0 · infra 相关性: 4/5 · 子方向: serving-system
+
+推理基础设施安全：第一个打 Triton JIT 编译管线的 Rowhammer 攻击——在 CPU DRAM 翻转一个 bit，让 MLIR/LLVM 优化 pass 生成「功能相同但次优」的 GPU kernel，磁盘缓存后持续拖慢后续所有推理。Triton 的 target 无关阶段跨 GPU 厂商共享，攻击 vendor agnostic（RTX 4090 + RX 7900 XTX 验证）。输出正确性保持不变，防御检测难。
+
+### 2026-10-23 · SpaceWPT: Low-Latency MoE Inference in Space Data Centers ⭐
+> [arXiv](https://arxiv.org/abs/2610.30923) · upvotes: 0 · infra 相关性: 4/5 · 子方向: moe-inference / serving-system
+
+太空数据中心的 MoE 推理：expert 分布在卫星上，偏斜激活让算力需求和均匀太阳能供电错配（忙 expert 缺电、闲 expert 电浪费）。SpaceWPT 用星间激光无线输电重新分配电力，核心是双边注水（two-sided water-filling）策略——按水位和输电链路效率决定每个活跃 expert 是捐电、留电还是受电。与 OrbitWeaver（10-21）共同勾勒天基推理系统这个新战场。
+
 ### 2026-10-21 · HAWK: Heterogeneity-Aware KV Cache Transfer for Efficient GPU-NPU Phase-Disaggregated LLM Inference ⭐
 > [arXiv](https://arxiv.org/abs/2610.29873) · upvotes: 0 · infra 相关性: 5/5 · 子方向: serving-system
 
@@ -116,6 +141,16 @@ agentic 负载反复重发几乎不变的超长上下文，prefix caching 省掉
 
 
 ## KV Cache 与显存
+
+### 2026-10-23 · Gandalf: Flash Shall Not Die! Increasing Flash Storage Lifetime for KV Cache Offloading in LLM Serving ⭐
+> [arXiv](https://arxiv.org/abs/2610.30791) · upvotes: 0 · infra 相关性: 5/5 · 子方向: kv-cache
+
+SSD KV offloading 的耐久性危机：生产负载（多轮对话/agent）每天写 81-240 TB KV，把 SSD 寿命从几年压到几个月；按访问历史过滤准入会伤命中率——因为不同注意力类型的 KV 历史模式可以一样、未来复用完全不同。Gandalf 用应用层信号做分层安置：full-attention KV（每轮都复用，长命）优先入 SSD，线性/稀疏注意力状态（用一次就丢）留 DRAM，加容量感知的柔性准入（offline oracle 蒸馏在线策略）。SSD 寿命平均 7.3×，命中率几乎不变；可扩展到 HBF。精读笔记见 [notes/papers/2026-10-23-gandalf.md](../../notes/papers/2026-10-23-gandalf.md)。
+
+### 2026-10-23 · Drift Says When, Budget Says How Much: Rate-Controlled KV Re-selection for Long-Form Multimodal Generation ⭐
+> [arXiv](https://arxiv.org/abs/2610.31433) · upvotes: 0 · infra 相关性: 4/5 · 子方向: kv-cache / long-context-vlm
+
+多模态 KV 压缩的通病是 prefill 时一次选好视觉 token、整个生成期复用。论文证明长文本生成下这个一次性选择是硬上限：即使拿着未压缩答案的注意力做 oracle 选择，ROUGE-L 一致性也只有 0.44-0.52——模型读的证据随描述展开在移动。固定漂移阈值也系统性失败（漂移幅度跨样本不可比，低漂移样本几乎从不刷新却受益最大）。RCR 让漂移决定「何时何地」重选、per-sample 控制器管「多频繁」，低秩漂移检测器 + 候选受限重选 + GPU 上决策。五种设置中四种胜 InfiniGen 1.6-3.8 ROUGE-L，检测器比精确重选小 4×。与 RIFT 的 decode staleness 同一发现：一次性 KV 选择在长生成中过期。
 
 ### 2026-10-21 · Cache Engineering for Agents（AKV）⭐
 > [arXiv](https://arxiv.org/abs/2610.28577) · upvotes: 0（10-22 涨至 45） · infra 相关性: 5/5 · 子方向: kv-cache
@@ -289,6 +324,21 @@ Looped Transformer 的 KV cache 随循环次数线性膨胀成为解码吞吐与
 
 
 ## 投机解码
+
+### 2026-10-23 · RIFT: KV Cache Compression for Draft Models with Complementary Compressibility Training ⭐
+> [arXiv](https://arxiv.org/abs/2610.31098) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding / kv-cache
+
+draft 模型 KV 压缩的盲区被命名：**decode staleness**——prefill 时选好的 KV（SnapKV 等）随生成推进过期，同预算下纯滑动窗口反而反超（SnapKV 接受长度 −36.7%、SWA +41%）；机制是注意力整体搬移到新生成的推理文本上（SnapKV 保留位的注意力占比 67%→25.4%），混合注意力架构更严重。RIFT 一族：stat（预算对半分给重要性选择+滑窗，+37.8%）→ dyn（每 Δ 步重打分刷新，100K ISL 保留 95.7% 全量 AL）→ ada（AL/熵/query drift 三信号自适应刷新，少 2.03× 刷新）；再加压缩感知训练（sparse mask 下 KD 消除训练-推理错配）。组合拳 32K ISL/8K 预算下保留 >98% 全量接受长度（SnapKV 63-67%）。定位是存算分离/边缘辅助 serving（draft 在 SRAM 受限设备上跑）。精读笔记见 [notes/papers/2026-10-23-rift.md](../../notes/papers/2026-10-23-rift.md)。
+
+### 2026-10-23 · Speculative Acceptance Does Not Decay with Position: A Full-Length Diagnostic on Long CoT with Independent Drafts ⭐
+> [arXiv](https://arxiv.org/abs/2610.30644) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
+
+给行业叙事「CoT 越长接受率越低」补上缺失的对照：1.78M 轮验证、MATH-500 全集、两个独立 draft（无训练长度错配）× 两种解码，within-problem 配对检验 + 隔离 greedy 复读病后，接受率在支持域内（greedy 0-8K/sampling 0-12K）**不随位置衰减**，后半段反而略高。真正的失败轴是熵：拒绝高精度集中在反思触发词（wait/however/check），argmax 一致率的「衰减」是可见性伪影。三臂 LoRA 轨迹对齐干预零提升——draft 对齐该直接优化接受判据而非轨迹拟合。与 RCSD/D-PAL 的「系统级目标」路线互证，对训练型 drafter 的「衰减」给出长度外推失败的解释补刀。精读笔记见 [notes/papers/2026-10-23-spec-acceptance-diagnostic.md](../../notes/papers/2026-10-23-spec-acceptance-diagnostic.md)。
+
+### 2026-10-23 · ValuSpec: Plug-and-Play Candidate Valuation before Target Verification for Tree-Based Speculative Decoding ⭐
+> [arXiv](https://arxiv.org/abs/2610.31338) · upvotes: 0 · infra 相关性: 4/5 · 子方向: speculative-decoding
+
+树投机解码在重复请求场景复用历史 draft 树，但候选树越长低质量分支越多，浪费 target 验证算力。ValuSpec 在昂贵验证前插一层即插即用估值：transfer-based 监督对齐 target 行为，阈值从 target greedy 轨迹标定、零参数训练；过滤后的树在 output-identical greedy 规则下验证（严格无损）。检索树场景端到端 2.38×，并入 EAGLE-3 动态树 2.78×。
 
 ### 2026-10-21 · TeCoP: Accelerating Diffusion LLM Decoding via Tentative Context Pipelining ⭐
 > [arXiv](https://arxiv.org/abs/2610.27583) · upvotes: 0 · infra 相关性: 5/5 · 子方向: speculative-decoding
@@ -545,6 +595,11 @@ agent 每轮只追加少量文本，但 CPU tokenizer 前端每次从头重分�
 
 ## MoE 推理
 
+### 2026-10-23 · Meta Expert: Cross-Layer Expert Sharing for Storage- and Retrieval-Efficient MoE ⭐
+> [arXiv](https://arxiv.org/abs/2610.27598) · upvotes: 23 · infra 相关性: 4/5 · 子方向: moe-inference
+
+主流 MoE 每层各配一套 expert（拓扑独立），但不同层的 expert 内容高度相似冗余。跨层共享的 Meta Expert 实证更优：同激活量同粒度下只用 70-80% 的 expert 数匹配 Vanilla MoE 性能（低参数冗余 + 低交叉熵 + 高下游精度）；理论分析还显示 Meta Expert 给隐状态提供更灵活的残差通路，提升信息检索效率——对推理侧意味着更小的 expert 池、更高的缓存与检索效率。
+
 ### 2026-10-21 · Specter: Fast MoE Inference via Quantization-Enabled Multi-Step Speculative Offloading ⭐
 > [arXiv](https://arxiv.org/abs/2511.14102) · upvotes: 20 · infra 相关性: 5/5 · 子方向: moe-inference
 
@@ -572,6 +627,16 @@ looped MoE 两次循环角色不对称（首访 residual 系数天然小）：La
 
 
 ## 长上下文与 VLM
+
+### 2026-10-23 · TTR-Compressor: Rethinking Sequence Compression with Test-time Regression ⭐
+> [arXiv](https://arxiv.org/abs/2610.31574) · upvotes: 10 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+序列压缩（视觉 token 合并、块稀疏注意力压缩）的常规做法是池化或学投影，都欠佳。TTR 换视角：输入 token 定义一个回归问题，**拟合出的系数就是压缩表示**——回归问题端到端反传学习、前向时闭式解算系数（快）。块稀疏注意力压缩大幅超 attention-based 压缩器；视觉 token 合并胜标准 MLP merger，同等性能省 55.6% 视觉 token。「test-time regression」有望成为高效模型的通用原语。
+
+### 2026-10-23 · Deep Fusion Memory: A Chunk-Level Parametric Memory for LLM ⭐
+> [arXiv](https://arxiv.org/abs/2610.25100) · upvotes: 35 · infra 相关性: 4/5 · 子方向: long-context-vlm
+
+外置参数记忆的痛点：构造训练数据要海量离线检索、输出级插值融合太浅。DFM 让因果记忆预测器从上文直接**生成**记忆（chunk 检索嵌入只当训练监督），预测的记忆在 chunk 内共享、经门控交叉注意力融进隐状态——推理时零显式检索。训练数据构造比 token 级方案少 32× 检索查询、2048× 检索条目；六个 QA 任务最强基线 +12.71%（Mistral）/ +11.19%（Qwen）。
 
 ### 2026-10-22 · ALLOT: Sparsity Should Be ALLOTted by Output — Training-Free Allocation of Block-Sparse Attention for Video Diffusion Transformers ⭐
 > [arXiv](https://arxiv.org/abs/2610.29441) · upvotes: 11 · infra 相关性: 5/5 · 子方向: long-context-vlm

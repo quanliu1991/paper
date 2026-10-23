@@ -611,3 +611,23 @@ terms:
     解释: 自回归视频模型在 teacher forcing 下靠相邻帧局部连续性「蒙」当前块去噪，逃避对场景真实演化的建模；预测隔断的远处块可逼出真演化建模
     相关: [long-context-vlm]
     首见: 2026-10-22 FCP
+  Decode Staleness (解码陈旧化):
+    level: learning
+    解释: prefill 时选好的 KV cache 随生成推进逐渐「过期」——注意力整体搬到新生成的推理文本上，需要 decode 期间刷新选择
+    相关: [speculative-decoding, kv-cache]
+    首见: 2026-10-23 RIFT
+  TBW/WAF (SSD 写寿命/写放大因子):
+    level: learning
+    解释: SSD 的 NAND 只能写有限次数（TBW=总写入预算），垃圾回收放大实际写入（WAF）——KV offloading 场景的生产写入量可把寿命从几年压到几个月
+    相关: [kv-cache, serving-system]
+    首见: 2026-10-23 Gandalf
+  Argmax 可见性伪影 (Argmax Visibility Artifact):
+    level: learning
+    解释: 采样模式下 argmax 一致率下降不代表真实期望接受概率下降——温度扫描可分离两个统计量，评测投机解码别只看 argmax 一致
+    相关: [speculative-decoding]
+    首见: 2026-10-23 Spec Acceptance Diagnostic
+  反思触发词 (Reflection Trigger Tokens):
+    level: learning
+    解释: wait/however/check 这类标记反思开始的词——投机解码的拒绝高精度集中在这里，失败轴是熵高而非位置晚
+    相关: [speculative-decoding]
+    首见: 2026-10-23 Spec Acceptance Diagnostic

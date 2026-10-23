@@ -6,7 +6,7 @@
 # 推荐分 = profile/interests.yaml 基础权重 × (1 + score/10)
 # 同分时比 infra 分，再比 upvotes。量小由 Agent 手动维护，无需脚本。
 
-更新: 2026-10-22（ALLOT 精读 long-context-vlm +2）
+更新: 2026-10-23（RIFT/Gandalf/接受率诊断精读：speculative-decoding +4、kv-cache +2）
 
 signals:
   training:
@@ -20,15 +20,15 @@ signals:
     追问: 1        # delayed-batching 推导、GPU 共卡账、SLO
     score: 13.5
   speculative-decoding:
-    精读: 3        # DLoop、S3R、JetSpec++
+    精读: 5        # DLoop、S3R、JetSpec++、RIFT、接受率诊断
     待读加入: 1    # DLoop
-    追问: 1        # 与 token 路由对比、无损性
-    score: 5.5
+    追问: 2        # 与 token 路由对比、无损性
+    score: 9.5
   kv-cache:
-    精读: 7        # KV-Repurpose、BELT、KV4-RL、KV Fidelity-Consumability、No-Hair Theorem、AKV、UlaCache
+    精读: 9        # KV-Repurpose、BELT、KV4-RL、KV Fidelity-Consumability、No-Hair Theorem、AKV、UlaCache、Gandalf（+RIFT 计入 spec 侧）
     待读加入: 0
     追问: 0
-    score: 12.0
+    score: 14.0
   quantization-compression: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   parallelism-scheduling: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
   moe-inference: {精读: 0, 待读加入: 0, 追问: 0, score: 0}
